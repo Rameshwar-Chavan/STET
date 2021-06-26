@@ -13,7 +13,7 @@
            -> Authenticated User Login
                User Name, Password
            -> Successful Login:
-                   Dashboard, Profile, Generate Time Table, Generate Hall Ticket, Regenerate Hall ticket, Generate timetable, All Registration, All Valid Registrations, Exam Dates, Candidate Documents, Result Generation, Support, Username Regeneration,
+                   Dashboard, Profile, Generate Time Table, Generate Hall Ticket, Regenerate Hall ticket, Generate timetable, All Registration, All Valid Registrations, Exam Dates, Candidate Documents, Result Generation, Support, Username Regeneration.
 
 
 
