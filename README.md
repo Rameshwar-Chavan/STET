@@ -1,11 +1,14 @@
 # STET
 
-## Requirements
-----> Candidate Requirements:
-       Students: 1. Registration
+# Requirements
+
+
+
+## Candidate Requirements:
+        - Students: 1. Registration
        
-              ~ Mobile No and Email id(User ID)
-              ~ First Name, Last Name
+              - Mobile No and Email id(User ID)
+              - First Name, Last Name
               
            ### Login using Password or OTP:
                      ---- Profile ----
