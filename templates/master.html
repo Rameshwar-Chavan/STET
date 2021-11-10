@@ -91,7 +91,23 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">    
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="{% url 'candidates:registration' %}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p><b>
+                 Applicant Registration
+              </b></p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'candidates:login' %}" class="nav-link">
+              <i class = "fa fa-unlock-alt"></i>
+              <p><b>
+                Applicant Login
+              </b></p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

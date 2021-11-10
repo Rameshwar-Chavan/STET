@@ -5446,7 +5446,6 @@ input[type="button"].btn-block {
   border-top-right-radius: 0.2rem;
   border-bottom-right-radius: 0.2rem;
 }
-
 .badge {
   display: inline-block;
   padding: 0.25em 0.4em;
@@ -52415,4 +52414,5 @@ a.text-muted:hover {
 .dark-mode .dark-mode.accent-gray-dark .page-item .page-link:hover, .dark-mode .dark-mode.accent-gray-dark .page-item .page-link:focus {
   color: #3f474e;
 }
+
 /*# sourceMappingURL=adminlte.css.map */
