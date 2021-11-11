@@ -1,47 +1,79 @@
-{% extends 'master.html' %}
-{% block body %}
+{% extends 'master.html' %} {% block body %}
 <section>
-    <div class="container">
-        <h1><i class="fa fa-sign-in" aria-hidden="true"></i>
-            <label>Login</label>
-        </h1>
-    </div>
-<div class="d-flex justify-content-center">
-  <div class="card col-md-4 ">
-    <div class="card-body">
+  <div class="container">
+    <h1>Login</h1>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="card col-md-4">
+      <div class="card-body">
         <form>
-            <label><h4 style="color:blue">Applicant Login</h4></label>
-            <input type="text" class="form-control  form-control-sm rounded-0" id="exampleInputRounded0" placeholder="Enter Username">
-            <br>
-            <input type="password" class="form-control form-control-sm rounded-0" id="exampleInputRounded1" placeholder="Enter Password">
-            <br>
-            <br>
-            <div class="row">
-                <div class="col-4">
-                    <button type="submit" class="btn btn-primary btn-flat" id="btnotp">Get OTP</button><br>
-                </div>
-                <div class="col-1"></div>
-                 <div class="col-md-6">
-                    <input type="text" class="form-control  form-control-sm rounded-0" id="otp" placeholder="">
-                </div>
-            </div>
-            <br>
-            <br>
-            <div class="row">
-                <button type="submit" class="btn btn-success btn-flat">Login here</button>
-                <div class="col-3"></div>
-                <button type="submit" class="btn btn-danger btn-flat" id="forgot">Forgot Password</button>
+          <label><h4 class="text-primary text-bold">Applicant Login</h4></label>
+          <div>
+            <input
+              type="text"
+              class="form-control form-control rounded"
+              id="exampleInputRounded0"
+              placeholder="Enter Username"
+            />
+          </div>
+          <br />
+          <div>
+            <input
+              type="password"
+              class="form-control form-control rounded"
+              id="exampleInputRounded1"
+              placeholder="Enter Password"
+            />
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-4">
+              <button
+                type="submit"
+                class="btn btn-primary btn-sm btn-rounded"
+                id="btnotp"
+              >
+                Get OTP</button
+              ><br />
             </div>
 
+            <div class="col-8">
+              <input
+                type="text"
+                class="form-control form-control-sm rounded"
+                id="otp"
+                placeholder=""
+              />
+            </div>
+          </div>
+          <br />
+          <br />
+          <div class="row">
+            <div class="col-6">
+              <button type="submit" class="btn btn-success btn-rounded">
+                Login
+              </button>
+            </div>
+
+            <div class="col-6">
+              <button
+                type="submit"
+                class="btn btn-danger btn-rounded"
+                id="forgot"
+              >
+                Forgot Password
+              </button>
+            </div>
+          </div>
         </form>
+      </div>
     </div>
   </div>
-</div>
 </section>
 <script>
-$("#btnotp").click(function(){
+  $("#btnotp").click(function () {
     $("#otp").toggle();
     $("#forgot").toggle();
-});
+  });
 </script>
 {% endblock body %}
