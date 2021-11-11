@@ -22,11 +22,6 @@
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="{% static 'dist/img/stet_logo.png' %}" alt="STET_Logo" height="60" width="60">
   </div>
-
-<div class="inline-back">
-<h3 class="text-center mt-2 text-primary">State Teachers Eligibility Test</h3>
-</div>
-
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light navbar-fixed">
     <!-- Left navbar links -->
@@ -73,7 +68,7 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary">
+  <aside class="main-sidebar sidebar-dark-primary fixed-sidebar">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
       <img src="{% static 'dist/img/stet_logo.png' %}" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -91,13 +86,53 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">    
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="{% url 'candidates:registration' %}" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <b>
+                 Applicant Registration
+              </b>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'candidates:login' %}" class="nav-link">
+              <i class="nav-icon fas fa-angle-right"></i>
+              <b>
+                Applicant Login
+              </b>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
+  <div class="row fluid-container mt-1">
+        <div class="col-2"></div>
+        <div class="col-1 pr-5 text-center d-inline">
+          <img
+            src="{% static 'dist/img/stet_logo.png' %}"
+            class="brand-image img-circle elevation-3 bg-dark"
+            style="opacity: 0.8"
+            height="85px"
+            width="85px"
+          />
+        </div>
+        <div class="col-7 mr-0 d-inline">
+          <h3 class="text-center text-info">
+            <b> महाराष्ट्र राज्य परीक्षा परिषद, पुणे </b>
+          </h3>
+          <h4 class="text-warning text-center">
+            <b
+              >महाराष्ट्र शिक्षक पात्रता परीक्षा - २०२१ <br />
+              Maharashtra Teacher Eligibility Test - 2021</b
+            >
+          </h4>
+        </div>
+        <div class="col-2"></div>
+      </div>
     <!-- Main content -->
     <section class="content-wrapper">
         {% block body %}
