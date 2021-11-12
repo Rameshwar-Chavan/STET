@@ -1,22 +1,201 @@
-{% extends 'master.html' %} {% block body %}
-<h4 class="text-right mr-5">Home</h4>
-{% comment %}
-<p>
-  महाराष्ट्र शिक्षक पात्रता परीक्षा 2021 परीक्षा - ( MAHATET 2021 ) ईमेल आणि
-  नोंदणी पृष्ठ सूचना . महाराष्ट्र शिक्षक पात्रता परीक्षा 2021 - ( MAHATET 2021 )
-  परीक्षा दिनांक बदलाबाबतचे प्रसिद्धीपत्रक. महाराष्ट्र शिक्षक पात्रता परीक्षा
-  2021 - ( MAHATET 2021 ) परीक्षा दिनांक बदलाबाबतचे प्रसिद्धीपत्रक. महाराष्ट्र
-  शिक्षक पात्रता परीक्षा 2021 - ( MAHATET 2021 ) परीक्षा दिनांक बदलाबाबतचे
-  प्रसिद्धीपत्रक. इयत्ता ६ वी ते इ ८ वी च्या गटातील उच्च प्राथमिक शिक्षकांना
-  नियुक्तीसाठी शिक्षक पात्रता परीक्षा पेपर क्र. II संबंधित उमेदवाराने त्यांनी
-  प्राप्त केलेल्या पदवीच्या विषयानुसार राहील. उदा. विज्ञान / गणित विषयासाठी
-  विज्ञान / गणित विषयातील शिक्षक पात्रता परीक्षा पेपर क्र. II, सामाजिकशास्त्र
-  शिक्षकांसाठी सामाजिकशास्त्र या विषयातील शिक्षक पात्रता परीक्षा पेपर क्र. II व
-  इतर विषयांसाठी उपरोक्त गणित / विज्ञान आणि सामाजिकशास्त्र यापैकी कोणताही एका
-  विषयातील शिक्षक पात्रता परीक्षा पेपर क्र. II उत्तीर्ण असणे आवश्यक राहील.
-  महाराष्ट्र शिक्षक पात्रता परीक्षा - २०२१ करीता उमेदवार ऑनलाईन आवेदनपत्र
-  भरणेसाठी दिनांक ०५/०९/२०२१ रोजी पर्यंत दिलेल्या मुदतवाढीचे प्रसिद्धीपत्रक
-  व्यावसायिक अर्हतेच्या शेवटच्या वर्षात प्रवेश घेतलेल्या विद्यार्थ्यांना शिक्षक
-  पात्रता परीक्षेचे आवेदनपत्र भरण्याची संधी उपलब्ध करून देणेबाबत प्रसिद्धीपत्रक
-</p>
-{% endcomment %} {% endblock body %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>State Teachers Eligibility Test</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body class="bg-light mt-1">
+  <div class="container-fluid">
+    <!-- <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__shake" src="/dist/img/photo1.png" alt="STET_Logo" height="60" width="60">
+    </div> -->
+    <!-- Tab panes -->
+    <div class="tab-content mt-auto">
+        <div class="">
+          <div class="row">
+            <div class="col-sm-2 pt-2 text-center d-inline">
+              <img src="{% static 'dist/img/stet_logo.png' %}" class="brand-image rounded-circle bg-dark" style="opacity: 0.9" height="85px"
+                width="85px" />
+            </div>
+            <div class="col-sm mr-auto pt-2 pb-2 d-inline">
+              <h3 class="text-center text-info">
+                <b> महाराष्ट्र राज्य परीक्षा परिषद, पुणे </b>
+              </h3>
+              <h4 class="text-warning text-center">
+                <b>महाराष्ट्र शिक्षक पात्रता परीक्षा - २०२१ <br />
+                  Maharashtra Teacher Eligibility Test - 2021</b>
+              </h4>
+            </div>
+            <div class="col-sm-2 mt-1 pt-2 text-center d-inline">
+              <img src="{% static 'dist/img/satymev_flag.jpg' %}" class="brand-image rounded-circle align-self-center" style="opacity: 0.9" height="85px"
+                width="85px" />
+            </div>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light"  style="background-color: rgb(172, 212, 235);">
+          <!-- <a class="navbar-brand" href="#">
+            <img src="dist/img/stet_logo.pn.gif" width="50" height="50" class="d-inline-block align-top bg-dark rounded-circle" alt="">
+            
+          </a> -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item d-sm-inline-block pl-lg-5 pr-1 pt-1 pb-1">
+                <a class="nav-link btn font-weight-bold" href="">Home</a>
+              </li>
+              <li class="nav-item pl-1 pr-1 pt-1 pb-1">
+                <a class="nav-link btn font-weight-bold" href="https://www3.digialm.com/OnlineAssessment/index.html?164@@M642">Mock Test</a>
+              </li>
+              <li class="nav-item pl-1 pr-1 pt-1 pb-1">
+                <a class="nav-link btn font-weight-bold" href="#">Contact Us</a>
+              </li>
+              <li class="nav-item pl-1 pr-1 pt-1 pb-1">
+                <a class="nav-link btn font-weight-bold" href="#">About Us</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+        <div class="row ml-auto mr-auto rounded">
+          <div class="col-sm-2">
+          
+            <div class="card mt-2">
+              <div class="card-header text-center bg-warning font-weight-bold font-weight-bolder">
+                Applicants
+              </div>
+            <div class="list-group" id="list-tab" role="tablist">
+              <a class="list-group-item list-group-item-action " id="list-home-list" data-toggle="list" href="#list-home"
+                role="tab" aria-controls="home">Applicant Login</a>
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile"
+                role="tab" aria-controls="profile">Applicant Registration</a>
+            </div>  
+            </div>
+            <!-- Offices Card Start -->
+            <div class="card mt-2">
+              <div class="card-header bg-warning text-center font-weight-bold">
+                Officers
+              </div>
+              <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action " id="list-home-list" data-toggle="list" href="#list-home"
+                  role="tab" aria-controls="home">Exam Officer Login</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile"
+                  role="tab" aria-controls="profile">Exam Investigator Login</a>
+                
+              </div>
+            </div>
+            <!-- Offices Card End -->
+            <!-- Offices Card Start -->
+            <div class="card mt-2">
+              <div class="card-header bg-success text-center font-weight-bold">
+                Downloads
+              </div>
+              <div class="list-group text-md-center" id="list-tab" role="tablist">
+                <a class="pt-2 pb-1 pl-1 pr-1 list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home"
+                  role="tab" aria-controls="home">Prev Year Question Paper</a>
+                <a class="pt-2 pb-1 pl-1 pr-1 list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile"
+                  role="tab" aria-controls="profile">Syllabus</a>
+            
+              </div>
+            </div>
+            <!-- Offices Card End -->
+          </div>
+          <!-- Main Content Start -->
+          <div class="col-sm mt-2">
+          
+            <div class="card text-center">
+              <div class="card-header bg-secondary font-weight-bold font-weight-bolder">
+                महाराष्ट्र शिक्षक पात्रता परीक्षा 2021 बाबतच्या सूचना
+              </div>
+              <div class="card-body">
+                <h5 class="card-title font-weight-bold font-weight-bolder">महाराष्ट्र शिक्षक पात्रता परीक्षा 2021 बाबतच्या सूचना</h5>
+               <hr>
+                <p class="card-text text-justify"> &nbsp; &nbsp; इयत्ता ६ वी ते इ ८ वी च्या गटातील उच्च प्राथमिक शिक्षकांना नियुक्तीसाठी शिक्षक पात्रता परीक्षा पेपर क्र. II
+                संबंधित उमेदवाराने त्यांनी प्राप्त केलेल्या पदवीच्या विषयानुसार राहील. उदा. विज्ञान / गणित विषयासाठी विज्ञान /
+                गणित विषयातील शिक्षक पात्रता परीक्षा पेपर क्र. II, सामाजिकशास्त्र शिक्षकांसाठी सामाजिकशास्त्र या विषयातील
+                शिक्षक पात्रता परीक्षा पेपर क्र. II व इतर विषयांसाठी उपरोक्त गणित / विज्ञान आणि सामाजिकशास्त्र यापैकी
+                कोणताही एका विषयातील शिक्षक पात्रता परीक्षा पेपर क्र. II उत्तीर्ण असणे आवश्यक राहील.
+                <hr>
+                
+                &nbsp; &nbsp; महाराष्ट्र शिक्षक पात्रता परीक्षा - २०२१ करीता उमेदवार ऑनलाईन आवेदनपत्र भरणेसाठी दिनांक ०५/०९/२०२१
+                रोजी पर्यंत दिलेल्या मुदतवाढीचे प्रसिद्धीपत्रक
+                व्यावसायिक अर्हतेच्या शेवटच्या वर्षात प्रवेश घेतलेल्या विद्यार्थ्यांना शिक्षक पात्रता परीक्षेचे आवेदनपत्र भरण्याची संधी
+                उपलब्ध करून देणेबाबत प्रसिद्धीपत्रक</p>
+              </div>
+              
+            </div>
+          </div>
+          <!-- Main Content End -->
+        <!-- Right Card Start -->
+            <!-- Notifications Start -->
+          <div class="col-sm-2 mt-1">
+            <div class="card mt-sm-2" >
+              <div class="card-header bg-info text-center font-weight-bold text-warning">
+                Notifications
+              </div>
+              <ul class="list-group list-group-flush text-center">
+                <li class="list-group-item"><marquee width="auto" direction="up" height="100%" scrollamount="1" class="text-center">
+                  <a href="#" class="nav-link">Latest News*</a>
+                </marquee></li><li class="list-group-item">
+                  <marquee width="auto" direction="up" height="100%" scrollamount="1" class="text-center">
+                    <a href="#" class="nav-link">Latest News*</a>
+                  </marquee>
+                </li>
+                <li class="list-group-item">
+                  <marquee width="auto" direction="up" height="100%" scrollamount="1" class="text-center">
+                    <a href="#" class="nav-link">Latest News*</a>
+                  </marquee>
+                </li>
+                <li class="list-group-item">
+                  <marquee width="auto" direction="up" height="100%" scrollamount="1" class="text-center">
+                    <a href="#" class="nav-link">Latest News*</a>
+                  </marquee>
+                </li>
+                <li class="list-group-item">
+                  <marquee width="auto" direction="up" height="100%" scrollamount="1" class="text-center">
+                    <a href="#" class="nav-link">Latest News*</a>
+                  </marquee>
+                </li>
+                <li class="list-group-item">
+                  <marquee width="auto" direction="up" height="100%" scrollamount="1" class="text-center">
+                    <a href="#" class="nav-link">Latest News*</a>
+                  </marquee>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Notifications Start -->
+        </div>
+        
+      </div>
+    </div>
+    <!-- Footer Start -->
+    <footer class="page-footer pb-3 pt-2 mt-2 text-center" style="background-color: rgb(172, 212, 235);">
+      <div class="footer pl-5 pr-5 d-block">
+        <span class="text-primary font-weight-bold">© 2021 Copyright Designed & Developed by</span> <a href="https://github.com/Rameshwar-Chavan" class="text-dark font-weight-bold" target="_blanck">Rameshwar Chavan</a> | <a href="https://github.com/Mangesh-Shirodkar"  class="text-dark font-weight-bold" target="_blanck">Mangesh Shirodkar</a> | <a href="https://github.com/DipakSinkar" target="_blanck"  class="text-dark font-weight-bold">Dipak Sinkar</a><a href="https://btech.mit.asia" target="_blanck" class="float-right d-none d-sm-inline-block font-weight-bold"> Maharashtra Institute of Technology(T), Aurangabad</a>
+      </div>
+      
+      <!-- Copyright -->
+    
+    </footer>
+    <!-- Footer End -->
+  </div>
+
+</body>
+
+</html>
