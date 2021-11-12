@@ -6,3 +6,6 @@ def registration(request):
 
 def login(request):
     return render(request, 'students/Applicant_Login.html', {})
+
+def logout(request):
+   return HttpResponse("Logout")
