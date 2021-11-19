@@ -1,4 +1,259 @@
 {% extends 'master.html' %}
 {% block body %}
-<h2 class="text-center">Candidate Registration</h2>
+<section class="content">
+    <div class="container-fluid">
+      <!-- SELECT2 EXAMPLE -->
+      <form action="#" method="post">
+        {% csrf_token %}
+        <div class="card card-primary mt-4">
+          <div class="card-header">
+            <h2 class="card-title"><b>New Registration</b></h2>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-12 col-md-3">
+                    <label for="farmer_name">Farmer Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="farmer_name"
+                      name="farmer_name"
+                      placeholder="Farmer Full Name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-12 col-md-3">
+                    <div class="form-group">
+                      <label for="address">Farmer Address</label>
+                      <textarea
+                        class="form-control"
+                        rows="2"
+                        name="address"
+                        id="address"
+                        placeholder="Address E.g At. CIDCO N-4 Aurangabad"
+                        required
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-12 col-md-2">
+                    <label for="Gender">Gender</label>
+                    <div class="form-group">
+                      <select
+                        class="form-control select2bs4"
+                        data-placeholder="Select a Gender"
+                        style="width: 100%"
+                        name="gender"
+                        id="gender"
+                        required
+                      >
+                        <option value="defualt">Select</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-1"></div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-md-3">
+                    <label for="religion">Religion</label>
+                    <div class="form-group">
+                      <select
+                        class="form-control select2bs4"
+                        data-placeholder="Select a Religion"
+                        style="width: 100%"
+                        name="religion"
+                        id="religion"
+                        required
+                      >
+                        <option value="select">Select</option>
+                        <option>Hindu</option>
+                        <option>Buddhist</option>
+                        <option>Christian</option>
+                        <option>Jain</option>
+                        <option>Muslim</option>
+                        <option>Parsi</option>
+                        <option>Sikh</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-12 col-md-3">
+                    <label for="Caste">Caste</label>
+                    <div class="form-group">
+                      <select
+                        class="form-control select2bs4"
+                        data-placeholder="Select a Caste"
+                        style="width: 100%"
+                        name="caste"
+                        id="caste"
+                        required
+                      >
+                        <option value="select">Select</option>
+                        <option>General</option>
+                        <option>(OBC) Other Backward Class</option>
+                        <option>(SBC) Special Backward Class</option>
+                        <option>(SC) Scheduled Caste</option>
+                        <option>(ST) Scheduled Tribe</option>
+                        <option>(VJNT) Vimukt Jat Nomadic Tribe</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-md-3">
+                    <label for="State">State</label>
+                    <div class="form-group">
+                      <select
+                        class="form-control select2bs4"
+                        data-placeholder="Select a State"
+                        style="width: 100%"
+                        name="state"
+                        id="state"
+                        required
+                      >
+                        <option value="select">Select</option>
+                        <option>Maharashtra</option>
+                        <option>Karnataka</option>
+                        <option>Goa</option>
+                        <option>Andhrapradesh</option>
+                        <option>Sikkim</option>
+                        <option>Punjab</option>
+                        <option>Bihar</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-12 col-md-3">
+                    <label for="District">District</label>
+                    <div class="form-group">
+                      <select
+                        class="form-control select2bs4"
+                        data-placeholder="Select a District"
+                        style="width: 100%"
+                        name="district"
+                        id="district"
+                        required
+                      >
+                        <option value="select">Select</option>
+                        <option>Aurangabad</option>
+                        <option>Nashik</option>
+                        <option>Jalgaon</option>
+                        <option>Akola</option>
+                        <option>Washim</option>
+                        <option>Nagpur</option>
+                        <option>Jalna</option>
+                        <option>Beed</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-12 col-md-3">
+                    <label for="Taluka">Taluka</label>
+                    <div class="form-group">
+                      <select
+                        class="form-control select2bs4"
+                        data-placeholder="Select a District"
+                        style="width: 100%"
+                        name="taluka"
+                        id="taluka"
+                        required
+                      >
+                        <option value="select">Select</option>
+                        <option>Aurangabad</option>
+                        <option>Kannad</option>
+                        <option>Soegaon</option>
+                        <option>Sillod</option>
+                        <option>Phulambri</option>
+                        <option>Khuldabad</option>
+                        <option>Vaijapur</option>
+                        <option>Gangapur</option>
+                        <option>Paithan</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-12 col-md-3">
+                    <label for="Village">Village</label>
+                    <div class="form-group">
+                      <select
+                        class="form-control select2bs4"
+                        data-placeholder="Select a District"
+                        style="width: 100%"
+                        name="village"
+                        id="village"
+                        required
+                      >
+                        <option value="select">Select</option>
+                        <option>Chittegaon</option>
+                        <option>Pimpri</option>
+                        <option>Chitte-Pimpalgaon</option>
+                        <option>Shendra</option>
+                        <option>Nipani</option>
+                        <option>Garkheda</option>
+                        <option>Adgaon</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-md-3 form-group">
+                    <label for="pincode">Pincode </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="pincode"
+                      id="pincode"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-md-3 form-group">
+                    <label for="mob">Phone Number </label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      name="phone"
+                      id="phone"
+                      minlength="10"
+                      maxlength="10"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.card -->
+           <br>
+        <div class="row">
+          <div class="col-md-5"></div>
+          <div class="col-md-1">
+            <input
+              type="submit"
+              class="btn btn-block btn-primary"
+              value="SAVE"
+            />
+          </div>
+          <div class="col-md-1"></div>
+          <br />
+          <div class="col-md-1">
+            <input
+              type="reset"
+              class="btn btn-block btn-danger"
+              value="CANCEL"
+            />
+          </div>
+        </div>
+      </form>
+      <br />
+      <br />
+    </div>
+  </section>
+
 {% endblock body %}
