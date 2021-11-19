@@ -6,7 +6,7 @@
   <title>State Teachers Eligibility Test</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback' %}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
@@ -43,7 +43,7 @@
             </div>
           </div>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-light"  style="background-color: rgb(172, 212, 235);">
+        <nav class="navbar navbar-expand-lg navbar-light navbar-rounded"  style="background-color: rgb(172, 212, 235);">
           <!-- <a class="navbar-brand" href="#">
             <img src="dist/img/stet_logo.pn.gif" width="50" height="50" class="d-inline-block align-top bg-dark rounded-circle" alt="">
             
@@ -62,10 +62,10 @@
                 <a class="nav-link btn font-weight-bold" href="https://www3.digialm.com/OnlineAssessment/index.html?164@@M642">Mock Test</a>
               </li>
               <li class="nav-item pl-1 pr-1 pt-1 pb-1">
-                <a class="nav-link btn font-weight-bold" href="#">Contact Us</a>
+                <a class="nav-link btn font-weight-bold" href="{% url 'contact' %}">Contact Us</a>
               </li>
               <li class="nav-item pl-1 pr-1 pt-1 pb-1">
-                <a class="nav-link btn font-weight-bold" href="#">About Us</a>
+                <a class="nav-link btn font-weight-bold" href="About">About Us</a>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
