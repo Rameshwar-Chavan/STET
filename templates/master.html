@@ -8,7 +8,7 @@
   <title>STET | Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback' %}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
   <!-- Theme style -->
@@ -19,44 +19,42 @@
 <div class="wrapper">
 
   <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
+  {% comment %} <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="{% static 'dist/img/stet_logo.png' %}" alt="STET_Logo" height="60" width="60">
-  </div>
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light navbar-fixed">
+  </div>  <!-- Navbar --> {% endcomment %}
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
+      <li class="nav-item d-sm-inline-block">
         <a href="{% url 'index' %}" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
+      <li class="nav-item d-sm-inline-block">
+        <a href="{% url 'about' %}" class="nav-link">About</a>
+      </li>
+      <li class="nav-item d-sm-inline-block">
         <a href="{% url 'contact' %}" class="nav-link">Contact</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{% url 'about' %}" class="nav-link">About Us</a>
-      </li>
     </ul>
-
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
+        {% comment %} <a class="nav-link" data-widget="navbar-search" href="#" role="button"> {% endcomment %}
+          {% comment %} <i class="fas fa-search"></i> {% endcomment %}
         </a>
         <div class="navbar-search-block">
           <form class="form-inline">
             <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              {% comment %} <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search"> {% endcomment %}
               <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
+                {% comment %} <button class="btn btn-navbar" type="submit"> {% endcomment %}
+                  {% comment %} <i class="fas fa-search"></i> {% endcomment %}
                 </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
+                {% comment %} <button class="btn btn-navbar" type="button" data-widget="navbar-search"> {% endcomment %}
+                  {% comment %} <i class="fas fa-times"></i> {% endcomment %}
                 </button>
               </div>
             </div>
@@ -111,7 +109,7 @@
   </aside>
   <div class="row container-fluid mt-1">
         <div class="col-sm"></div>
-        <div class="col-sm  text-center d-inline">
+        <div class="col-sm  text-center d-inline pr-2 pb-2">
           <img
             src="{% static 'dist/img/stet_logo.png' %}"
             class="brand-image img-circle elevation-3 bg-dark"
