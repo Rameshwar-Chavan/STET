@@ -1,3 +1,103 @@
-{% extends 'master.html' %} {% block body %}
-<h1 class="text-success text-center">Welcome to STET Contact Us!</h1>
-{% endblock body %}
+{% extends 'base_home.html' %} {% load static %} {% block home_body %}
+
+<!-- Main Content Start -->
+<div class="col-sm mt-2">
+  <div class="card text-center">
+    <div class="card-header bg-secondary font-weight-bold font-weight-bolder">
+      Contact Us
+    </div>
+
+    <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-5 mb-4">
+        <!--Form with header-->
+        <div class="card">
+          <div class="card-body">
+            <!--Header-->
+
+            <p class="bg-secondary">
+              <i class="fas fa-envelope"></i> <b>Stay In Touch</b>
+            </p>
+            <hr />
+
+            <!--Body-->
+            <div class="md-form">
+              <i class="fas fa-user prefix grey-text"></i>
+              <label for="form-name">Your name</label>
+              <input type="text" id="form-name" class="form-control" />
+            </div>
+
+            <div class="md-form">
+              <i class="fas fa-envelope prefix grey-text"></i>
+              <label for="form-email">Your email</label>
+              <input type="text" id="form-email" class="form-control" />
+            </div>
+
+            <div class="md-form">
+              <i class="fas fa-tag prefix grey-text"></i>
+              <label for="form-Subject">Subject</label>
+              <input type="text" id="form-Subject" class="form-control" />
+            </div>
+
+            <div class="md-form">
+              <i class="fas fa-pencil-alt prefix grey-text"></i>
+              <label for="form-text">Message</label>
+              <textarea
+                id="form-text"
+                class="form-control md-textarea"
+                rows="3"
+              ></textarea>
+            </div>
+
+            <div class="text-center mt-4">
+              <button class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+        <!--Form with header-->
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-7 mt-2">
+        <!--Google map-->
+        <div id="map-container-google-3" class="z-depth-1-half map-container-3">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d60525.88880465524!2d73.84341018058588!3d18.53486397444987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3bc2c0f9cbb07a6b%3A0xcdeb4077dc00bde3!2sMaharashtra%20Teachers%20Eligibility%20Test%2C%2017%2C%20Dr%20Baba%20Saheb%20Ambedkar%20Rd%2C%20Camp%2C%20Pune%2C%20Maharashtra%20411001!3m2!1d18.534899199999998!2d73.87842549999999!5e0!3m2!1sen!2sin!4v1637398067463!5m2!1sen!2sin"
+            width="auto"
+            height="400"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+        <hr />
+        <p class="text-justify pl-3 pr-2">
+          <b>पत्ता</b> : आयुक्त, महाराष्ट्र राज्य परीक्षा परिषद, १७, डॉ. आंबेडकर
+          मार्ग, पुणे - ४११ ००१
+        </p>
+        <hr />
+        <p class="text-justify pl-3 pr-2">
+          <b>हेल्पलाईन नंबर</b> :
+          <a href="callto:8956438464">(+91) 8956438464</a> |
+          <a href="callto:8956438465">65 </a>
+          | <a href="callto:8956438466"> 66 </a> |
+          <a href="callto:8956438467"> 67 </a> |
+          <a href="callto:8956438468"> 68 </a>
+        </p>
+        <hr />
+        <p class="text-justify pl-3 pr-2">
+          <b>ई-मेल</b> :
+          <a href="mailto:mahatet2021.msce@gmail.com">
+            mahatet2021.msce@gmail.com
+          </a>
+        </p>
+
+        <br />
+      </div>
+      <!--Grid column-->
+    </div>
+  </div>
+</div>
+<!-- Main Content End -->
+{% endblock home_body %}
