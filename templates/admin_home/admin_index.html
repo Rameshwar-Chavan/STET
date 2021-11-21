@@ -119,9 +119,9 @@
     </div>
     <!-- /.sidebar -->
   </aside>
-  <div class="row container mt-1">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-2 pr-5 text-center d-inline">
+  <div class="content-wrapper pt-2">
+  <div class="row">
+        <div class="col-sm-2 pr-2 pt-1 pl-1 pb-2 text-center d-inline">
           <img
             src="{% static 'dist/img/stet_logo.png' %}"
             class="brand-image img-circle elevation-3 bg-dark"
@@ -130,7 +130,7 @@
             width="85px"
           />
         </div>
-        <div class="col-sm-7 mr-0 d-inline">
+        <div class="col-sm-8 mr-0 d-inline">
           <h3 class="text-center text-info">
             <b> महाराष्ट्र राज्य परीक्षा परिषद, पुणे </b>
           </h3>
@@ -141,19 +141,104 @@
             >
           </h4>
         </div>
+        <div class="col-sm-2"></div>
+
         {% comment %} <div class="col-sm"></div> {% endcomment %}
       </div>
+        <hr>
+      <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Officer Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Officer Dashboard</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
     <!-- Main content -->
-    <section class="content-wrapper">
-        {% block body %}
-          {% if messages%}
-                  {% include 'message_alert.html' %}
-              {% endif %}
-        {% endblock body %}
+
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>150</h3>
+
+                <p>Total Applications</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>100<sup style="font-size: 20px"></sup></h3>
+
+                <p>Total Valid Applications</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>15</h3>
+
+                <p>Total Duplicate Applications</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>35</h3>
+
+                <p>None Eligible Applications</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+        <!-- /.row -->
+        </div>
     </section>
     <!-- /.content -->
+
+    <br><br>  
   </div>
-  <footer class="main-footer footer-fixed">
+  </div>
+  <footer class="main-footer footer-fixed bg-light">
     <strong>Copyright &copy; 2021-2022 Design & Developed by <a href="https://github.com/Rameshwar-Chavan">Rameshwar Chavan</a> |<a href="https://github.com/Mangesh-Shirodkar"> Mangesh Shirodkar</a> |<a href="https://github.com/DipakSinkar"> Dipak Sinkar</a> |</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
