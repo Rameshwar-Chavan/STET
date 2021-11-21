@@ -13,6 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
 </head>
 
 <body class="bg-light mt-1">
@@ -56,16 +57,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item d-sm-inline-block pl-lg-5 pr-1 pt-1 pb-1">
-                <a class="nav-link btn font-weight-bold" href="">Home</a>
+                <a class="nav-link navbar-brand btn font-weight-bold" href="{% url 'index' %}">Home</a>
               </li>
               <li class="nav-item pl-1 pr-1 pt-1 pb-1">
-                <a class="nav-link btn font-weight-bold" href="https://www3.digialm.com/OnlineAssessment/index.html?164@@M642">Mock Test</a>
+                <a class="nav-link navbar-brand btn font-weight-bold" href="https://www3.digialm.com/OnlineAssessment/index.html?164@@M642">Mock Test</a>
               </li>
               <li class="nav-item pl-1 pr-1 pt-1 pb-1">
-                <a class="nav-link btn font-weight-bold" href="{% url 'contact' %}">Contact Us</a>
+                <a class="nav-link navbar-brand btn font-weight-bold" href="{% url 'contact' %}">Contact Us</a>
               </li>
               <li class="nav-item pl-1 pr-1 pt-1 pb-1">
-                <a class="nav-link btn font-weight-bold" href="about">About Us</a>
+                <a class="nav-link navbar-brand btn font-weight-bold" href="{% url 'about' %}">About Us</a>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
