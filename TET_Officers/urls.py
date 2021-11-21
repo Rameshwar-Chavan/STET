@@ -5,7 +5,8 @@ from django.core import serializers
 app_name = 'TET_Officers'
 urlpatterns = [
     # path("", views.index, name="index"),
-    path("TET_Officers/admin_index", views.admin_index, name="admin_index"),
-    path("Admin_Login/", views.login, name="login"),
-    path("Admin_Registration/", views.registration, name="registration")
+    path("Officer_Dashboard", views.officer_home, name="officer_home"),
+    path("EO_Login/", views.Exam_Officer_Login,
+         name="EO_Login"),
+    path("EIO_Login/", views.Exam_Investigator_Login, name="EIO_Login")
 ]
