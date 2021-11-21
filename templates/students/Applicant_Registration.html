@@ -1,123 +1,160 @@
-{% extends 'master.html' %}
-{% block body %}
+{% extends 'master.html' %} {% block body %}
 <section class="content">
-    <div class="container-fluid">
-         {% if messages %} {% include 'message_alert.html' %} {% endif %}
-      <!-- SELECT2 EXAMPLE -->
-      <form action="#"  class="form-horizontal" method="post">
-        {% csrf_token %}
-        <div class="card card-primary mt-4">
-          <div class="card-header">
-            <h1 class="card-title"><b>New Registration</b></h1>
-          </div>
-          <!-- /.card-header -->
-          <div class="card-body">
-            <div class="row">
-              <div class="col-12">
-                <div class="row justify-content-center">
-                  <div class="col-md-2 mt-4">
-                      <label for="first_name" class="control-label">Applicant First Name</label>
-                  </div>
-                  <div class="col-md-3 mt-3">
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="first_name"
-                        name="first_name"
-                        placeholder=""
-                        required
-                      />
-                  </div>
+  <div class="container-fluid">
+    {% if messages %} {% include 'message_alert.html' %} {% endif %}
+    <!-- SELECT2 EXAMPLE -->
+    <form
+      action="{% url 'candidates:login' %}"
+      class="form-horizontal"
+      method="post"
+    >
+      {% csrf_token %}
+      <div class="card card-primary mt-4">
+        <div class="card-header card-text">
+          <h1 class="card-title"><b>New Registration</b></h1>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12">
+              <div class="row justify-content-center">
+                <div class="col-md-2 mt-4">
+                  <label for="first_name" class="control-label"
+                    >Applicant First Name</label
+                  >
                 </div>
-                <div class="row justify-content-center">
-                   <div class="col-md-2 mt-4">
-                      <h5><small><label for="last_name" style="font-weight:700"  class="control-label">Applicant Last Name</label></small></h5>
-                   </div>
-                  <div class="col-md-3 mt-3">
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="last_name"
-                        name="last_name"
-                        placeholder=""
-                        required
-                      />
-                  </div>
+                <div class="col-md-3 mt-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="first_name"
+                    name="first_name"
+                    placeholder=""
+                    required
+                  />
                 </div>
-                <div class="row justify-content-center">
-                   <div class="col-md-2 mt-4">
-                      <h5><small><label style="font-weight:700" for="email" class="control-label">Email ID</label></small></h5>
-                   </div>
-                  <div class="col-md-3 mt-3">
-                    <input
-                        type="text"
-                        class="form-control"
-                        name="email"
-                        id="email"
-                        placeholder=""
-                        required
-                      />
-                  </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-2 mt-4">
+                  <h5>
+                    <small
+                      ><label
+                        for="last_name"
+                        style="font-weight: 700"
+                        class="control-label"
+                        >Applicant Last Name</label
+                      ></small
+                    >
+                  </h5>
                 </div>
-                <div class="row justify-content-center">
-                   <div class="col-md-2 mt-4">
-                      <h5><small><label style="font-weight:700" for="password" class="control-label">Password</label></small></h5>
-                   </div>
-                  <div class="col-md-3 mt-3">
-                    <input
-                        type="password"
-                        class="form-control"
-                        id="password"
-                        name="password"
-                        placeholder=""
-                        required
-                      />
-                  </div>
+                <div class="col-md-3 mt-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="last_name"
+                    name="last_name"
+                    placeholder=""
+                    required
+                  />
                 </div>
-                <div class="row justify-content-center">
-                   <div class="col-md-2 mt-4">
-                      <h5><small><label style="font-weight:700" for="mobile" class="control-label">Mobile Number</label></small></h5>
-                   </div>
-                  <div class="col-md-3 mt-3">
-                    <input
-                        type="text"
-                        class="form-control"
-                        name="mobile"
-                        id="mobile"
-                        placeholder=""
-                        required
-                      />
-                  </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-2 mt-4">
+                  <h5>
+                    <small
+                      ><label
+                        style="font-weight: 700"
+                        for="email"
+                        class="control-label"
+                        >Email ID</label
+                      ></small
+                    >
+                  </h5>
+                </div>
+                <div class="col-md-3 mt-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="email"
+                    id="email"
+                    placeholder=""
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-2 mt-4">
+                  <h5>
+                    <small
+                      ><label
+                        style="font-weight: 700"
+                        for="password"
+                        class="control-label"
+                        >Password</label
+                      ></small
+                    >
+                  </h5>
+                </div>
+                <div class="col-md-3 mt-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    placeholder=""
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-2 mt-4">
+                  <h5>
+                    <small
+                      ><label
+                        style="font-weight: 700"
+                        for="mobile"
+                        class="control-label"
+                        >Mobile Number</label
+                      ></small
+                    >
+                  </h5>
+                </div>
+                <div class="col-md-3 mt-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="mobile"
+                    id="mobile"
+                    placeholder=""
+                    required
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- /.card -->
-           <br>
-        <div class="row">
-          <div class="col-md-5"></div>
-          <div class="col-md-1">
-            <input
-              type="submit"
-              class="btn btn-block btn-primary"
-              value="Register"
-            />
-          </div>
-          <div class="col-md-1"></div>
-          <br />
-          <div class="col-md-1">
-            <input
-              type="reset"
-              class="btn btn-block btn-danger"
-              value="Reset"
-            />
-          </div>
+      </div>
+      <!-- /.card -->
+      <br />
+      <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-1">
+          <input
+            type="submit"
+            class="btn btn-block btn-primary"
+            value="Register"
+          />
         </div>
-      </form>
-      <br/>
-      <br/>
-    </div>
-  </section>
+        <div class="col-md-1"></div>
+        <br />
+        <div class="col-md-1">
+          <input type="reset" class="btn btn-block btn-danger" value="Reset" />
+        </div>
+      </div>
+    </form>
+    <br />
+    <br />
+  </div>
+</section>
 
 {% endblock body %}
