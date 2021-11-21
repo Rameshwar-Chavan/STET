@@ -1,8 +1,9 @@
-  {% extends 'master.html' %} {% block body %}
+{% extends 'master.html' %} {% block body %}
 <section>
   <div class="container">
     <h1>Login</h1>
   </div>
+  {% if messages %} {% include 'message_alert.html' %} {% endif %}
   <div class="d-flex justify-content-center">
     <div class="card col-md-4">
       <div class="card-body">
