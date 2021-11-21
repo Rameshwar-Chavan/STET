@@ -88,24 +88,9 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-item">
-            <a href="{% url 'TET_Officers:registration' %}" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
-              <b>
-                 Profile
-              </b>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{% url 'TET_Officers:login' %}" class="nav-link">
-              <i class="nav-icon fas fa-angle-right"></i>
-              <b>
-                Officer Login
-              </b>
-            </a>
-          </li>
+          
         <li class="nav-item">
-            <a href="{% url 'TET_Officers:registration' %}" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <b>
                  Generate Timetable
@@ -113,7 +98,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="{% url 'TET_Officers:registration' %}" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <b>
                  Generate Hallticket
@@ -121,10 +106,10 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="{% url 'TET_Officers:registration' %}" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <b>
-                Result 
+                Results 
               </b>
             </a>
             </li>
@@ -134,9 +119,9 @@
     </div>
     <!-- /.sidebar -->
   </aside>
-  <div class="row fluid-container mt-1">
-        <div class="col-2"></div>
-        <div class="col-1 pr-5 text-center d-inline">
+  <div class="row container mt-1">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-2 pr-5 text-center d-inline">
           <img
             src="{% static 'dist/img/stet_logo.png' %}"
             class="brand-image img-circle elevation-3 bg-dark"
@@ -145,7 +130,7 @@
             width="85px"
           />
         </div>
-        <div class="col-7 mr-0 d-inline">
+        <div class="col-sm-7 mr-0 d-inline">
           <h3 class="text-center text-info">
             <b> महाराष्ट्र राज्य परीक्षा परिषद, पुणे </b>
           </h3>
@@ -156,7 +141,7 @@
             >
           </h4>
         </div>
-        <div class="col-2"></div>
+        {% comment %} <div class="col-sm"></div> {% endcomment %}
       </div>
     <!-- Main content -->
     <section class="content-wrapper">
@@ -169,7 +154,7 @@
     <!-- /.content -->
   </div>
   <footer class="main-footer footer-fixed">
-    <strong>Copyright &copy; 2021-2022 Design & Developed by <a href="#">Rameshwar Chavan</a> |<a href="#"> Mangesh Shirodkar</a> |<a href="#"> Dipak Sinkar</a> |</strong>
+    <strong>Copyright &copy; 2021-2022 Design & Developed by <a href="https://github.com/Rameshwar-Chavan">Rameshwar Chavan</a> |<a href="https://github.com/Mangesh-Shirodkar"> Mangesh Shirodkar</a> |<a href="https://github.com/DipakSinkar"> Dipak Sinkar</a> |</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <p><b><a href="http://btech.mit.asia" target="_blanck">MIT(T), Aurangabad</a></b></p>
