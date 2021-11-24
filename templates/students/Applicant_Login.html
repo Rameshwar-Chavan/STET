@@ -1,80 +1,131 @@
-{% extends 'master.html' %} {% block body %}
-<section>
-  <div class="container">
-    <h1>Login</h1>
-  </div>
-  {% if messages %} {% include 'message_alert.html' %} {% endif %}
-  <div class="d-flex justify-content-center">
-    <div class="card col-md-4">
-      <div class="card-body">
-        <form action="{% url 'candidates:dashboard' %}">
-          <label><h4 class="text-primary text-bold">Candidate Login</h4></label>
-          <div>
-            <input
-              type="text"
-              class="form-control form-control rounded"
-              id="exampleInputRounded0"
-              placeholder="Enter Username"
-            />
-          </div>
-          <br />
-          <div>
-            <input
-              type="password"
-              class="form-control form-control rounded"
-              id="exampleInputRounded1"
-              placeholder="Enter Password"
-            />
-          </div>
-          <br />
-          <div class="row">
-            <div class="col-4">
-              <button
-                type="submit"
-                class="btn btn-primary btn-sm btn-rounded"
-                id="btnotp"
-              >
-                Get OTP</button
-              ><br />
-            </div>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AdminLTE 3 | Log in</title>
 
-            <div class="col-8">
-              <input
-                type="text"
-                class="form-control form-control-sm rounded"
-                id="otp"
-                placeholder=""
-              />
-            </div>
-          </div>
-          <br />
-          <br />
-          <div class="row">
-            <div class="col-6">
-              <button type="submit" class="btn btn-success btn-rounded">
-                Login
-              </button>
-            </div>
-
-            <div class="col-6">
-              <button
-                type="submit"
-                class="btn btn-danger btn-rounded"
-                id="forgot"
-              >
-                Forgot Password
-              </button>
-            </div>
-          </div>
-        </form>
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/fontawesome-free/css/all.min.css' %}"
+    />
+    <!-- icheck bootstrap -->
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}"
+    />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}" />
+  </head>
+  <body class="hold-transition login-page">
+    <div class="container-fluide mt-4">
+      <div class="row">
+        <div class="col-sm-2 pt-2 text-center d-inline">
+          <img
+            src="{% static 'dist/img/stet_logo.png' %}"
+            class="brand-image rounded-circle bg-dark"
+            style="opacity: 0.9"
+            height="85px"
+            width="85px"
+          />
+        </div>
+        <div class="col-sm-8 mr-auto pt-2 pb-2 d-inline">
+          <h3 class="text-center text-info">
+            <b> महाराष्ट्र राज्य परीक्षा परिषद, पुणे </b>
+          </h3>
+          <h4 class="text-warning text-center">
+            <b
+              >महाराष्ट्र शिक्षक पात्रता परीक्षा - २०२१ <br />
+              Maharashtra Teacher Eligibility Test - 2021</b
+            >
+          </h4>
+        </div>
+        <div class="col-sm-2 mt-1 pt-2 text-center d-inline">
+          <img
+            src="{% static 'dist/img/satymev_flag.jpg' %}"
+            class="brand-image rounded-circle align-self-center"
+            style="opacity: 0.9"
+            height="85px"
+            width="85px"
+          />
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<script>
-  $("#btnotp").click(function () {
-    $("#otp").toggle();
-    $("#forgot").toggle();
-  });
-</script>
-{% endblock body %}
+    <div class="login-box mt-2">
+      <!-- /.login-logo -->
+
+      <div class="card">
+        <div class="card-body login-card-body">
+          <div class="login-logo bg-">
+            <span class="text-primary text-bold"
+              ><b> Candidate login </b></span>
+            <hr/>
+          </div>
+          <form action="{% url 'candidates:dashboard' %}" method="post">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Mobile No" />
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-envelope"></span>
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+              />
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-8">
+              </div>
+              <!-- /.col -->
+              <div class="col-4"></div>
+              <!-- /.col -->
+            </div>
+            <br />
+
+            <div class="row">
+              <!-- /.col -->
+              <div class="col-sm-4">
+                <button type="submit" class="btn btn-primary btn-block">
+                  Log In
+                </button>
+              </div>
+              <div class="col-sm-1"></div>
+              <div class="col-sm-6">
+                <button type="submit" class="btn btn-danger btn-block">
+                  Forgot Password?
+                </button>
+              </div>
+              <!-- /.col -->
+            </div>
+          </form>
+        </div>
+        <!-- /.login-card-body -->
+      </div>
+    </div>
+    <!-- /.login-box -->
+    <br />
+    <!-- jQuery -->
+    <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+    <!-- Bootstrap 4 -->
+    <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- AdminLTE App -->
+    <script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+  </body>
+</html>
