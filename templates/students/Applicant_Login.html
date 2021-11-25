@@ -1,76 +1,79 @@
 {% extends 'master.html' %} {% block body %}
 <section>
-  <div class="container">
-    <h1>Login</h1>
-  </div>
-  {% if messages %} {% include 'message_alert.html' %} {% endif %}
-  <div class="d-flex justify-content-center">
-    <div class="card col-md-4">
-      <div class="card-body">
-        <form action="{% url 'candidates:dashboard' %}">
-          <label><h4 class="text-primary text-bold">Candidate Login</h4></label>
-          <div>
-            <input
-              type="text"
-              class="form-control form-control rounded"
-              id="exampleInputRounded0"
-              placeholder="Enter Username"
-            />
-          </div>
-          <br />
-          <div>
-            <input
-              type="password"
-              class="form-control form-control rounded"
-              id="exampleInputRounded1"
-              placeholder="Enter Password"
-            />
-          </div>
-          <br />
-          <div class="row">
-            <div class="col-4">
-              <button
-                type="submit"
-                class="btn btn-primary btn-sm btn-rounded"
-                id="btnotp"
-              >
-                Get OTP</button
-              ><br />
-            </div>
-
-            <div class="col-8">
+  <div class="container-fluid">
+    {% if messages %} {% include 'message_alert.html' %} {% endif %}
+    <div class="d-flex justify-content-center">
+      <div class="col-md-4"></div>
+      <div class="card col-md-4">
+        <div class="card-body">
+          <form action="{% url 'candidates:dashboard' %}">
+            <h4 class="text-primary text-bold text-center">Applicant Login</h4>
+            <div>
+              <hr />
               <input
                 type="text"
-                class="form-control form-control-sm rounded"
-                id="otp"
-                placeholder=""
+                class="form-control form-control rounded"
+                id="exampleInputRounded0"
+                placeholder="Enter Username"
               />
             </div>
-          </div>
-          <br />
-          <br />
-          <div class="row">
-            <div class="col-6">
-              <button type="submit" class="btn btn-success btn-rounded">
-                Login
-              </button>
+            <br />
+            <div>
+              <input
+                type="password"
+                class="form-control form-control rounded"
+                id="exampleInputRounded1"
+                placeholder="Enter Password"
+              />
             </div>
+            <br />
+            <div class="row">
+              <div class="col-4">
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-sm btn-rounded"
+                  id="btnotp"
+                >
+                  Get OTP</button
+                ><br />
+              </div>
 
-            <div class="col-6">
-              <button
-                type="submit"
-                class="btn btn-danger btn-rounded"
-                id="forgot"
-              >
-                Forgot Password
-              </button>
+              <div class="col-8">
+                <input
+                  type="text"
+                  class="form-control form-control-sm rounded"
+                  id="otp"
+                  placeholder=""
+                />
+              </div>
             </div>
-          </div>
-        </form>
+            <br />
+            <br />
+            <div class="row">
+              <div class="col-6">
+                <button type="submit" class="btn btn-success btn-rounded">
+                  Login
+                </button>
+              </div>
+
+              <div class="col-6">
+                <button
+                  type="submit"
+                  class="btn btn-danger btn-rounded"
+                  id="forgot"
+                >
+                  Forgot Password
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
+      <div class="col-md-4"></div>
     </div>
   </div>
 </section>
+
 <script>
   $("#btnotp").click(function () {
     $("#otp").toggle();
