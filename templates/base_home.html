@@ -56,17 +56,17 @@
         
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item d-sm-inline-block pl-lg-5 pr-1 pt-1 pb-1">
-                <a class="nav-link navbar-brand btn font-weight-bold" href="{% url 'index' %}">Home</a>
+              <li class="nav-item d-sm-inline-block pl-1 pr-1 pt-1 pb-1">
+                <a class="nav-link navbar-brand btn font-weight-bold" href="{% url 'index' %}"> Home</a>
               </li>
               <li class="nav-item pl-1 pr-1 pt-1 pb-1">
-                <a class="nav-link navbar-brand btn font-weight-bold" href="https://www3.digialm.com/OnlineAssessment/index.html?164@@M642">Mock Test</a>
+                <a class="nav-link navbar-brand btn font-weight-bold" href="https://www3.digialm.com/OnlineAssessment/index.html?164@@M642"> Mock Test</a>
               </li>
               <li class="nav-item pl-1 pr-1 pt-1 pb-1">
-                <a class="nav-link navbar-brand btn font-weight-bold" href="{% url 'contact' %}">Contact Us</a>
+                <a class="nav-link navbar-brand btn font-weight-bold" href="{% url 'contact' %}"> Contact Us</a>
               </li>
               <li class="nav-item pl-1 pr-1 pt-1 pb-1">
-                <a class="nav-link navbar-brand btn font-weight-bold" href="{% url 'about' %}">About Us</a>
+                <a class="nav-link navbar-brand btn font-weight-bold" href="{% url 'about' %}"> About Us</a>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -79,14 +79,14 @@
           <div class="col-sm-2">
           
             <div class="card mt-2 rounded">
-              <div class="card-header text-center bg-warning font-weight-bold font-weight-bolder">
+              <div class="card-header text-center bg-warning text-bold ">
                 Applicants
               </div>
-            <div class="list-group text-center" id="list-tab" role="tablist">
+            <div class="list-group" id="list-tab" role="tablist">
               <a class="list-group-item list-group-item-action" href="{% url 'candidates:login' %}"
-               >Applicant Login</a>
+               ><i class="fas fa-sign-in-alt"></i> <span class="text-primary text-bold"> Login</span></a>
               <a class="list-group-item list-group-item-action" href="{% url 'candidates:registration' %}"
-               >Applicant Registration</a>
+               ><i class="fas fa-edit"></i><span class="text-primary text-bold font-12"> New Registration</span></a>
             </div>  
             </div>
             <!-- Offices Card Start -->
@@ -94,11 +94,11 @@
               <div class="card-header bg-warning text-center font-weight-bold">
                 Officers
               </div>
-              <div class="list-group text-center" id="list-tab" role="tablist">
+              <div class="list-group" id="list-tab" role="tablist">
                 <a class="list-group-item list-group-item-action " href="{% url 'TET_Officers:EO_Login' %}"
-                  >Exam Officer Login</a>
+                  ><i class="fas fa-sign-in-alt"></i> <span class="text-primary text-bold"> EO Login</span></a>
                 <a class="list-group-item list-group-item-action" href="{% url 'TET_Officers:EIO_Login' %}"
-                  >Exam Investigator Login</a>
+                  ><i class="fas fa-sign-in-alt"></i> <span class="text-primary text-bold"> EIO Login</span></a>
                 
               </div>
             </div>
