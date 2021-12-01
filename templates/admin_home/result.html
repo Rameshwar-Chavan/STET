@@ -1,0 +1,85 @@
+{% extends 'admin_home/admin_index.html' %} {% block admin_body %}
+<!-- Content Start-->
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 ml-1"><b>Results</b></h1>
+      </div>
+      <!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="{% url 'TET_Officers:officer_home' %}">Home</a></li>
+          <li class="breadcrumb-item active">Result</li>
+        </ol>
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Section start-->
+<section class="content">
+  <div class="container-fluid">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+      <div class="col-lg">
+        <!-- small box -->
+        <div class="small-box bg-light">
+          <div class="card-header bg-secondary">
+            <h4 class="text-center"><b>Candidate Exam Result</b></h4>
+          </div>
+          <div class="inner">
+             <!-- table start -->
+            <table class="table table-responsive text-justify">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Applicant ID</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">District</th>
+                  <th scope="col">Taluka</th>
+                  <th scope="col">Exam Date</th>
+                  <th scope="col">Exam Name</th>
+                  <th scope="col">Result status</th>
+                  <th scope="col">Poste Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Ramesh</td>
+                  <td>Pawar</td>
+                  <td>At. Chittegaon</td>
+                  <td>Aurangabad</td>
+                  <td>Aurangabad</td>
+                  <td>20-08-2021</td>
+                  <td>GTE</td>
+                  <td>Cleared</td>
+                  <td>Graduate Teacher </td>
+                </tr>
+            </tbody>
+            </table>
+            <!-- table end -->
+          </div>
+            <!-- inner end -->
+          </div>
+          <!-- small box end -->
+        </div>
+      
+              <br><br>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- ./col -->
+    </div>
+    <!-- /.row -->
+  </div>
+</section>
+<!-- /.content -->
+{% endblock admin_body %}
