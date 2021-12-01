@@ -6,7 +6,11 @@ app_name = 'TET_Officers'
 urlpatterns = [
     # path("", views.index, name="index"),
     path("Officer_Dashboard", views.officer_home, name="officer_home"),
-    path("EO_Login/", views.Exam_Officer_Login,
+    path("EO_Login/", views.exam_officer_login,
          name="EO_Login"),
-    path("EIO_Login/", views.Exam_Investigator_Login, name="EIO_Login")
+    path("EIO_Login/", views.exam_investigator_login, name="EIO_Login"),
+    path("Notifications/", views.notification, name="Notifications"),
+    path("Timetables/", views.timetable, name="Timetables"),
+    path("Results/", views.results, name="Results"),
+
 ]
