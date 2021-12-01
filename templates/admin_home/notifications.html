@@ -1,0 +1,168 @@
+{% extends 'admin_home/admin_index.html' %} {% block admin_body %}
+<!-- Content Start-->
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 ml-1"><b>Notifications</b></h1>
+      </div>
+      <!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="{% url 'TET_Officers:officer_home' %}">Home</a></li>
+          <li class="breadcrumb-item active">Notifications</li>
+        </ol>
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Section start-->
+<section class="content">
+  <div class="container-fluid">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+      <div class="col-lg-6">
+        <!-- small box -->
+        <div class="small-box bg-light">
+          <div class="card-header bg-secondary">
+            <h4 class="text-center"><b>All Notifications</b></h4>
+          </div>
+          <div class="inner">
+             <!-- table start -->
+            <table class="table table-responsive text-center">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Sr No</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Start Date</th>
+                  <th scope="col">End Date</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Graduate Teachers(GT)</td>
+                  <td>20-05-2021</td>
+                  <td>30-08-2021</td>
+                  <td><a href="#" class="text mt-1 mb-1 ml-1 mr-1 text-warning"><i class="fas fa-edit"></i></a>  <a href="#" class="text-danger mt-1 mb-1 "><i class="far fa-trash-alt"></i></a></td>                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Post Graduate Teachers(PGT)</td>
+                  <td>30-08-2021</td>
+                  <td>30-11-2021</td>
+                  <td><a href="#" class="mt-1 mb-1 ml-1 mr-1 text-warning"><i class="fas fa-edit"></i></a>  <a href="#" class="text-danger mt-1 mb-1"><i class="far fa-trash-alt"></i></a></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>ZP Teachers (ZPT)</td>
+                  <td>To be Announced</td>
+                  <td>To be Announced</td>
+                  <td><a href="#" class="mt-1 mb-1 ml-1 mr-1 text-warning"><i class="fas fa-edit"></i> </a>  <a href="#" class="mt-1 mb-1 text-danger"><i class="far fa-trash-alt"></i></a></td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- table end -->
+          </div>
+            <!-- inner end -->
+          </div>
+          <!-- small box end -->
+        </div>
+      
+      <!-- ./col -->
+      <div class="col-lg-6">
+        <!-- small box -->
+        <div class="small-box bg-light">
+          <div class="card-header bg-primary">
+            <h4 class="text-center text-warning"><b>New Notifications</b></h4>
+          </div>
+          <div class="inner">
+            <form action="#" method="post">
+              {% csrf_token %}
+              <div class="text-justify">
+                <label for="title" class="">Notification Title</label>
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Notification Title" required
+                />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-bell"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="text-justify">
+                <label for="title" class="">Start Date</label>
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  type="date"
+                  class="form-control"
+                  placeholder="Start Date" required
+                />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-calendar"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="text-justify">
+                <label for="title" class="">End Date</label>
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  type="date"
+                  class="form-control"
+                  placeholder="Last Date" required
+                />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-calendar"></span>
+                  </div>
+                </div>
+              </div>
+                <!-- /.col -->
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-sm-2"></div>
+                <!-- /.col -->
+                <div class="col-sm-4 pt-1 pb-2 pl-2 pr-2">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-block btn-rounded"
+                  >
+                    Create
+                  </button>
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-4 pt-1 pb-2 pl-2 pr-2">
+                  <button
+                    type="submit"
+                    class="btn btn-danger btn-block btn-rounded"
+                  >
+                    Cancel
+                  </button>
+                </div>
+                <div class="col-sm-1"></div>
+              </div>
+              <br><br>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- ./col -->
+    </div>
+    <!-- /.row -->
+  </div>
+</section>
+<!-- /.content -->
+{% endblock admin_body %}
