@@ -88,7 +88,15 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="{% url 'candidates:registration' %}" class="nav-link">
+            <a href="{% url 'candidates:dashboard' %}" class="nav-link">
+              <i class="nav-icon fas fa-home"></i>
+              <b>
+                 Home
+              </b>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'candidates:profile' %}" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <b>
                  Profile
@@ -97,9 +105,33 @@
           </li>
           <li class="nav-item">
             <a href="{% url 'candidates:login' %}" class="nav-link">
+              <i class="nav-icon fas fa-bell"></i>
+              <b>
+                All Posts
+              </b>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'candidates:login' %}" class="nav-link">
+              <i class="nav-icon fa fa-check"></i>
+              <b>
+                My Applied Posts
+              </b>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a href="{% url 'candidates:login' %}" class="nav-link">
+              <i class="nav-icon fa fa-times"></i>
+              <b>
+                Cancelled Posts
+              </b>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a href="{% url 'candidates:login' %}" class="nav-link">
               <i class="nav-icon fas fa-angle-right"></i>
               <b>
-
+                Complaint/Suggestions
               </b>
             </a>
           </li>
