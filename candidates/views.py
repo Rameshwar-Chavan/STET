@@ -26,3 +26,6 @@ def login(request):
 
 def dashboard(request):
     return render(request, 'students/Applicant_Dashboard.html', {})
+
+def profile(request):
+    return render(request, 'students/Applicant_profile.html',{})
