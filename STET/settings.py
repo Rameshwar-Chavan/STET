@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #My Apps
+    # My Apps
     'candidates.apps.CandidatesConfig',
     'TET_Officers.apps.TetOfficersConfig',
 ]
