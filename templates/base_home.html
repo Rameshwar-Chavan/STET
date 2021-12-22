@@ -17,7 +17,7 @@
   
 </head>
 
-<body class="bg-light mt-1">
+<body class="mt-1 bg-" style="background:#dfe2e8">
   <!-- <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="/dist/img/photo1.png" alt="STET_Logo" height="60" width="60">
   </div> -->
@@ -45,7 +45,7 @@
             </div>
           </div>
         </div>
-        <nav class="navbar navbar-expand-sm navbar-light navbar-rounded sticky-top" style="background:#cee0db">
+        <nav class="navbar navbar-expand-sm navbar-light navbar-rounded sticky-top"style="background:#dfe2e8" >
           <!-- <a class="navbar-brand" href="#">
             <img src="dist/img/stet_logo.pn.gif" width="50" height="50" class="d-inline-block align-top bg-dark rounded-circle" alt="">
             
@@ -134,34 +134,10 @@
               <div class="card-header bg-info text-center font-weight-bold text-warning">
                 <b>Notifications</b>
               </div>
-              <ul class="list-group list-group-flush text-center">
-                <li class="list-group-item"><marquee width="auto" direction="up" height="100%" scrollamount="1" class="text-center">
-                  <a href="#" class="nav-link">Latest News 1*</a>
-                </marquee></li><li class="list-group-item">
-                  <marquee width="auto" direction="up" height="100%" scrollamount="1" class="text-center">
-                    <a href="#" class="nav-link">Latest News*</a>
-                  </marquee>
-                </li>
-                <li class="list-group-item">
-                  <marquee width="auto" direction="up" height="100%" scrollamount="1" class="text-center">
-                    <a href="#" class="nav-link">Latest News*</a>
-                  </marquee>
-                </li>
-                <li class="list-group-item">
-                  <marquee width="auto" direction="up" height="100%" scrollamount="1" class="text-center">
-                    <a href="#" class="nav-link">Latest News*</a>
-                  </marquee>
-                </li>
-                <li class="list-group-item">
-                  <marquee width="auto" direction="up" height="100%" scrollamount="1" class="text-center">
-                    <a href="#" class="nav-link">Latest News*</a>
-                  </marquee>
-                </li>
-                <li class="list-group-item">
-                  <marquee width="auto" direction="up" height="100%" scrollamount="1" class="text-center">
-                    <a href="#" class="nav-link">Latest News*</a>
-                  </marquee>
-                </li>
+              <ul class="list-group list-group-flush text-justify">{% for notification in all_notifications %}
+                <li class="list-group-item"><marquee width="auto" direction="up" height="100%" scrollamount="1" class="text-center">  
+                  <a href="#" class="nav-link">Apply for current opening {{ notification.notification_name }} Starting from {{ notification.notification_str_date }} and Ending Date is {{ notification.notification_end_date }}</a>
+                </marquee></li>{% endfor %}
               </ul>
             </div>
           </div>
