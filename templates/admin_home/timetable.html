@@ -46,26 +46,15 @@
                 </tr>
               </thead>
               <tbody>
+                {% for time_tables in timetable_list %}
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Graduate Teachers(GT)</td>
-                  <td>20-05-2021</td>
-                  <td>30-08-2021</td>
-                  <td><a href="#" class="text mt-1 mb-1 ml-1 mr-1 text-warning"><i class="fas fa-edit"></i></a>  <a href="#" class="text-danger mt-1 mb-1 "><i class="far fa-trash-alt"></i></a></td>                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Post Graduate Teachers(PGT)</td>
-                  <td>30-08-2021</td>
-                  <td>30-11-2021</td>
-                  <td><a href="#" class="text mt-1 mb-1 ml-1 mr-1 text-warning"><i class="fas fa-edit"></i></a>  <a href="#" class="text-danger mt-1 mb-1 "><i class="far fa-trash-alt"></i></a></td>
+                  <td>{{ time_tables.id }}</td>
+                  <td>{{ time_tables.exam_name }}</td>
+                  <td>{{ time_tables.exam_str_date }}</td>
+                  <td>{{ time_tables.exam_end_date }}</td>
+                  <td><a href="#" class="text mt-1 mb-1 ml-1 mr-1 text-warning"><i class="fas fa-edit"></i></a>  <a href="#" class="text-danger mt-1 mb-1 "><i class="far fa-trash-alt"></i></a></td>                
                 </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>ZP Teachers (ZPT)</td>
-                  <td>To be Announced</td>
-                  <td>To be Announced</td>
-                  <td><a href="#" class="text mt-1 mb-1 ml-1 mr-1 text-warning"><i class="fas fa-edit"></i></a>  <a href="#" class="text-danger mt-1 mb-1 "><i class="far fa-trash-alt"></i></a></td>
-                </tr>
+                {% endfor %}
               </tbody>
             </table>
             <!-- table end -->
@@ -92,6 +81,8 @@
                 <input
                   type="text"
                   class="form-control"
+                  name="exam_name"
+                  id="exam_name"
                   placeholder="Graduate Teachers Exam 2021" required
                 />
                 <div class="input-group-append">
@@ -107,6 +98,8 @@
                 <input
                   type="date"
                   class="form-control"
+                  name="exam_str_date"
+                  id="exam_str_date"
                   placeholder="Start Date" required
                 />
                 <div class="input-group-append">
@@ -122,6 +115,8 @@
                 <input
                   type="date"
                   class="form-control"
+                  name="exam_end_date"
+                  id="exam_end_date"
                   placeholder="End Date" required
                 />
                 <div class="input-group-append">
