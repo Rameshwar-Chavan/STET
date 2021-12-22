@@ -45,26 +45,15 @@
                 </tr>
               </thead>
               <tbody>
+                {% for notification in all_notifications %}
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Graduate Teachers(GT)</td>
-                  <td>20-05-2021</td>
-                  <td>30-08-2021</td>
-                  <td><a href="#" class="text mt-1 mb-1 ml-1 mr-1 text-warning"><i class="fas fa-edit"></i></a>  <a href="#" class="text-danger mt-1 mb-1 "><i class="far fa-trash-alt"></i></a></td>                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Post Graduate Teachers(PGT)</td>
-                  <td>30-08-2021</td>
-                  <td>30-11-2021</td>
-                  <td><a href="#" class="mt-1 mb-1 ml-1 mr-1 text-warning"><i class="fas fa-edit"></i></a>  <a href="#" class="text-danger mt-1 mb-1"><i class="far fa-trash-alt"></i></a></td>
+                  <td>{{ notification.id }}</td>
+                  <td>{{ notification.notification_name }}</td>
+                  <td>{{ notification.notification_str_date }}</td>
+                  <td>{{ notification.notification_end_date }}</td>
+                  <td><a href="#" class="text mt-1 mb-1 ml-1 mr-1 text-warning"><i class="fas fa-edit"></i></a>  <a href="#" class="text-danger mt-1 mb-1 "><i class="far fa-trash-alt"></i></a></td>                
                 </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>ZP Teachers (ZPT)</td>
-                  <td>To be Announced</td>
-                  <td>To be Announced</td>
-                  <td><a href="#" class="mt-1 mb-1 ml-1 mr-1 text-warning"><i class="fas fa-edit"></i> </a>  <a href="#" class="mt-1 mb-1 text-danger"><i class="far fa-trash-alt"></i></a></td>
-                </tr>
+                {% endfor %}
               </tbody>
             </table>
             <!-- table end -->
@@ -82,7 +71,7 @@
             <h4 class="text-center text-warning"><b>New Notifications</b></h4>
           </div>
           <div class="inner">
-            <form action="#" method="post">
+            <form action="{% url 'TET_Officers:Notifications' %}" method="POST">
               {% csrf_token %}
               <div class="text-justify">
                 <label for="title" class="">Notification Title</label>
@@ -91,6 +80,8 @@
                 <input
                   type="text"
                   class="form-control"
+                  name="notification_name"
+                  id="notification_name"
                   placeholder="Notification Title" required
                 />
                 <div class="input-group-append">
@@ -106,6 +97,8 @@
                 <input
                   type="date"
                   class="form-control"
+                  name="notification_str_date"
+                  id="notification_str_date"
                   placeholder="Start Date" required
                 />
                 <div class="input-group-append">
@@ -121,6 +114,8 @@
                 <input
                   type="date"
                   class="form-control"
+                  name="notification_end_date"
+                  id="notification_end_date"
                   placeholder="Last Date" required
                 />
                 <div class="input-group-append">
@@ -146,10 +141,10 @@
                 <!-- /.col -->
                 <div class="col-sm-4 pt-1 pb-2 pl-2 pr-2">
                   <button
-                    type="submit"
-                    class="btn btn-danger btn-block btn-rounded"
+                    type="Reset"
+                    class="btn btn-danger btn-block btn-rounded" 
                   >
-                    Cancel
+                    Reset
                   </button>
                 </div>
                 <div class="col-sm-1"></div>
