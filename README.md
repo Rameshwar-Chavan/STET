@@ -18,25 +18,23 @@
                Successful Login:
                    Profile, Important Dates, Result, Notice,Hall Ticket, Documents, Forgot password, Logout.
 
----
-
-       2. Admin
-           -> Authenticated User Login
-               User Name, Password
-           -> Successful Login:
-                   Dashboard, Profile, Generate Time Table, Generate Hall Ticket, Regenerate Hall ticket, All Registration, All Valid Registrations, Exam
-                   Dates, Candidate Documents, Result Generation, Support, Username Regeneration, Password Regeneration.
+2.  Admin
+    -> Authenticated User Login
+    User Name, Password
+    -> Successful Login:
+    Dashboard, Profile, Generate Time Table, Generate Hall Ticket, Regenerate Hall ticket, All Registration, All Valid Registrations, Exam
+    Dates, Candidate Documents, Result Generation, Support, Username Regeneration, Password Regeneration.
 
 ---
 
-### 3. ChatBot
+## 3. ChatBot
 
 - FAQ
 - Exam Query
 - Registration Issues
 - Login Demo
 
-# Mock Exam
+## 4. Mock Exam Interface
 
 - It Provides demo quetions and Online exam interface to end user/ Candidates.
   created by rameshwar
