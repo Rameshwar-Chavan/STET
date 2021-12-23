@@ -1,8 +1,6 @@
 # STET
 
-# Requirements
-
-## Candidate Requirements:
+## 1. Candidate Requirements:
 
         - Students: 1. Registration
 
@@ -18,7 +16,8 @@
                Successful Login:
                    Profile, Important Dates, Result, Notice,Hall Ticket, Documents, Forgot password, Logout.
 
-2.  Admin
+## 2. Admin:
+
     -> Authenticated User Login
     User Name, Password
     -> Successful Login:
