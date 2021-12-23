@@ -29,12 +29,12 @@
 
 ---
 
-# 3. ChatBot
-* FAQ
-* Exam Query
-* Registration Issues
-* Login Demo
+### 3. ChatBot
 
+- FAQ
+- Exam Query
+- Registration Issues
+- Login Demo
 
 # Mock Exam
 
