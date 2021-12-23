@@ -29,10 +29,11 @@
 
 ---
 
-       3. ChatBot
-             -> FAQ
-
-             ----JavaScript----
+# 3. ChatBot
+* FAQ
+* Exam Query
+* Registration Issues
+* Login Demo
 
 
 # Mock Exam
