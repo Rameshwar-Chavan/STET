@@ -19,10 +19,10 @@
     />
     <!-- Theme style -->
     <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}" />
-    <!-- Steeper CSS CDN -->
+    <!-- Steeper CSS -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css"
+      href="{% static 'plugins/bs-stepper/css/bs-stepper.min.css' %}"
     />
   </head>
   <body class="hold-transition sidebar-mini layout-fixed">
@@ -278,6 +278,6 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{% static 'dist/js/pages/dashboard.js' %}"></script>
     <!-- Steeper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
+    <script src="{% static 'plugins/bs-stepper/js/bs-stepper.min.js' %}"></script>
   </body>
 </html>
