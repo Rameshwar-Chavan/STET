@@ -33,7 +33,7 @@
 - Registration Issues
 - Login Demo
 
-## 4. Mock Exam Interface :
+## 4. Mock Exam Interface:
 
 - It Provides demo quetions and Online exam interface to end user/ Candidates.
   created by rameshwar
