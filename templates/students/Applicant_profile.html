@@ -25,7 +25,7 @@
 <!-- /.content-header -->
 
 <!-- Step form start-->
-<div class="bs-stepper">
+<div class="bs-stepper" id="stepper">
   <div class="bs-stepper-header" role="tablist">
     <!-- your steps here -->
     <div class="row">
@@ -104,7 +104,6 @@
         </div>
       </div>
     </div>
-
     <div class="bs-stepper-content">
       <!-- steps content here -->
       <div
@@ -122,39 +121,45 @@
         role="tabpanel"
         aria-labelledby="address-part-trigger"
       >
-
       </div>
-        <div
+      <div
         id="other-part"
         class="content"
         role="tabpanel"
         aria-labelledby="other-part-trigger"
       >
-
       </div>
-        <div
+      <div
         id="academics-part"
         class="content"
         role="tabpanel"
         aria-labelledby="academics-part-trigger"
       >
-
       </div>
-        <div
+      <div
         id="experience-part"
         class="content"
         role="tabpanel"
-        aria-labelledby="experience-part-trigger"
-      >
-
+        aria-labelledby="experience-part-trigger">
       </div>
     </div>
   </div>
 </div>
 
 <script>
-var stepper = new Stepper(document.querySelector('.bs-stepper'))
-stepper.next()
+var stepperEl = document.getElementById('stepper')
+var stepper = new Stepper(stepperEl)
+
+stepperEl.addEventListener('show.bs-stepper', function (event) {
+  // You can call prevent to stop the rendering of your step
+  // event.preventDefault()
+
+  console.warn(event.detail.indexStep)
+})
+
+stepperEl.addEventListener('shown.bs-stepper', function (event) {
+  console.warn('step shown')
+})
 </script>
 
 {% endblock candidate_body %}
