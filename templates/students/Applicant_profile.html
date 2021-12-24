@@ -25,7 +25,7 @@
 <!-- /.content-header -->
 
 <!-- Step form start-->
-<div class="bs-stepper" id="stepper">
+<div class="bs-stepper">
   <div class="bs-stepper-header" role="tablist">
     <!-- your steps here -->
     <div class="row">
@@ -104,24 +104,40 @@
         </div>
       </div>
     </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-12">
+    </div>
     <div class="bs-stepper-content">
       <!-- steps content here -->
-      <div
-        id="personal-part"
-        class="content"
-        role="tabpanel"
-        aria-labelledby="personal-part-trigger"
-      >
-        <p class="text-center">Personal Info</p>
-        <button class="btn btn-primary" onclick="stepper1.next()">Next</button>
-      </div>
-      <div
+     <div class="card card-primary">
+       <div class="card-header">
+        <h2 class="card-title">Personal Information</h2>
+       </div>
+       <div class="card-body">
+         <div class="row">
+            <div id="personal-part" class="content" role="tabpanel" aria-labelledby="personal-part-trigger">
+                <button class="btn btn-primary" onclick="stepper.next()">Next</button>
+            </div>
+         </div>
+       </div>
+     </div>
+     <div class="card card-success">
+       <div class="card-header">
+         <h2>Address Information</h2>
+       </div>
+       <div class="card-body">
+         <div
         id="address-part"
         class="content"
         role="tabpanel"
         aria-labelledby="address-part-trigger"
-      >
-      </div>
+        >
+        <button class="btn btn-primary" onclick="stepper.previous()">Prev</button>
+        </div>
+       </div>
+     </div>
       <div
         id="other-part"
         class="content"
@@ -141,24 +157,14 @@
         class="content"
         role="tabpanel"
         aria-labelledby="experience-part-trigger">
+        </div>
       </div>
     </div>
-  </div>
 </div>
 
 <script>
-var stepperEl = document.getElementById('stepper')
-var stepper = new Stepper(stepperEl)
-
-stepperEl.addEventListener('show.bs-stepper', function (event) {
-  // You can call prevent to stop the rendering of your step
-  // event.preventDefault()
-
-  console.warn(event.detail.indexStep)
-})
-
-stepperEl.addEventListener('shown.bs-stepper', function (event) {
-  console.warn('step shown')
+document.addEventListener('DOMContentLoaded', function () {
+    window.stepper = new Stepper(document.querySelector('.bs-stepper'))
 })
 </script>
 
