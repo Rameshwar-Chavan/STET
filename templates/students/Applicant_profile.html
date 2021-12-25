@@ -106,38 +106,26 @@
     </div>
   </div>
   <br>
+ <div class="col-12">
   <div class="row">
-    <div class="col-12">
-    </div>
     <div class="bs-stepper-content">
       <!-- steps content here -->
-     <div class="card card-primary">
-       <div class="card-header">
-        <h2 class="card-title">Personal Information</h2>
+       <div id="personal-part" class="content" role="tabpanel" aria-labelledby="personal-part-trigger">
+           <div class="row">
+
+               <button class="btn btn-primary" onclick="stepper.next()">Next</button>
+               <div class="col-md-4"></div>
+             <label>Email</label>
+           </div>
        </div>
-       <div class="card-body">
-         <div class="row">
-            <div id="personal-part" class="content" role="tabpanel" aria-labelledby="personal-part-trigger">
-                <button class="btn btn-primary" onclick="stepper.next()">Next</button>
-            </div>
-         </div>
-       </div>
-     </div>
-     <div class="card card-success">
-       <div class="card-header">
-         <h2>Address Information</h2>
-       </div>
-       <div class="card-body">
-         <div
+      <div
         id="address-part"
         class="content"
         role="tabpanel"
         aria-labelledby="address-part-trigger"
         >
         <button class="btn btn-primary" onclick="stepper.previous()">Prev</button>
-        </div>
-       </div>
-     </div>
+      </div>
       <div
         id="other-part"
         class="content"
@@ -160,6 +148,7 @@
         </div>
       </div>
     </div>
+  </div>
 </div>
 
 <script>
