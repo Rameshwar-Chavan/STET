@@ -1,0 +1,216 @@
+{% extends 'students/Applicant_Dashboard.html' %} {% block candidate_body %}
+<section class="content">
+  <div class="container-fluid">
+    <!-- card row started -->
+    {% if messages %} {% include 'message_alert.html' %} {% endif %}
+    <form action="#">
+      <div class="card-body rounded" style="background: #ffffff">
+        <div class="text-center card-header text-primary">
+          <h3><strong>Apply to Poste</strong></h3>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <div class="">
+                <label for="first_name">First Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name"
+                  required
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Col-2 Start-->
+          <div class="col-sm-4">
+            <div class="form-group">
+              <div class="">
+                <label for="middle_name">Middle Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name"
+                  required
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Col-3 Start-->
+          <div class="col-sm-4">
+            <div class="form-group">
+              <div class="">
+                <label for="Last Name" class="">Last Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name"
+                  required
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Row-2 Start-->
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="form-group">
+              <div class="">
+                <label for="mobile">Mobile Number</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name"
+                  required
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Col-2 Start-->
+          <div class="col-sm-3">
+            <div class="form-group">
+              <div class="">
+                <label for="email">Email-ID</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name"
+                  required
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Col-3 Start-->
+          <div class="col-sm-3">
+            <div class="form-group">
+              <div class="">
+                <label for="email">Qualification</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name"
+                  required
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Col-4 Start-->
+          <div class="col-sm-3">
+            <div class="form-group">
+              <div class="">
+                <label for="email">Caste</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name"
+                  required
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row-3 Start-->
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="form-group">
+              <div class="">
+                <label for="address">Address</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name"
+                  required
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Col-2 Start-->
+          <div class="col-sm-3">
+            <div class="form-group">
+              <div class="">
+                <label for="State">State</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name"
+                  required
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Col-3 Start-->
+          <div class="col-sm-3">
+            <div class="form-group">
+              <div class="">
+                <label for="district" class="">District</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name"
+                  required
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+          <!-- Col-4 Start-->
+          <div class="col-sm-3">
+            <div class="form-group">
+              <div class="">
+                <label for="district" class="">Taluka</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name"
+                  required
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br />
+        <hr />
+        <div class="text-right">
+          <button type="submit" class="btn btn-primary rounded">
+            Save & Next
+          </button>
+        </div>
+      </div>
+    </form>
+    <br />
+    <br />
+  </div>
+</section>
+
+{% endblock candidate_body %}
