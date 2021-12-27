@@ -269,18 +269,59 @@
           class="content"
           role="tabpanel"
           aria-labelledby="address-part-trigger"
+          class="content card-body rounded "
+          style="background:#e6edf2"
           >
-          <div class="row">
-                 <div class="col-md-4">
-                   <label>Email</label>
-                 </div>
-                 <div class="col-md-4">
-                   <label> Candidate Name</label>
-                 </div>
-             </div>
+            <div class="row">
+              <div class="col-md-5 form-group">
+                  <div class="row">
+                      <div class="col-md-3">
+                          <label class="mt-2"><strong>Local Address </strong></label>
+                      </div>
+                      <div class="col-md-8">
+                          <textarea  class="form-control mt-2" required></textarea>
+                      </div>
+                  </div>
+              </div>
+              &nbsp;
+              <div class="col-md-5 form-group">
+                  <div class="row">
+                      <div class="col-md-3">
+                          <label class="mt-2"><strong>Permanent Address </strong></label>
+                      </div>
+                      <div class="col-md-8">
+                        <textarea class="form-control mt-2" required></textarea>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-5 form-group">
+              <div class="row">
+                  <div class="col-md-12">
+                        <label class="mt-2 text-align-center">Please Check if Permanent Address Is Same as Local Address</label>
+                  </div>
+                  <div class="col-md-6">
+                        <div class="icheck-primary d-inline">
+                          <input type="radio" id="radioPrimary5" name="r3">
+                          <label for="radioPrimary1" class="mt-2">
+                            Yes
+                          </label>
+                        </div>
+                        &nbsp;
+                        &nbsp;
+                        <div class="icheck-primary d-inline">
+                          <input type="radio" id="radioPrimary6" name="r3">
+                          <label for="radioPrimary2" class="mt-2">
+                           No
+                          </label>
+                        </div>
+                  </div>
+              </div>
+          </div>
+
           <button class="btn btn-primary" onclick="stepper.previous()">Prev</button>
           <button class="btn btn-primary" onclick="stepper.next()">Next</button>
-        </div>
+     </div>
         <div
           id="other-part"
           class="content"
