@@ -106,47 +106,73 @@
     </div>
   </div>
   <br>
- <div class="col-12">
   <div class="row">
-    <div class="bs-stepper-content">
-      <!-- steps content here -->
-       <div id="personal-part" class="content" role="tabpanel" aria-labelledby="personal-part-trigger">
-           <div class="row">
-
-               <button class="btn btn-primary" onclick="stepper.next()">Next</button>
-               <div class="col-md-4"></div>
-             <label>Email</label>
-           </div>
-       </div>
-      <div
-        id="address-part"
-        class="content"
-        role="tabpanel"
-        aria-labelledby="address-part-trigger"
-        >
-        <button class="btn btn-primary" onclick="stepper.previous()">Prev</button>
-      </div>
-      <div
-        id="other-part"
-        class="content"
-        role="tabpanel"
-        aria-labelledby="other-part-trigger"
-      >
-      </div>
-      <div
-        id="academics-part"
-        class="content"
-        role="tabpanel"
-        aria-labelledby="academics-part-trigger"
-      >
-      </div>
-      <div
-        id="experience-part"
-        class="content"
-        role="tabpanel"
-        aria-labelledby="experience-part-trigger">
+   <div class="col-12">
+     <form method="post" action="/">
+       {% csrf_token %}
+      <div class="bs-stepper-content">
+        <!-- steps content here -->
+         <div id="personal-part" class="content card-body rounded " style="background:#e6edf2" role="tabpanel" aria-labelledby="personal-part-trigger">
+             <div class="row">
+                 <div class="col-md-4 form-group">
+                   <div class="row">
+                     <div class="col-md-3">
+                       <label class="mt-2"><strong>Email</strong></label>
+                     </div>
+                     <div class="col-md-9">
+                       <input type="text" class="form-control" placeholder="Enter Email" required>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="col-md-4">
+                   <label> Candidate Name</label>
+                 </div>
+             </div>
+            <div class="row">
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-primary" onclick="stepper.next()">Next</button>
+              </div>
+            </div>
+         </div>
+        <div
+          id="address-part"
+          class="content"
+          role="tabpanel"
+          aria-labelledby="address-part-trigger"
+          >
+          <div class="row">
+                 <div class="col-md-4">
+                   <label>Email</label>
+                 </div>
+                 <div class="col-md-4">
+                   <label> Candidate Name</label>
+                 </div>
+             </div>
+          <button class="btn btn-primary" onclick="stepper.previous()">Prev</button>
+          <button class="btn btn-primary" onclick="stepper.next()">Next</button>
         </div>
-      </div>
+        <div
+          id="other-part"
+          class="content"
+          role="tabpanel"
+          aria-labelledby="other-part-trigger"
+        >
+        </div>
+        <div
+          id="academics-part"
+          class="content"
+          role="tabpanel"
+          aria-labelledby="academics-part-trigger"
+        >
+        </div>
+        <div
+          id="experience-part"
+          class="content"
+          role="tabpanel"
+          aria-labelledby="experience-part-trigger">
+          </div>
+        </div>
+     </form>
     </div>
   </div>
 </div>
