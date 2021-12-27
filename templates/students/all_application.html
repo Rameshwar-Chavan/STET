@@ -1,0 +1,48 @@
+{% extends 'students/Applicant_Dashboard.html' %} {% block candidate_body %}
+<section class="content">
+  <div class="container-fluid">
+    <!-- card row started -->
+    {% if messages %} {% include 'message_alert.html' %} {% endif %}
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="inner">
+          <!-- table start -->
+          <table class="table text-center">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Sr No</th>
+                <th scope="col">Title</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for notification in all_notifications %}
+              <tr>
+                <td>{{ notification.id }}</td>
+                <td>{{ notification.notification_name }}</td>
+                <td>{{ notification.notification_str_date }}</td>
+                <td>{{ notification.notification_end_date }}</td>
+                <td>
+                  <a
+                    href="{% url 'candidates:Post_Apply' %}"
+                    class="text mt-1 mb-1 ml-1 mr-1 btn btn-primary btn-sm"
+                    >Apply
+                  </a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <!-- table end -->
+        </div>
+        <!-- inner end -->
+      </div>
+    </div>
+    <br />
+    <br />
+  </div>
+</section>
+
+{% endblock candidate_body %}
