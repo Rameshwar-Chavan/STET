@@ -2,7 +2,7 @@
 
 ## 1. Candidate Requirements:
 
-        - Students: 1. Registration
+* Students: 1. Registration
 
               - Mobile No and Email id(User ID)
               - First Name, Last Name
