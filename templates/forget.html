@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AdminLTE 3 | Forget</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/fontawesome-free/css/all.min.css' %}"
+    />
+    <!-- icheck bootstrap -->
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}"
+    />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}" />
+  </head>
+  <body class="hold-transition login-page">
+    <div class="container-fluide mt-4">
+      <div class="row">
+        <div class="col-sm-2 pt-2 text-center d-inline">
+          <img
+            src="{% static 'dist/img/stet_logo.png' %}"
+            class="brand-image rounded-circle bg-dark"
+            style="opacity: 0.9"
+            height="85px"
+            width="85px"
+          />
+        </div>
+        <div class="col-sm-8 mr-auto pt-2 pb-2 d-inline">
+          <h3 class="text-center text-info">
+            <b> महाराष्ट्र राज्य परीक्षा परिषद, पुणे </b>
+          </h3>
+          <h4 class="text-warning text-center">
+            <b
+              >महाराष्ट्र शिक्षक पात्रता परीक्षा - २०२१ <br />
+              Maharashtra Teacher Eligibility Test - 2021</b
+            >
+          </h4>
+        </div>
+        <div class="col-sm-2 mt-1 pt-2 text-center d-inline">
+          <img
+            src="{% static 'dist/img/satymev_flag.jpg' %}"
+            class="brand-image rounded-circle align-self-center"
+            style="opacity: 0.9"
+            height="85px"
+            width="85px"
+          />
+        </div>
+      </div>
+    </div>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+ <div class="form-gap"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="text-center">
+                  <h3><i class="fa fa-lock fa-4x"></i></h3>
+                  <h2 class="text-center">Forgot Password?</h2>
+                  <p>You can reset your password here.</p>
+                  <div class="panel-body">
+    
+                    <form id="register-form" role="form" autocomplete="off" class="form" method="post">
+    
+                      <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                          <input id="email" name="email" placeholder="email address" class="form-control"  type="email">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Reset Password" type="submit">
+                      </div>
+                      
+                      <input type="hidden" class="hide" name="token" id="token" value=""> 
+                    </form>
+    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div>
+</div>

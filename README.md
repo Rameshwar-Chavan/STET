@@ -2,29 +2,56 @@
 
 ## 1. Candidate Requirements:
 
-* Students: 1. Registration
+#### Registration:
+- Mobile No , Email id(User ID), password
+- First Name, Last Name 
+- Login using Password or OTP
 
-              - Mobile No and Email id(User ID)
-              - First Name, Last Name
+### Profile
+#### Personal Details:
+- First Name, Middle Name, Last Name
+- Email, Mobile No
+- DOB, Gender,Age, Marital Status
+- Aadhar Number*
 
-           ## Login using Password or OTP:
-                     ---- Profile ----
-           --> Personal Details, Academic Details, Experience Details, Post Details, Document Upload, Fees Details, Submit Form.
+#### Address Details:
+- Local:Address 1, Local:Address 2
+- Permenant: Address 1, Address 2
+- State, District, Taluka, Village, Pincode
 
-           --> User Name : Mobile No / Email id
-           --> Password : Own Password
-               Successful Login:
-                   Profile, Important Dates, Result, Notice,Hall Ticket, Documents, Forgot password, Logout.
+#### Other Information:
+- Religion, Caste
 
-## 2. Admin:
+#### Academics Deatils:
+- Qualification, Stream
+- Institute Name, University/ Board name
+- Passing Year , Percentage
 
-    -> Authenticated User Login
-    User Name, Password
-    -> Successful Login:
-    Dashboard, Profile, Generate Time Table, Generate Hall Ticket, Regenerate Hall ticket, All Registration, All Valid Registrations, Exam
-    Dates, Candidate Documents, Result Generation, Support, Username Regeneration, Password Regeneration.
+#### Documents:
+- SSC, HSC/Diploma*
+- Graduation, Post Graduation
+- Caste, Non Creamy layer, Nationality
+- Photo, signature
 
----
+
+## Admin :
+
+#### Login:
+- User Name : Mobile No / Email id
+- Password : Own Password
+
+##### Dashboard:
+- Home, Hall ticket, Time Table, Notifications, Results.
+
+
+#### Apply Application:
+- Candidate Full Name, Mobile No
+- Email, Qualification, Caste
+- Fees/Payment*
+
+
+
+
 
 ## 3. ChatBot
 

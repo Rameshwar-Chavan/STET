@@ -21,3 +21,6 @@ def about(request):
 def contact(request):
     all_notifications = Notifications.objects.all()
     return render(request, 'contact.html', {'all_notifications': all_notifications})
+def forget(request):
+    all_notifications = Notifications.objects.all()
+    return render(request, 'forget.html', {'all_notifications': all_notifications})

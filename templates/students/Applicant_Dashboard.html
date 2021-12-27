@@ -19,10 +19,15 @@
     />
     <!-- Theme style -->
     <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}" />
-    <!-- Steeper CSS CDN -->
+    <!-- Steeper CSS -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css"
+      href="{% static 'plugins/bs-stepper/css/bs-stepper.min.css' %}"
+    />
+    <!-- icheck-bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}"
     />
   </head>
   <body class="hold-transition sidebar-mini layout-fixed">
@@ -234,7 +239,27 @@
         <hr />
         <!-- Main content -->
         <section class="">
-          {% block candidate_body %} {% endblock candidate_body %}
+          {% block candidate_body %}
+          <div class="col-sm-6">
+            <h3 class="m-0 ml-0"><b>Profile Status</b></h3>
+          </div>
+          <br>
+          <div class="row">
+             <div class="col-12">
+               <div class="progress-group ml-2 mr-4">
+                      <strong class="mb-4">Profile Completness</strong>
+                      <span class="float-right"><b></b></span>
+                      <div class="progress progress-sm mt-1" style="height: 20px;">
+                        <div class="progress-bar bg-primary" style="width: 50%" ><b><h6 class="mt-1">50 %</h6></b></div>
+                      </div>
+               </div>
+            </div>
+          </div>
+
+
+
+
+          {% endblock candidate_body %}
         </section>
         <!-- /.content -->
       </div>
@@ -278,6 +303,6 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{% static 'dist/js/pages/dashboard.js' %}"></script>
     <!-- Steeper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
+    <script src="{% static 'plugins/bs-stepper/js/bs-stepper.min.js' %}"></script>
   </body>
 </html>
