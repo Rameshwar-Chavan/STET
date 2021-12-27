@@ -25,4 +25,5 @@ urlpatterns = [
     path('', include('candidates.urls')),
     path('', include('TET_Officers.urls')),
     path('admin/', admin.site.urls),
+    path("forget/", views.forget, name="forget"),
 ]
