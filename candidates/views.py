@@ -17,7 +17,7 @@ def registration(request):
             insert.save()
             messages.success(
                 request, 'Applicant Registration Successfully Completed !')
-            return render(request, 'students/Applicant_Registration.html', {})
+            # return render(request, 'students/Applicant_Registration.html', {})
         else:
             messages.error(request, 'Applicant Is Already Registered!')
             return render(request, 'students/Applicant_Registration.html', {})
