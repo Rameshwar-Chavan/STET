@@ -105,253 +105,321 @@
       </div>
     </div>
   </div>
-  <br>
+  <br />
   <div class="row">
-   <div class="col-12">
-     <form method="post" action="/">
-       {% csrf_token %}
-      <div class="bs-stepper-content">
-        <!-- steps content here -->
-         <div id="personal-part" class="content card-body rounded " style="background:#e6edf2" role="tabpanel" aria-labelledby="personal-part-trigger">
-             <div class="row">
-                 <div class="col-md-4 form-group">
-                   <div class="row">
-                     <div class="col-md-4">
-                       <label class="mt-2"><strong>First Name</strong></label>
-                     </div>
-                     <div class="col-md-6">
-                       <input type="text" class="form-control" placeholder="Enter First Name" required>
-                     </div>
-                   </div>
-                 </div>
-                 <div class="col-md-4 form-group">
-                   <div class="row">
-                     <div class="col-md-4">
-                        <label class="mt-2"><strong>Middle Name</strong></label>
-                     </div>
-                     <div class="com-md-6">
-                       <input type="text" class="form-control" placeholder="Enter Middle Name" required>
-                     </div>
-                   </div>
-                 </div>
-                  <div class="col-md-4 form-group">
-                   <div class="row">
-                     <div class="col-md-4">
-                        <label class="mt-2"><strong>Last Name</strong></label>
-                     </div>
-                     <div class="com-md-6">
-                       <input type="text" class="form-control" placeholder="Enter Last Name" required>
-                     </div>
-                   </div>
-                 </div>
-             </div>
-           <br>
+    <div class="col-12">
+      <form method="post" action="/">
+        {% csrf_token %}
+        <div class="bs-stepper-content">
+          <!-- steps content here -->
+          <div
+            id="personal-part"
+            class="content card-body rounded"
+            style="background: #e6edf2"
+            role="tabpanel"
+            aria-labelledby="personal-part-trigger"
+          >
             <div class="row">
-                 <div class="col-md-4 form-group">
-                   <div class="row">
-                     <div class="col-md-4">
-                       <label class="mt-2"><strong>Date Of Birth</strong></label>
-                     </div>
-                     <div class="col-md-7">
-                        <div class="input-group mb-3">
-                            <input
-                              type="date"
-                              class="form-control"
-                              name="notification_str_date"
-                              id="notification_str_date"
-                              placeholder="Start Date" required
-                            />
-                            <div class="input-group-append">
-                              <div class="input-group-text">
-                                <span class="fas fa-calendar"></span>
-                              </div>
-                            </div>
-                        </div>
-                     </div>
-                   </div>
-                 </div>
-                 <div class="col-md-4 form-group">
-                   <div class="row">
-                     <div class="col-md-4">
-                        <label class="mt-2 text-align-center"><strong>Gender</strong></label>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="icheck-primary d-inline">
-                          <input type="radio" id="radioPrimary1" name="r1">
-                          <label for="radioPrimary1" class="mt-2">
-                            Male
-                          </label>
-                        </div>
-                        &nbsp;
-                        &nbsp;
-                        <div class="icheck-primary d-inline">
-                          <input type="radio" id="radioPrimary2" name="r1">
-                          <label for="radioPrimary2" class="mt-2">
-                            Female
-                          </label>
-                        </div>
-                     </div>
-                   </div>
-                 </div>
-                  <div class="col-md-4 form-group">
-                   <div class="row">
-                     <div class="col-md-4">
-                        <label class="mt-2"><strong>Age</strong></label>
-                     </div>
-                     <div class="com-md-4">
-                       <input type="text" class="form-control" placeholder="Enter Age" required>
-                     </div>
-                   </div>
-                 </div>
-             </div>
-           <br>
-           <div class="row">
-              <div class="col-6 form-group">
-                   <div class="row">
-                     <div class="col-md-2">
-                       <label class="mt-2"><strong>Email</strong></label>
-                     </div>
-                     <div class="col-md-6">
-                       <input type="Email" class="form-control" placeholder="Enter Email" required>
-                     </div>
-                   </div>
-               </div>
-               <div class="col-md-6 form-group">
-                   <div class="row">
-                     <div class="col-md-4">
-                        <label class="mt-2"><strong>Mobile Number</strong></label>
-                     </div>
-                     <div class="col-md-6">
-                       <input type="text" class="form-control" placeholder="Enter Mobile Number" required>
-                     </div>
-                   </div>
-               </div>
-           </div>
-           <br>
-           <div class="row">
-            <div class="col-md-4 form-group">
+              <div class="col-md-4 form-group">
                 <div class="row">
-                     <div class="col-md-4">
-                        <label class="mt-2 text-align-center"><strong>Marital Status</strong></label>
-                     </div>
-                     <div class="col-md-8">
-                        <div class="icheck-primary d-inline">
-                          <input type="radio" id="radioPrimary3" name="r2">
-                          <label for="radioPrimary1" class="mt-2">
-                            Married
-                          </label>
-                        </div>
-                        &nbsp;
-                        &nbsp;
-                        <div class="icheck-primary d-inline">
-                          <input type="radio" id="radioPrimary4" name="r2">
-                          <label for="radioPrimary2" class="mt-2">
-                            Unmarried
-                          </label>
-                        </div>
-                     </div>
-                   </div>
+                  <div class="col-md-4">
+                    <label class="mt-2"><strong>First Name</strong></label>
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter First Name"
+                      required
+                    />
+                  </div>
                 </div>
-           </div>
-           <br>
-            <div class="row">
-                <div class="col-md-5"></div>
-                <div class="col-md-6">
-                    <button class="btn btn-primary" onclick="stepper.next()">Save</button>
-                    &nbsp;
-                    &nbsp;
-                    <button class="btn btn-primary" onclick="stepper.next()">Next</button>
+              </div>
+              <div class="col-md-4 form-group">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label class="mt-2"><strong>Middle Name</strong></label>
+                  </div>
+                  <div class="com-md-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Middle Name"
+                      required
+                    />
+                  </div>
                 </div>
+              </div>
+              <div class="col-md-4 form-group">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label class="mt-2"><strong>Last Name</strong></label>
+                  </div>
+                  <div class="com-md-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Last Name"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-         </div>
-        <div
-          id="address-part"
-          class="content"
-          role="tabpanel"
-          aria-labelledby="address-part-trigger"
-          class="content card-body rounded "
-          style="background:#e6edf2"
+            <br />
+            <div class="row">
+              <div class="col-md-4 form-group">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label class="mt-2"><strong>Date Of Birth</strong></label>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="input-group mb-3">
+                      <input
+                        type="date"
+                        class="form-control"
+                        name="notification_str_date"
+                        id="notification_str_date"
+                        placeholder="Start Date"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 form-group">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label class="mt-2 text-align-center"
+                      ><strong>Gender</strong></label
+                    >
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-check d-inline icheck-primary">
+                      <input
+                        class="form-check-input mt-2 mr-2"
+                        type="radio"
+                        name="gender"
+                        id="flexRadioDefault_male"
+                        checked
+                      />
+                      <label
+                        class="form-check-label mt-2 ml-2"
+                        for="flexRadioDefault_male"
+                      >
+                        <strong>Male</strong>
+                      </label>
+                    </div>
+
+                    <div class="form-check d-inline icheck-primary">
+                      <input
+                        class="form-check-input mt-2 ml-3"
+                        type="radio"
+                        name="gender"
+                        id="flexRadioDefault_female"
+                        checked
+                      />
+                      <label
+                        class="form-check-label mt-2 ml-2"
+                        for="flexRadioDefault_female"
+                      >
+                        <strong>Female</strong>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 form-group">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label class="mt-2"><strong>Age</strong></label>
+                  </div>
+                  <div class="com-md-4">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Age"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-sm form-group">
+                <div class="row">
+                  <div class="col-sm-2">
+                    <label class="mt-2"><strong>Email</strong></label>
+                  </div>
+                  <div class="col-sm-8">
+                    <input
+                      type="Email"
+                      class="form-control"
+                      placeholder="Enter Email"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm form-group">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <label class="mt-2"><strong>Mobile Number</strong></label>
+                  </div>
+                  <div class="col-sm-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Mobile Number"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-md-4 form-group">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label class="text-align-center"
+                      ><strong>Marital Status</strong></label
+                    >
+                  </div>
+                  <div class="col-md-8">
+                    <div class="form-check d-inline icheck-primary">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault1"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        <strong>Married</strong>
+                      </label>
+                    </div>
+                    &nbsp; &nbsp;
+                    <div class="form-check d-inline icheck-primary">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault2"
+                        checked
+                      />
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        <strong>Unmarried</strong>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-md-5"></div>
+              <div class="col-md-6">
+                <button class="btn btn-primary" onclick="stepper.next()">
+                  Save
+                </button>
+                &nbsp; &nbsp;
+                <button class="btn btn-primary" onclick="stepper.next()">
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            id="address-part"
+            class="content"
+            role="tabpanel"
+            aria-labelledby="address-part-trigger"
+            class="content card-body rounded"
+            style="background: #e6edf2"
           >
             <div class="row">
               <div class="col-md-5 form-group">
-                  <div class="row">
-                      <div class="col-md-3">
-                          <label class="mt-2"><strong>Local Address </strong></label>
-                      </div>
-                      <div class="col-md-8">
-                          <textarea  class="form-control mt-2" required></textarea>
-                      </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <label class="mt-2"><strong>Local Address </strong></label>
                   </div>
+                  <div class="col-md-8">
+                    <textarea class="form-control mt-2" required></textarea>
+                  </div>
+                </div>
               </div>
               &nbsp;
               <div class="col-md-5 form-group">
-                  <div class="row">
-                      <div class="col-md-3">
-                          <label class="mt-2"><strong>Permanent Address </strong></label>
-                      </div>
-                      <div class="col-md-8">
-                        <textarea class="form-control mt-2" required></textarea>
-                      </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <label class="mt-2"
+                      ><strong>Permanent Address </strong></label
+                    >
                   </div>
+                  <div class="col-md-8">
+                    <textarea class="form-control mt-2" required></textarea>
+                  </div>
+                </div>
               </div>
-          </div>
-          <div class="col-md-5 form-group">
+            </div>
+            <div class="col-md-5 form-group">
               <div class="row">
-                  <div class="col-md-12">
-                        <label class="mt-2 text-align-center">Please Check if Permanent Address Is Same as Local Address</label>
+                <div class="col-md-12">
+                  <label class="mt-2 text-align-center"
+                    >Please Check if Permanent Address Is Same as Local
+                    Address</label
+                  >
+                </div>
+                <div class="col-md-6">
+                  <div class="icheck-primary d-inline">
+                    <input type="radio" id="radioPrimary5" name="r3" />
+                    <label for="radioPrimary1" class="mt-2"> Yes </label>
                   </div>
-                  <div class="col-md-6">
-                        <div class="icheck-primary d-inline">
-                          <input type="radio" id="radioPrimary5" name="r3">
-                          <label for="radioPrimary1" class="mt-2">
-                            Yes
-                          </label>
-                        </div>
-                        &nbsp;
-                        &nbsp;
-                        <div class="icheck-primary d-inline">
-                          <input type="radio" id="radioPrimary6" name="r3">
-                          <label for="radioPrimary2" class="mt-2">
-                           No
-                          </label>
-                        </div>
+                  &nbsp; &nbsp;
+                  <div class="icheck-primary d-inline">
+                    <input type="radio" id="radioPrimary6" name="r3" />
+                    <label for="radioPrimary2" class="mt-2"> No </label>
                   </div>
+                </div>
               </div>
-          </div>
+            </div>
 
-          <button class="btn btn-primary" onclick="stepper.previous()">Prev</button>
-          <button class="btn btn-primary" onclick="stepper.next()">Next</button>
-     </div>
-        <div
-          id="other-part"
-          class="content"
-          role="tabpanel"
-          aria-labelledby="other-part-trigger"
-        >
-        </div>
-        <div
-          id="academics-part"
-          class="content"
-          role="tabpanel"
-          aria-labelledby="academics-part-trigger"
-        >
-        </div>
-        <div
-          id="experience-part"
-          class="content"
-          role="tabpanel"
-          aria-labelledby="experience-part-trigger">
+            <button class="btn btn-primary" onclick="stepper.previous()">
+              Prev
+            </button>
+            <button class="btn btn-primary" onclick="stepper.next()">
+              Next
+            </button>
           </div>
+          <div
+            id="other-part"
+            class="content"
+            role="tabpanel"
+            aria-labelledby="other-part-trigger"
+          ></div>
+          <div
+            id="academics-part"
+            class="content"
+            role="tabpanel"
+            aria-labelledby="academics-part-trigger"
+          ></div>
+          <div
+            id="experience-part"
+            class="content"
+            role="tabpanel"
+            aria-labelledby="experience-part-trigger"
+          ></div>
         </div>
-     </form>
+      </form>
     </div>
   </div>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    window.stepper = new Stepper(document.querySelector('.bs-stepper'))
-})
+  document.addEventListener("DOMContentLoaded", function () {
+    window.stepper = new Stepper(document.querySelector(".bs-stepper"));
+  });
 </script>
 
 {% endblock candidate_body %}
