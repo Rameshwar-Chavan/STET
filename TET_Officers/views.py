@@ -66,3 +66,7 @@ def timetable(request):
 
 def results(request):
     return render(request, 'admin_home/result.html')
+
+
+def hallticket(request):
+    return render(request, 'admin_home/hallticket.html', {})
