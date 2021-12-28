@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+  
   <!-- <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css"> -->
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -104,7 +105,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{% url 'TET_Officers:Hallticket' %}" target="_blanck" class="nav-link">
               <i class="nav-icon fas fa-file-alt"></i>
               <b>
                  Generate Hallticket
