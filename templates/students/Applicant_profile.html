@@ -33,7 +33,7 @@
         <div class="step" data-target="#personal-part">
           <button
             type="button"
-            class="step-trigger"
+            class="btn step-trigger"
             role="tab"
             aria-controls="personal-part"
             id="personal-part-trigger"
@@ -48,7 +48,7 @@
         <div class="step" data-target="#address-part">
           <button
             type="button"
-            class="step-trigger"
+            class="btn step-trigger"
             role="tab"
             aria-controls="information-part"
             id="address-part-trigger"
@@ -63,7 +63,7 @@
         <div class="step" data-target="#other-part">
           <button
             type="button"
-            class="step-trigger"
+            class="btn step-trigger"
             role="tab"
             aria-controls="other-part"
             id="other-part-trigger"
@@ -78,7 +78,7 @@
         <div class="step" data-target="#academics-part">
           <button
             type="button"
-            class="step-trigger"
+            class="btn step-trigger"
             role="tab"
             aria-controls="academics-part"
             id="academics-part-trigger"
@@ -93,7 +93,7 @@
         <div class="step" data-target="#experience-part">
           <button
             type="button"
-            class="step-trigger"
+            class="btn step-trigger"
             role="tab"
             aria-controls="experience-part"
             id="experience-part-trigger"
@@ -118,7 +118,7 @@
           <div
             id="personal-part"
             class="content"
-            style="background: #ffffff"
+            style="background: #e6edf2"
             role="tabpanel"
             aria-labelledby="personal-part-trigger"
           >
@@ -133,7 +133,7 @@
                       <label for="first_name">First Name</label>
                       <input
                         type="text"
-                        class="form-control"
+                        class="validate form-control"
                         placeholder="Enter First Name"
                         required
                       />
@@ -146,7 +146,7 @@
                       <label for="middle_name">Middle Name</label>
                       <input
                         type="text"
-                        class="form-control"
+                        class="validate form-control"
                         placeholder="Enter Middle Name"
                         required
                       />
@@ -159,7 +159,7 @@
                       <label for="last_name">Last Name</label>
                       <input
                         type="text"
-                        class="form-control"
+                        class="validate form-control"
                         placeholder="Enter Last Name"
                         required
                       />
@@ -274,10 +274,10 @@
                         <input
                           class="form-check-input"
                           type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
+                          name="marital_status"
+                          id="flexRadioDefault_married"
                         />
-                        <label class="form-check-label" for="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault_married">
                           <strong>Married</strong>
                         </label>
                       </div>
@@ -286,10 +286,10 @@
                         <input
                           class="form-check-input"
                           type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault2"
+                          name="marital_status"
+                          id="flexRadioDefault_unmarried"
                         />
-                        <label class="form-check-label" for="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault_unmarried">
                           <strong>Unmarried</strong>
                         </label>
                       </div>
@@ -321,66 +321,340 @@
             class="content card-body rounded"
             style="background: #e6edf2"
           >
-            <div class="row">
-              <div class="col-md-5 form-group">
-                <div class="row">
-                  <div class="col-md-3">
-                    <label class="mt-2"><strong>Local Address </strong></label>
-                  </div>
-                  <div class="col-md-8">
-                    <textarea class="form-control mt-2" required></textarea>
-                  </div>
-                </div>
-              </div>
-              &nbsp;
-              <div class="col-md-5 form-group">
-                <div class="row">
-                  <div class="col-md-3">
-                    <label class="mt-2"
-                      ><strong>Permanent Address </strong></label
-                    >
-                  </div>
-                  <div class="col-md-8">
-                    <textarea class="form-control mt-2" required></textarea>
-                  </div>
-                </div>
-              </div>
+            <div class="card-header bg-primary text-center">
+              <strong><h4>Address Details</h4></strong>
             </div>
-            <div class="col-md-5 form-group">
+            <div class="card-body">
               <div class="row">
-                <div class="col-md-12">
-                  <label class="mt-2 text-align-center"
-                    >Please Check if Permanent Address Is Same as Local
-                    Address</label
-                  >
-                </div>
-                <div class="col-md-6">
-                  <div class="icheck-primary d-inline">
-                    <input type="radio" id="radioPrimary5" name="r3" />
-                    <label for="radioPrimary1" class="mt-2"> Yes </label>
+                <div class="col-md-4 form-group">
+                  <!-- Row-1 Start-->
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="Local Address">Local Address</label>
+                      <textarea
+                        class="form-control"
+                        required
+                      >
+                      </textarea>
+                    </div>
                   </div>
-                  &nbsp; &nbsp;
-                  <div class="icheck-primary d-inline">
-                    <input type="radio" id="radioPrimary6" name="r3" />
-                    <label for="radioPrimary2" class="mt-2"> No </label>
+                </div>
+                <div class="col-sm-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="Is Same address">Check If Permanent Address Is Same<br> As Local Address</label>
+                      <div class="row">
+                          <div class="col-sm mt-2">
+                            <div class="form-check d-inline icheck-success">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="address_same"
+                                id="flexRadioAddress_Same_yes"
+                              />
+                              <label class="form-check-label" for="flexRadioAddress_Same_yes">
+                                <strong>Yes</strong>
+                              </label>
+                            </div>
+                            &nbsp;
+                            &nbsp;
+                            <div class="form-check d-inline icheck-success">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="address_same"
+                                id="flexRadioAddress_Same_no"
+                              />
+                              <label
+                                class="form-check-label" for="flexRadioAddress_Same_no">
+                                <strong>No</strong>
+                              </label>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="Permanent Address">Permanent Address</label>
+                      <textarea
+                        class="form-control"
+                        required
+                      ></textarea>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <button class="btn btn-primary" onclick="stepper.previous()">
-              Prev
-            </button>
-            <button class="btn btn-primary" onclick="stepper.next()">
-              Next
-            </button>
+              <!-- Row-2 Start-->
+              <div class="row">
+                <div class="col-sm-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="State">State</label>
+                      <div class="form-group">
+                        <select
+                          class="form-control select2bs4"
+                          data-placeholder="Select a State"
+                          style="width: 100%"
+                          name="state"
+                          id="state"
+                          required
+                        >
+                          <option value="select">Select</option>
+                          <option>Maharashtra</option>
+                          <option>Karnataka</option>
+                          <option>Goa</option>
+                          <option>Andhrapradesh</option>
+                          <option>Sikkim</option>
+                          <option>Punjab</option>
+                          <option>Bihar</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="District">District</label>
+                      <div class="form-group">
+                      <select
+                        class="form-control select2bs4"
+                        data-placeholder="Select a District"
+                        style="width: 100%"
+                        name="district"
+                        id="district"
+                        required
+                      >
+                        <option value="select">Select</option>
+                        <option>Aurangabad</option>
+                        <option>Nashik</option>
+                        <option>Jalgaon</option>
+                        <option>Akola</option>
+                        <option>Washim</option>
+                        <option>Nagpur</option>
+                        <option>Jalna</option>
+                        <option>Beed</option>
+                      </select>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="Taluka">Taluka</label>
+                      <div class="form-group">
+                      <select
+                        class="form-control select2bs4"
+                        data-placeholder="Select a District"
+                        style="width: 100%"
+                        name="taluka"
+                        id="taluka"
+                        required
+                      >
+                        <option value="select">Select</option>
+                        <option>Aurangabad</option>
+                        <option>Kannad</option>
+                        <option>Soegaon</option>
+                        <option>Sillod</option>
+                        <option>Phulambri</option>
+                        <option>Khuldabad</option>
+                        <option>Vaijapur</option>
+                        <option>Gangapur</option>
+                        <option>Paithan</option>
+                      </select>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row-3 Start-->
+              <div class="row">
+                <div class="col-sm-4 form-group">
+                  <div class="row">
+                      <div class="col-sm">
+                        <label for="Village">Village</label>
+                          <div class="form-group">
+                              <select
+                                class="form-control select2bs4"
+                                data-placeholder="Select a District"
+                                style="width: 100%"
+                                name="village"
+                                id="village"
+                                required
+                              >
+                                <option value="select">Select</option>
+                                <option>Chittegaon</option>
+                                <option>Pimpri</option>
+                                <option>Chitte-Pimpalgaon</option>
+                                <option>Shendra</option>
+                                <option>Nipani</option>
+                                <option>Garkheda</option>
+                                <option>Adgaon</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label class="Pincode">Pincode</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm text-center">
+                  <button class="btn btn-primary" onclick="stepper.previous()">
+                    Prev
+                  </button>
+                  &nbsp; &nbsp;
+                  <button class="btn btn-primary" onclick="stepper.next()">
+                    Next
+                  </button>
+                </div>
+                <div class="col-sm"></div>
+              </div>
+            </div>
           </div>
           <div
             id="other-part"
             class="content"
             role="tabpanel"
             aria-labelledby="other-part-trigger"
-          ></div>
+            style="background: #e6edf2"
+          >
+            <div class="card-header bg-primary text-center">
+              <strong><h4>Other Information</h4></strong>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4 form-group">
+                  <!-- Row-1 Start-->
+                  <div class="row">
+                    <div class="col-sm">
+                       <label for="religion">Religion</label>
+                        <div class="form-group">
+                          <select
+                            class="form-control select2bs4"
+                            data-placeholder="Select a Religion"
+                            style="width: 100%"
+                            name="religion"
+                            id="religion"
+                            required
+                          >
+                            <option value="select">Select</option>
+                            <option>Hindu</option>
+                            <option>Buddhist</option>
+                            <option>Christian</option>
+                            <option>Jain</option>
+                            <option>Muslim</option>
+                            <option>Parsi</option>
+                            <option>Sikh</option>
+                          </select>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="Caste">Caste</label>
+                      <div class="form-group">
+                        <select
+                          class="form-control select2bs4"
+                          data-placeholder="Select a Caste"
+                          style="width: 100%"
+                          name="caste"
+                          id="caste"
+                          required
+                        >
+                          <option value="select">Select</option>
+                          <option>General</option>
+                          <option>(OBC) Other Backward Class</option>
+                          <option>(SBC) Special Backward Class</option>
+                          <option>(SC) Scheduled Caste</option>
+                          <option>(ST) Scheduled Tribe</option>
+                          <option>(VJNT) Vimukt Jat Nomadic Tribe</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="pwd">Person With Disablity</label>
+                      <div class="row">
+                          <div class="col-sm mt-2">
+                            <div class="form-check d-inline icheck-success">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="pwd"
+                                id="flexRadio_pwd_yes"
+                              />
+                              <label
+                                class="form-check-label ml-2 d-inline"
+                                for="flexRadio_pwd_yes"
+                              >
+                                <strong>Yes</strong>
+                              </label>
+                            </div>
+                            &nbsp;
+                            &nbsp;
+                            <div class="form-check d-inline icheck-success">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="pwd"
+                                id="flexRadio_pwd_no"
+                              />
+                              <label
+                                class="form-check-label mt-2 ml-2 d-inline"
+                                for="flexRadio_pwd_no"
+                              >
+                                <strong>No</strong>
+                              </label>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Row-2 Start-->
+
+              <!-- Row-3 Start-->
+              <br />
+              <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm text-center">
+                  <button class="btn btn-primary" onclick="stepper.previous()">
+                    Prev
+                  </button>
+                  &nbsp; &nbsp;
+                  <button class="btn btn-primary" onclick="stepper.next()">
+                    Next
+                  </button>
+                </div>
+                <div class="col-sm"></div>
+              </div>
+            </div>
+          </div>
           <div
             id="academics-part"
             class="content"
