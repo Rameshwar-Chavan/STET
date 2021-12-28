@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AdminLTE 3 | Log in</title>
+    <title>Applicant Log in</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link
@@ -62,11 +62,10 @@
       <!-- /.login-logo -->
 
       <div class="card">
+        <div class="card-header bg-info text-center">
+          <strong><h3>Candidate login</h3></strong>
+        </div>
         <div class="card-body login-card-body">
-          <div class="login-logo bg-">
-            <span class="text-primary text-bold"><b> Candidate login </b></span>
-            <hr />
-          </div>
           <form action="{% url 'candidates:dashboard' %}" method="post">
             {% csrf_token %}
             <div class="input-group mb-3">
@@ -94,7 +93,7 @@
               <div class="col-4">
                 <button
                   type="submit"
-                  class="btn btn-primary btn-sm btn-rounded"
+                  class="btn btn-info btn-sm btn-rounded"
                   id="btnotp"
                 >
                   Get OTP</button
@@ -114,22 +113,18 @@
             <br />
             <div class="row">
               <div class="col-6">
-                <button type="submit" class="btn btn-success btn-rounded">
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-rounded btn-block"
+                >
                   Login
                 </button>
               </div>
 
               <div class="col-6">
-                <button
-                  type="submit"
-                  class="btn btn-danger btn-rounded"
-                  id="forgot"
-                ><a href="{% url 'forget' %}" class="text-primary font-weight-bold"
-                >
-                
+                <a href="{% url 'forget' %}" class="btn btn-danger">
                   Forgot Password
-               
-                </button>
+                </a>
               </div>
             </div>
           </form>
