@@ -24,6 +24,8 @@
   <!-- Tab panes -->
   <div class="container-fluid">
     <div class="tab-content mt-auto">
+      <div id="google_translate_element" class="text-right rounded responsive"></div>
+
         <div class="">
           <div class="row">
             <div class="col-sm-2 pt-2 text-center d-inline">
@@ -161,6 +163,15 @@
   {% comment %} <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script> {% endcomment %}
   <!-- jQuery UI 1.11.4 -->
   {% comment %} <script src="{% static 'plugins/jquery-ui/jquery-ui.min.js' %}"></script> {% endcomment %}
+  <!-- Google Translation Script-->
+  <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- Goole translation End-->
   <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
   <script>
     $.widget.bridge('uibutton', $.ui.button)
