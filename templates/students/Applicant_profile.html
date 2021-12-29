@@ -90,16 +90,16 @@
       </div>
       <div class="line"></div>
       <div class="col-sm">
-        <div class="step" data-target="#experience-part">
+        <div class="step" data-target="#document-part">
           <button
             type="button"
             class="btn step-trigger"
             role="tab"
-            aria-controls="experience-part"
-            id="experience-part-trigger"
+            aria-controls="document-part"
+            id="document-part-trigger"
           >
             <span class="bs-stepper-circle">5</span>
-            <span class="bs-stepper-label">Experience Details</span>
+            <span class="bs-stepper-label">Upload Documents</span>
           </button>
         </div>
       </div>
@@ -191,6 +191,8 @@
                         type="text"
                         class="form-control"
                         placeholder="Enter Mobile Number"
+                        maxlength="10"
+                        minlength="10"
                         required
                       />
                     </div>
@@ -660,13 +662,272 @@
             class="content"
             role="tabpanel"
             aria-labelledby="academics-part-trigger"
-          ></div>
+          >
+            <div class="card-header bg-primary text-center">
+              <strong><h4>Academics Information</h4></strong>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4 form-group">
+                  <!-- Row-1 Start-->
+                  <div class="row">
+                    <div class="col-sm">
+                       <label for="Qualification_level">Qualification Level</label>
+                        <div class="form-group">
+                          <select
+                            class="form-control select2bs4"
+                            data-placeholder="Select a Qualification"
+                            style="width: 100%"
+                            name="qualification"
+                            id="qualification"
+                            required
+                          >
+                            <option value="select">Select</option>
+                            <option>Certificate Course</option>
+                            <option>Diploma Course</option>
+                            <option>S.S.C (10 std)</option>
+                            <option>H.S.C</option>
+                            <option>Under Graduate Course</option>
+                            <option>Post Graduate Course</option>
+                            <option>Vocational Course</option>
+                            <option>Ph.D</option>
+                          </select>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="Stream">Stream</label>
+                      <div class="form-group">
+                        <select
+                          class="form-control select2bs4"
+                          data-placeholder="Select a stream"
+                          style="width: 100%"
+                          name="stream"
+                          id="stream"
+                          required
+                        >
+                          <option value="select">Select</option>
+                          <option>Agriculture</option>
+                          <option>Arts</option>
+                          <option>Commerce</option>
+                          <option>Education</option>
+                          <option>Engineering</option>
+                          <option>Law</option>
+                          <option>Management</option>
+                          <option>Physical Education</option>
+                          <option>Science</option>
+                          <option>Veterinary</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="Institute Name">Institute Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="institute name"
+                        id="institute name"
+                        placeholder=""
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Row-2 Start-->
+              <div class="row">
+                <div class="col-sm-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                       <label for="University">University / Board Name</label>
+                        <div class="form-group">
+                          <select
+                            class="form-control select2bs4"
+                            data-placeholder="Select a University"
+                            style="width: 100%"
+                            name="university"
+                            id="university"
+                            required
+                          >
+                            <option value="select">Select</option>
+                            <option>BAMU</option>
+                            <option>BATU</option>
+                            <option>Autonomous</option>
+                            <option>SPPU</option>
+                            <option>Nashik</option>
+                            <option>Jalgaon</option>
+                          </select>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                       <label for="Passing year">Passing Year</label>
+                        <div class="form-group">
+                          <select
+                            class="form-control select2bs4"
+                            data-placeholder="Select a Passing Year"
+                            style="width: 100%"
+                            name="passing_year"
+                            id="passing_year"
+                            required
+                          >
+                            <option value="select">Select</option>
+                            <option>2021</option>
+                            <option>2020</option>
+                            <option>2019</option>
+                            <option>2018</option>
+                            <option>2017</option>
+                            <option>2016</option>
+                          </select>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="Percentage">Percentage</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="Percentage"
+                        id="Percentage"
+                        placeholder=""
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row-3 Start-->
+              <br />
+              <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm text-center">
+                  <button class="btn btn-primary" onclick="stepper.previous()">
+                    Prev
+                  </button>
+                  &nbsp; &nbsp;
+                  <button class="btn btn-primary" onclick="stepper.next()">
+                    Next
+                  </button>
+                </div>
+                <div class="col-sm"></div>
+              </div>
+            </div>
+          </div>
           <div
-            id="experience-part"
+            id="document-part"
             class="content"
             role="tabpanel"
-            aria-labelledby="experience-part-trigger"
-          ></div>
+            aria-labelledby="document-part-trigger"
+          >
+            <div class="card-header bg-primary text-center">
+              <strong><h4>Upload Documents</h4></strong>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <!-- Row-1 Start-->
+                  <div class="row">
+                      <div class="form-group">
+                        <label for="ssc_marksheet">S.S.C Marksheet</label>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="ssc_file">
+                          <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-6 form-group">
+                  <div class="row">
+                      <div class="form-group">
+                        <label for="hsc_marksheet">H.S.C Marksheet</label>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="hsc_file">
+                          <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Row-2 Start-->
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <div class="row">
+                      <div class="form-group">
+                        <label for="caste certificate">Caste Certificate</label>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="caste_file">
+                          <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-6 form-group">
+                  <div class="row">
+                      <div class="form-group">
+                        <label for="Non_creamy_layer">Non-Creamy-Layer</label>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="non_creamy_layer_file">
+                          <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Row-3 Start-->
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <div class="row">
+                      <div class="form-group">
+                        <label for="Photo">Passport Size Photo</label>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="passport_photo_file">
+                          <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-6 form-group">
+                  <div class="row">
+                      <div class="form-group">
+                        <label for="Signature">Signature</label>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="signature_file">
+                          <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm text-center">
+                  <button class="btn btn-primary" onclick="stepper.previous()">
+                    Prev
+                  </button>
+                  &nbsp; &nbsp;
+                  <button class="btn btn-primary" onclick="stepper.next()">
+                    Next
+                  </button>
+                </div>
+                <div class="col-sm"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </form>
     </div>
