@@ -10,7 +10,7 @@ class Notifications(models.Model):
         auto_now=False, auto_now_add=False, null=True)
 
     def __str__(self):
-        return self.id
+        return self.notification_name
 
 
 class TimeTable(models.Model):
@@ -22,4 +22,4 @@ class TimeTable(models.Model):
         auto_now=False, auto_now_add=False, null=True)
 
     def __str__(self):
-        return self.id
+        return self.exam_name
