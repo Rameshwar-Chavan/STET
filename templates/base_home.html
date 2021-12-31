@@ -176,6 +176,13 @@ function googleTranslateElementInit() {
   <script>
     $.widget.bridge('uibutton', $.ui.button)
   </script>
+  <script>
+  setTimeout(function(){
+      if($('#msg').length>0){
+        $('#msg').remove();
+      }
+  }, 10000)
+</script>
   <!-- Bootstrap 4 -->
   <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'dist/js/adminlte.js' %}"></script>
