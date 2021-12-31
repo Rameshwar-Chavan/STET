@@ -26,7 +26,7 @@
 <!-- Message if Start -->
 {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
 <!-- Message Div Start -->
-<div class="text-center alert alert-success alert-dismissible" id="msg">
+<div class="text-center alert alert-error alert-dismissible" id="msg">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   <strong id="msg">{{message}}</strong>
 </div>
@@ -35,7 +35,7 @@
 <!-- Message if Start-->
 {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
 <!-- Message Div Start -->
-<div class="text-center alert alert-success alert-dismissible" id="msg">
+<div class="text-center alert alert-warning alert-dismissible" id="msg">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   <strong id="msg">{{message}}</strong>
 </div>
