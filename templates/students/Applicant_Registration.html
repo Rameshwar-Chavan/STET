@@ -1,174 +1,183 @@
-{% extends 'master.html' %} {% block body %}
-<section class="content">
-  <div class="container-fluid">
-    <!-- card row started -->
-    <div class="row">
-      <div class="col-sm-2"></div>
-      {% if messages %} {% include 'message_alert.html' %} {% endif %}
-      <!-- SELECT2 EXAMPLE -->
-      <div class="col-sm-8">
-        <form
-          action="{% url 'candidates:login' %}"
-          class="form-horizontal"
-          method="post"
-        >
-          {% csrf_token %}
-          <div class="card card-primary mt-4">
-            <!-- /.card-header -->
-            <div class="card-body">
-              <div class="">
-                <h3 class="text-center text-primary">
-                  <b>Applicant Registration</b>
-                </h3>
+{% extends 'base_home.html' %} {% block home_body %} {% if messages %} {%
+include 'message_alert.html' %} {% endif %}
+<!-- Registration Form -->
+<div class="col-sm">
+  <form
+    action="{% url 'candidates:login' %}"
+    class="needs-validation"
+    novalidate
+    method="post"
+  >
+    {% csrf_token %}
+    <div class="card mt-2">
+      <div class="card-header bg-primary">
+        <h3 class="text-center">Applicant Registration</h3>
+      </div>
+      <!-- /.card-header -->
+      <div class="row mt-1">
+        <div class="col-sm-2"></div>
+        <div class="card-body col-sm-8">
+          <div class="col-sm">
+            <div class="form-group row mt-2">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-3">
+                <label for="first_name" class="control-label">First Name</label>
               </div>
-              <hr />
-              <div class="row">
-                <div class="col-sm">
-                  <div class="row justify-content-center">
-                    <div class="col-md-4 mt-4">
-                      <label for="first_name" class="control-label"
-                        >Applicant First Name</label
-                      >
-                    </div>
-                    <div class="col-md-6 mt-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="first_name"
-                        name="first_name"
-                        placeholder=""
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div class="row justify-content-center">
-                    <div class="col-md-4 mt-4">
-                      <h5>
-                        <small
-                          ><label
-                            for="last_name"
-                            style="font-weight: 700"
-                            class="control-label"
-                            >Applicant Last Name</label
-                          ></small
-                        >
-                      </h5>
-                    </div>
-                    <div class="col-md-6 mt-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="last_name"
-                        name="last_name"
-                        placeholder=""
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div class="row justify-content-center">
-                    <div class="col-md-4 mt-4">
-                      <h5>
-                        <small
-                          ><label
-                            style="font-weight: 700"
-                            for="email"
-                            class="control-label"
-                            >Email ID</label
-                          ></small
-                        >
-                      </h5>
-                    </div>
-                    <div class="col-md-6 mt-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="email"
-                        id="email"
-                        placeholder=""
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div class="row justify-content-center">
-                    <div class="col-md-4 mt-4">
-                      <h5>
-                        <small
-                          ><label
-                            style="font-weight: 700"
-                            for="password"
-                            class="control-label"
-                            >Password</label
-                          ></small
-                        >
-                      </h5>
-                    </div>
-                    <div class="col-md-6 mt-3">
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="password"
-                        name="password"
-                        placeholder=""
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div class="row justify-content-center">
-                    <div class="col-md-4 mt-4">
-                      <h5>
-                        <small
-                          ><label
-                            style="font-weight: 700"
-                            for="mobile"
-                            class="control-label"
-                            >Mobile Number</label
-                          ></small
-                        >
-                      </h5>
-                    </div>
-                    <div class="col-md-6 mt-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="mobile"
-                        id="mobile"
-                        placeholder=""
-                        required
-                      />
-                    </div>
-                  </div>
-                </div>
+              <div class="col-sm-7">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="first_name"
+                  name="first_name"
+                  placeholder="First Name"
+                  required
+                />
+                <!-- <div class="valid-feedback">Looks good!</div> -->
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-3">
+                <label
+                  for="last_name"
+                  style="font-weight: 700"
+                  class="control-label"
+                  >Last Name</label
+                >
+              </div>
+              <div class="col-sm-7">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="last_name"
+                  name="last_name"
+                  placeholder="Last Name"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-3">
+                <label
+                  style="font-weight: 700"
+                  for="email"
+                  class="control-label"
+                  >Email ID</label
+                >
+              </div>
+              <div class="col-sm-7">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="email"
+                  id="email"
+                  placeholder="Email : test@test.com"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-3">
+                <label
+                  style="font-weight: 700"
+                  for="password"
+                  class="control-label"
+                  >Password</label
+                >
+              </div>
+              <div class="col-sm-7">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-3">
+                <label
+                  style="font-weight: 700"
+                  for="mobile"
+                  class="control-label"
+                  >Mobile Number</label
+                >
+              </div>
+              <div class="col-sm-7">
+                <input
+                  type="tel"
+                  class="form-control"
+                  name="mobile"
+                  id="mobile"
+                  placeholder="Mobile No: 7777888877"
+                  required="required"
+                  pattern="^\d{10}$"
+                />
               </div>
             </div>
           </div>
-          <!-- /.card -->
-          <br />
+          <!--Button Section Start -->
           <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-2">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-2 text-center">
               <input
                 type="submit"
-                class="btn btn-block btn-primary"
+                class="btn btn-primary btn-sm mt-2 pl-3 pr-3"
                 value="Register"
               />
             </div>
-            <div class="col-md-1"></div>
-            <br />
-            <div class="col-md-2">
+            <div class="col-sm-2 text-center">
               <input
                 type="reset"
-                class="btn btn-block btn-danger"
+                class="btn btn-danger btn-sm mt-2 pl-4 pr-4"
                 value="Reset"
               />
             </div>
+            <div class="col-sm-4"></div>
           </div>
-        </form>
+          <!--Button Section End -->
+          <br />
+        </div>
+        <div class="col-sm-2"></div>
       </div>
-      <div clss="col-sm-2"></div>
-    </div>
-    <br />
-    <br />
-  </div>
-</section>
 
-{% endblock body %}
+      <br />
+    </div>
+    <!-- /.card -->
+  </form>
+</div>
+<!-- validation -->
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function () {
+    "use strict";
+    window.addEventListener(
+      "load",
+      function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName("needs-validation");
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      },
+      false
+    );
+  })();
+</script>
+{% endblock home_body %}
