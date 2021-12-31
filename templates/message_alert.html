@@ -1,20 +1,48 @@
-{% load static %} 
-  {% if messages %} 
-    {% for message in messages %} 
-      {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
-        <p class="text-center alert alert-primary alert-dismissible" id="msg1" role="alert">{{ message }}</p>
-      {% endif %} 
-      
-      {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
-       <h5><b><p class="text-center alert alert-success alert-dismissible" id="msg2" role="alert">{{ message }}</p></b></h5>
-    {% endif %} 
-    
-    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
-        <p class="text-center alert alert-danger alert-dismissible" id="msg3" role="alert">{{ message }}</p>
-    {% endif %}
-    
-    {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
-        <p class="text-center alert alert-warning alert-dismissible" id="msg4" role="alert">{{ message }}</p>
-    {% endif %}
-  {% endfor %} 
-  {% endif %}
+{% load static %} {% if messages %}
+<!-- Message if start-->
+{% for message in messages %}
+<!-- For loop satrted-->
+{% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+<!-- Message Div Start -->
+<div class="text-center alert alert-primary alert-dismissible" id="msg">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong id="msg">{{message}}</strong>
+</div>
+<!-- Message Div End -->
+{% endif %}
+<!-- Message if End -->
+
+<!-- Message if Start -->
+{% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+<!-- Message Div Start -->
+<div class="text-center alert alert-success alert-dismissible" id="msg">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong id="msg">{{message}}</strong>
+</div>
+<!-- Message Div End -->
+{% endif %}
+<!-- Message if End -->
+
+<!-- Message if Start -->
+{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+<!-- Message Div Start -->
+<div class="text-center alert alert-success alert-dismissible" id="msg">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong id="msg">{{message}}</strong>
+</div>
+<!-- Message Div End -->
+{% endif %}
+<!-- Message if Start-->
+{% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+<!-- Message Div Start -->
+<div class="text-center alert alert-success alert-dismissible" id="msg">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong id="msg">{{message}}</strong>
+</div>
+<!-- Message Div End -->
+{% endif %}
+<!-- Message if End-->
+{% endfor %}
+<!-- Messages for End-->
+{% endif %}
+<!-- Messages if End-->
