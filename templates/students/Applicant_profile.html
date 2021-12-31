@@ -1,7 +1,7 @@
 {% extends 'students/Applicant_Dashboard.html' %} {% block candidate_body %}
 
 <!-- Content Start-->
-<div class="content-header">
+<div class="content-header" xmlns="http://www.w3.org/1999/html">
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
@@ -110,9 +110,6 @@
     <div class="col-sm-1"></div>
 
     <div class="col-sm-10">
-      <form method="post" action="/">
-        {% csrf_token %}
-
         <div class="bs-stepper-content">
           <!-- steps content here -->
           <div
@@ -122,204 +119,212 @@
             role="tabpanel"
             aria-labelledby="personal-part-trigger"
           >
-            <div class="card-header bg-primary text-center">
-              <strong><h3>Personal Information</h3></strong>
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-4 form-group">
-                  <div class="row">
-                    <div class="col-sm">
-                      <label for="first_name">First Name</label>
-                      <input
-                        type="text"
-                        class="validate form-control"
-                        placeholder="Enter First Name"
-                        required
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-4 form-group">
-                  <div class="row">
-                    <div class="col-sm">
-                      <label for="middle_name">Middle Name</label>
-                      <input
-                        type="text"
-                        class="validate form-control"
-                        placeholder="Enter Middle Name"
-                        required
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 form-group">
-                  <div class="row">
-                    <div class="col-sm">
-                      <label for="last_name">Last Name</label>
-                      <input
-                        type="text"
-                        class="validate form-control"
-                        placeholder="Enter Last Name"
-                        required
-                      />
-                    </div>
-                  </div>
-                </div>
+            <form action="{% url 'candidates:profile' %}" method="POST">
+              {% csrf_token %}
+              <div class="card-header bg-primary text-center">
+                <strong><h3>Personal Information</h3></strong>
               </div>
-
-              <!-- Row-2 Start-->
-              <div class="row">
-                <div class="col-sm-4 form-group">
-                  <div class="row">
-                    <div class="col-sm">
-                      <label for="email">Email</label>
-                      <input
-                        type="Email"
-                        class="form-control"
-                        placeholder="Enter Email"
-                        required
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-4 form-group">
-                  <div class="row">
-                    <div class="col-sm">
-                      <label for="mobile">Mobile Number</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter Mobile Number"
-                        maxlength="10"
-                        minlength="10"
-                        required
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-4 form-group">
-                  <div class="row">
-                    <div class="col-sm">
-                      <label for="dob">Date Of Birth</label>
-                      <div class="input-group mb-3">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-4 form-group">
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="first_name">First Name</label>
                         <input
-                          type="date"
-                          class="form-control"
-                          name="notification_str_date"
-                          id="notification_str_date"
-                          placeholder="Start Date"
+                          type="text"
+                          class="validate form-control"
+                          id="first_name"
+                          placeholder="Enter First Name"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 form-group">
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="middle_name">Middle Name</label>
+                        <input
+                          type="text"
+                          class="validate form-control"
+                          id="middle_name"
+                          placeholder="Enter Middle Name"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 form-group">
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="last_name">Last Name</label>
+                        <input
+                          type="text"
+                          class="validate form-control"
+                          id="last_name"
+                          placeholder="Enter Last Name"
                           required
                         />
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Row-3 Start-->
-              <div class="row">
-                <div class="col-sm-4 form-group">
-                  <label for="gender">Gender</label>
-                  <div class="row">
-                    <div class="col-sm mt-2">
-                      <div class="form-check d-inline icheck-success">
+                <!-- Row-2 Start-->
+                <div class="row">
+                  <div class="col-sm-4 form-group">
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="email">Email</label>
                         <input
-                          class="form-check-input mt-2 mr-2 d-inline"
-                          type="radio"
-                          name="gender"
-                          id="flexRadioDefault_male"
+                          type="Email"
+                          class="form-control"
+                          id="email"
+                          placeholder="Enter Email"
+                          required
                         />
-                        <label
-                          class="form-check-label ml-2 d-inline"
-                          for="flexRadioDefault_male"
-                        >
-                          <strong>Male</strong>
-                        </label>
                       </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 form-group">
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="mobile">Mobile Number</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="mobile"
+                          placeholder="Enter Mobile Number"
+                          maxlength="10"
+                          minlength="10"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 form-group">
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="dob">Date Of Birth</label>
+                        <div class="input-group mb-3">
+                          <input
+                            type="date"
+                            class="form-control"
+                            name="d_o_b"
+                            id="d_o_b"
+                            placeholder=""
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-                      <div class="form-check d-inline icheck-success">
+                <!-- Row-3 Start-->
+                <div class="row">
+                  <div class="col-sm-4 form-group">
+                    <label for="gender">Gender</label>
+                    <div class="row">
+                      <div class="col-sm mt-2">
+                        <div class="form-check d-inline icheck-success">
+                          <input
+                            class="form-check-input mt-2 mr-2 d-inline"
+                            type="radio"
+                            name="gender"
+                            id="flexRadioDefault_male"
+                          />
+                          <label
+                            class="form-check-label ml-2 d-inline"
+                            for="flexRadioDefault_male"
+                          >
+                            <strong>Male</strong>
+                          </label>
+                        </div>
+
+                        <div class="form-check d-inline icheck-success">
+                          <input
+                            class="form-check-input ml-3 d-inline"
+                            type="radio"
+                            name="gender"
+                            id="flexRadioDefault_female"
+                          />
+                          <label
+                            class="form-check-label mt-2 ml-2 d-inline"
+                            for="flexRadioDefault_female"
+                          >
+                            <strong>Female</strong>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 form-group">
+                    <div class="row">
+                      <div class="col-sm">
+                        <label class="">Age</label>
                         <input
-                          class="form-check-input ml-3 d-inline"
-                          type="radio"
-                          name="gender"
-                          id="flexRadioDefault_female"
+                          type="text"
+                          class="form-control"
+                          required
+                          disabled
                         />
-                        <label
-                          class="form-check-label mt-2 ml-2 d-inline"
-                          for="flexRadioDefault_female"
-                        >
-                          <strong>Female</strong>
-                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 form-group">
+                    <label for="marital_status">Marital Status</label>
+                    <div class="row">
+                      <div class="col-sm mt-2">
+                        <div class="form-check d-inline icheck-success">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="marital_status"
+                            id="flexRadioDefault_married"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexRadioDefault_married"
+                          >
+                            <strong>Married</strong>
+                          </label>
+                        </div>
+                        &nbsp; &nbsp;
+                        <div class="form-check d-inline icheck-success">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="marital_status"
+                            id="flexRadioDefault_unmarried"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexRadioDefault_unmarried"
+                          >
+                            <strong>Unmarried</strong>
+                          </label>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-4 form-group">
-                  <div class="row">
-                    <div class="col-sm">
-                      <label class="">Age</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        required
-                        disabled
-                      />
-                    </div>
+                <br />
+                <div class="row">
+                  <div class="col-sm"></div>
+                  <div class="col-sm text-center">
+                    <button type="submit" class="btn btn-success">
+                      Save
+                    </button>
+                    &nbsp; &nbsp;
+                    <button class="btn btn-primary" onclick="stepper.next()">
+                      Next
+                    </button>
                   </div>
-                </div>
-                <div class="col-sm-4 form-group">
-                  <label for="marital_status">Marital Status</label>
-                  <div class="row">
-                    <div class="col-sm mt-2">
-                      <div class="form-check d-inline icheck-success">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="marital_status"
-                          id="flexRadioDefault_married"
-                        />
-                        <label
-                          class="form-check-label"
-                          for="flexRadioDefault_married"
-                        >
-                          <strong>Married</strong>
-                        </label>
-                      </div>
-                      &nbsp; &nbsp;
-                      <div class="form-check d-inline icheck-success">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="marital_status"
-                          id="flexRadioDefault_unmarried"
-                        />
-                        <label
-                          class="form-check-label"
-                          for="flexRadioDefault_unmarried"
-                        >
-                          <strong>Unmarried</strong>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="col-sm"></div>
                 </div>
               </div>
-              <br />
-              <div class="row">
-                <div class="col-sm"></div>
-                <div class="col-sm text-center">
-                  <button class="btn btn-primary" onclick="stepper.next()">
-                    Save
-                  </button>
-                  &nbsp; &nbsp;
-                  <button class="btn btn-primary" onclick="stepper.next()">
-                    Next
-                  </button>
-                </div>
-                <div class="col-sm"></div>
-              </div>
-            </div>
+            </form>
           </div>
           <div
             id="address-part"
