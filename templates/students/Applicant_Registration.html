@@ -6,7 +6,7 @@ include 'message_alert.html' %} {% endif %}
     action="{% url 'candidates:login' %}"
     class="needs-validation"
     novalidate
-    method="post"
+    method="POST"
   >
     {% csrf_token %}
     <div class="card mt-2">

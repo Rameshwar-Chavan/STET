@@ -14,6 +14,7 @@ class applicant_registration(models.Model):
 
 
 class personal_information(models.Model):
+
     first_name = models.CharField(max_length=20)
     middle_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=30)
@@ -23,3 +24,6 @@ class personal_information(models.Model):
     gender = models.CharField(max_length=10)
     age = models.IntegerField()
     marital_status = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.first_name

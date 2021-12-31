@@ -35,19 +35,23 @@ def dashboard(request):
 
 def profile(request):
     if request.method == "POST":
-        if request.POST.get('first_name') and request.POST.get('last_name') and request.POST.get('email') and request.POST.get('password') and request.POST.get('mobile'):
-            insert = applicant_registration()
-            insert.applicant_first_name = request.POST.get('first_name')
-            insert.applicant_last_name = request.POST.get('last_name')
+        if request.POST.get('first_name') and request.POST.get('middle_name') and request.POST.get('last_name') and request.POST.get('email') and request.POST.get('mobile') and request.POST.get('d_o_b') and request.POST.get('gender') and request.POST.get('age') and request.POST.get('marital_status'):
+            insert = personal_information()
+            insert.first_name = request.POST.get('first_name')
+            insert.middle_name = request.POST.get('middle_name')
+            insert.last_name = request.POST.get('last_name')
             insert.email_id = request.POST.get('email')
-            insert.password = request.POST.get('password')
             insert.mobile = request.POST.get('mobile')
+            insert.d_o_b = request.POST.get('d_o_b')
+            insert.gender = request.POST.get('gender')
+            insert.age = request.POST.get('age')
+            insert.marital_status = request.POST.get('marital_status')
             insert.save()
-            messages.success(
-                request, 'Personal Information Successfully Completed !')
+           # messages.success(
+              #  request, 'Personal Information Successfully Completed !')
             # return render(request, 'students/Applicant_Registration.html', {})
         else:
-            messages.error(request, 'Applicant Is Already Registered!')
+            #messages.error(request, 'Applicant Is Already Registered!')
             return render(request, 'students/Applicant_profile.html', {})
 
     return render(request, 'students/Applicant_profile.html', {})
