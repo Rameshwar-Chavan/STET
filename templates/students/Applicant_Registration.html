@@ -1,22 +1,28 @@
-{% extends 'base_home.html' %} {% block home_body %} {% if messages %} {%
-include 'message_alert.html' %} {% endif %}
+{% extends 'base_home.html' %} {% block home_body %}
+
+<div class="col-sm-1"></div>
 <!-- Registration Form -->
-<div class="col-sm">
+<div class="col-sm-5 pt-1">
+  <!-- Message Start-->
+  {% if messages %}
+  <!-- Message Included start -->
+  {% include 'message_alert.html' %}
+  <!-- Message Included end-->
+  {% endif %}
   <form
-    action="{% url 'candidates:login' %}"
+    action="{% url 'candidates:registration' %}"
     class="needs-validation"
     novalidate
     method="post"
   >
     {% csrf_token %}
-    <div class="card mt-2">
+    <div class="card shadow-lg mt-2" style="border-radius: 10px">
       <div class="card-header bg-primary">
         <h3 class="text-center">Applicant Registration</h3>
       </div>
       <!-- /.card-header -->
       <div class="row mt-1">
-        <div class="col-sm-2"></div>
-        <div class="card-body col-sm-8">
+        <div class="card-body col-sm">
           <div class="col-sm">
             <div class="form-group row mt-2">
               <div class="col-sm-1"></div>
@@ -72,8 +78,9 @@ include 'message_alert.html' %} {% endif %}
                   class="form-control"
                   name="email"
                   id="email"
+                  pattern=".+@gmail\.com"
                   placeholder="Email : test@test.com"
-                  required
+                  required="required"
                 />
               </div>
             </div>
@@ -90,6 +97,8 @@ include 'message_alert.html' %} {% endif %}
               <div class="col-sm-7">
                 <input
                   type="password"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
                   class="form-control"
                   id="password"
                   name="password"
@@ -143,7 +152,6 @@ include 'message_alert.html' %} {% endif %}
           <!--Button Section End -->
           <br />
         </div>
-        <div class="col-sm-2"></div>
       </div>
 
       <br />
@@ -151,6 +159,7 @@ include 'message_alert.html' %} {% endif %}
     <!-- /.card -->
   </form>
 </div>
+<div class="col-sm-1"></div>
 <!-- validation -->
 <script>
   // Example starter JavaScript for disabling form submissions if there are invalid fields
