@@ -13,13 +13,13 @@ class applicant_registration(models.Model):
         return self.applicant_first_name
 
 
-class Profile(models.Model):
-
-    candidate_first_name = models.CharField(max_length=20)
-    candidate_last_name = models.CharField(max_length=30)
+class personal_information(models.Model):
+    first_name = models.CharField(max_length=20)
+    middle_name = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=30)
     email_id = models.EmailField(max_length=100)
-    password = models.CharField(max_length=50)
     mobile = models.BigIntegerField()
-
-    def __str__(self):
-        return self.applicant_first_name
+    d_o_b = models.DateField(auto_now=False, auto_now_add=False)
+    gender = models.CharField(max_length=10)
+    age = models.IntegerField()
+    marital_status = models.CharField(max_length=20)
