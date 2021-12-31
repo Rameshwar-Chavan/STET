@@ -47,11 +47,11 @@ def profile(request):
             insert.age = request.POST.get('age')
             insert.marital_status = request.POST.get('marital_status')
             insert.save()
-           # messages.success(
-              #  request, 'Personal Information Successfully Completed !')
-            # return render(request, 'students/Applicant_Registration.html', {})
+            messages.success(
+               request, 'Personal Information Successfully Saved!')
+            return render(request, 'students/Applicant_profile.html', {})
         else:
-            #messages.error(request, 'Applicant Is Already Registered!')
+            messages.error(request, 'Applicant Is Already Registered!')
             return render(request, 'students/Applicant_profile.html', {})
 
     return render(request, 'students/Applicant_profile.html', {})
