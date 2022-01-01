@@ -350,210 +350,219 @@
             class="content card-body rounded"
             style="background: #e6edf2"
           >
-            <div class="card-header bg-primary text-center">
-              <strong><h4>Address Details</h4></strong>
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-4 form-group">
-                  <!-- Row-1 Start-->
-                  <div class="row">
-                    <div class="col-sm">
-                      <label for="Local Address">Local Address</label>
-                      <textarea class="form-control" required> </textarea>
+            <form action="{% url 'candidates:profile' %}" method="POST" name="address">
+              {% csrf_token %}
+              <div class="card-header bg-primary text-center">
+                <strong><h4>Address Details</h4></strong>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-4 form-group">
+                    <!-- Row-1 Start-->
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="Local Address">Local Address</label>
+                        <textarea class="form-control" name="local_address" id="local_address" required> </textarea>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-sm-4 form-group">
-                  <div class="row">
-                    <div class="col-sm">
-                      <label for="Is Same address"
-                        >Check If Permanent Address Is Same<br />
-                        As Local Address</label
-                      >
-                      <div class="row">
-                        <div class="col-sm mt-2">
-                          <div class="form-check d-inline icheck-success">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="address_same"
-                              id="flexRadioAddress_Same_yes"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexRadioAddress_Same_yes"
-                            >
-                              <strong>Yes</strong>
-                            </label>
-                          </div>
-                          &nbsp; &nbsp;
-                          <div class="form-check d-inline icheck-success">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="address_same"
-                              id="flexRadioAddress_Same_no"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexRadioAddress_Same_no"
-                            >
-                              <strong>No</strong>
-                            </label>
+                  <div class="col-sm-4 form-group">
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="Is Same address"
+                          >Check If Permanent Address Is Same<br />
+                          As Local Address</label
+                        >
+                        <div class="row">
+                          <div class="col-sm mt-2">
+                            <div class="form-check d-inline icheck-success">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="address_same"
+                                id="flexRadioAddress_Same_yes"
+                                value="yes"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexRadioAddress_Same_yes"
+                              >
+                                <strong>Yes</strong>
+                              </label>
+                            </div>
+                            &nbsp; &nbsp;
+                            <div class="form-check d-inline icheck-success">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="address_same"
+                                id="flexRadioAddress_Same_no"
+                                value="no"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexRadioAddress_Same_no"
+                              >
+                                <strong>No</strong>
+                              </label>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-md-4 form-group">
-                  <div class="row">
-                    <div class="col-sm">
-                      <label for="Permanent Address">Permanent Address</label>
-                      <textarea class="form-control" required></textarea>
+                  <div class="col-md-4 form-group">
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="Permanent Address">Permanent Address</label>
+                        <textarea class="form-control" name="permanent_address" id="permanent_address" required></textarea>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Row-2 Start-->
-              <div class="row">
-                <div class="col-sm-4 form-group">
-                  <div class="row">
-                    <div class="col-sm">
-                      <label for="State">State</label>
-                      <div class="form-group">
-                        <select
-                          class="form-control select2bs4"
-                          data-placeholder="Select a State"
-                          style="width: 100%"
-                          name="state"
-                          id="state"
-                          required
-                        >
-                          <option value="select">Select</option>
-                          <option>Maharashtra</option>
-                          <option>Karnataka</option>
-                          <option>Goa</option>
-                          <option>Andhrapradesh</option>
-                          <option>Sikkim</option>
-                          <option>Punjab</option>
-                          <option>Bihar</option>
-                        </select>
+                <!-- Row-2 Start-->
+                <div class="row">
+                  <div class="col-sm-4 form-group">
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="State">State</label>
+                        <div class="form-group">
+                          <select
+                            class="form-control select2bs4"
+                            data-placeholder="Select a State"
+                            style="width: 100%"
+                            name="state"
+                            id="state"
+                            required
+                          >
+                            <option value="select">Select</option>
+                            <option>Maharashtra</option>
+                            <option>Karnataka</option>
+                            <option>Goa</option>
+                            <option>Andhrapradesh</option>
+                            <option>Sikkim</option>
+                            <option>Punjab</option>
+                            <option>Bihar</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 form-group">
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="District">District</label>
+                        <div class="form-group">
+                          <select
+                            class="form-control select2bs4"
+                            data-placeholder="Select a District"
+                            style="width: 100%"
+                            name="district"
+                            id="district"
+                            required
+                          >
+                            <option value="select">Select</option>
+                            <option>Aurangabad</option>
+                            <option>Nashik</option>
+                            <option>Jalgaon</option>
+                            <option>Akola</option>
+                            <option>Washim</option>
+                            <option>Nagpur</option>
+                            <option>Jalna</option>
+                            <option>Beed</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 form-group">
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="Taluka">Taluka</label>
+                        <div class="form-group">
+                          <select
+                            class="form-control select2bs4"
+                            data-placeholder="Select a District"
+                            style="width: 100%"
+                            name="taluka"
+                            id="taluka"
+                            required
+                          >
+                            <option value="select">Select</option>
+                            <option>Aurangabad</option>
+                            <option>Kannad</option>
+                            <option>Soegaon</option>
+                            <option>Sillod</option>
+                            <option>Phulambri</option>
+                            <option>Khuldabad</option>
+                            <option>Vaijapur</option>
+                            <option>Gangapur</option>
+                            <option>Paithan</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-4 form-group">
-                  <div class="row">
-                    <div class="col-sm">
-                      <label for="District">District</label>
-                      <div class="form-group">
-                        <select
-                          class="form-control select2bs4"
-                          data-placeholder="Select a District"
-                          style="width: 100%"
-                          name="district"
-                          id="district"
-                          required
-                        >
-                          <option value="select">Select</option>
-                          <option>Aurangabad</option>
-                          <option>Nashik</option>
-                          <option>Jalgaon</option>
-                          <option>Akola</option>
-                          <option>Washim</option>
-                          <option>Nagpur</option>
-                          <option>Jalna</option>
-                          <option>Beed</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-4 form-group">
-                  <div class="row">
-                    <div class="col-sm">
-                      <label for="Taluka">Taluka</label>
-                      <div class="form-group">
-                        <select
-                          class="form-control select2bs4"
-                          data-placeholder="Select a District"
-                          style="width: 100%"
-                          name="taluka"
-                          id="taluka"
-                          required
-                        >
-                          <option value="select">Select</option>
-                          <option>Aurangabad</option>
-                          <option>Kannad</option>
-                          <option>Soegaon</option>
-                          <option>Sillod</option>
-                          <option>Phulambri</option>
-                          <option>Khuldabad</option>
-                          <option>Vaijapur</option>
-                          <option>Gangapur</option>
-                          <option>Paithan</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <!-- Row-3 Start-->
-              <div class="row">
-                <div class="col-sm-4 form-group">
-                  <div class="row">
-                    <div class="col-sm">
-                      <label for="Village">Village</label>
-                      <div class="form-group">
-                        <select
-                          class="form-control select2bs4"
-                          data-placeholder="Select a District"
-                          style="width: 100%"
-                          name="village"
-                          id="village"
-                          required
-                        >
-                          <option value="select">Select</option>
-                          <option>Chittegaon</option>
-                          <option>Pimpri</option>
-                          <option>Chitte-Pimpalgaon</option>
-                          <option>Shendra</option>
-                          <option>Nipani</option>
-                          <option>Garkheda</option>
-                          <option>Adgaon</option>
-                        </select>
+                <!-- Row-3 Start-->
+                <div class="row">
+                  <div class="col-sm-4 form-group">
+                    <div class="row">
+                      <div class="col-sm">
+                        <label for="Village">Village</label>
+                        <div class="form-group">
+                          <select
+                            class="form-control select2bs4"
+                            data-placeholder="Select a District"
+                            style="width: 100%"
+                            name="village"
+                            id="village"
+                            required
+                          >
+                            <option value="select">Select</option>
+                            <option>Chittegaon</option>
+                            <option>Pimpri</option>
+                            <option>Chitte-Pimpalgaon</option>
+                            <option>Shendra</option>
+                            <option>Nipani</option>
+                            <option>Garkheda</option>
+                            <option>Adgaon</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 form-group">
+                    <div class="row">
+                      <div class="col-sm">
+                        <label class="Pincode">Pincode</label>
+                        <input type="text" class="form-control" name="pincode" id="pincode" required />
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-4 form-group">
-                  <div class="row">
-                    <div class="col-sm">
-                      <label class="Pincode">Pincode</label>
-                      <input type="text" class="form-control" required />
-                    </div>
+                <br />
+                <div class="row">
+                  <div class="col-sm"></div>
+                  <div class="col-sm text-center">
+                    <button class="btn btn-primary" onclick="stepper.previous()">
+                      Prev
+                    </button>
+                    &nbsp;&nbsp;
+                    <button type="submit" class="btn btn-success">
+                      Save
+                    </button>
+                    &nbsp;
+                    <button class="btn btn-primary" onclick="stepper.next()">
+                      Next
+                    </button>
                   </div>
+                  <div class="col-sm"></div>
                 </div>
               </div>
-              <br />
-              <div class="row">
-                <div class="col-sm"></div>
-                <div class="col-sm text-center">
-                  <button class="btn btn-primary" onclick="stepper.previous()">
-                    Prev
-                  </button>
-                  &nbsp; &nbsp;
-                  <button class="btn btn-primary" onclick="stepper.next()">
-                    Next
-                  </button>
-                </div>
-                <div class="col-sm"></div>
-              </div>
-            </div>
+            </form>
           </div>
           <div
             id="other-part"
@@ -631,6 +640,7 @@
                               type="radio"
                               name="pwd"
                               id="flexRadio_pwd_yes"
+                              value="yes"
                             />
                             <label
                               class="form-check-label ml-2 d-inline"
@@ -646,6 +656,7 @@
                               type="radio"
                               name="pwd"
                               id="flexRadio_pwd_no"
+                              value="no"
                             />
                             <label
                               class="form-check-label mt-2 ml-2 d-inline"
@@ -996,6 +1007,14 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     window.stepper = new Stepper(document.querySelector(".bs-stepper"));
+  });
+  $('input[type=radio][name=address_same]').change(function() {
+        if (this.value == 'yes')
+        {
+            var local = $("#local_address").val();
+            $("#permanent_address").val(local);
+            $("#permanent_address").attr("disabled","disabled");
+        }
   });
 </script>
 

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from candidates.models import applicant_registration, personal_information
+from candidates.models import applicant_registration, personal_information, address_information, other_information, Academic_information
 from TET_Officers.models import Notifications
 from django.contrib import messages
 from django.http import HttpResponse
@@ -57,6 +57,26 @@ def profile(request):
         else:
             messages.error(request, 'Applicant Is Already Registered!')
             return render(request, 'students/Applicant_profile.html', {})
+
+    if request.method == "POST":
+        if request.POST.get('local_address') and request.POST.get('address_same') and request.POST.get('permanent_address') and request.POST.get('state') and request.POST.get('district') and request.POST.get('taluka') and request.POST.get('village') and request.POST.get('pincode'):
+            insert = address_information()
+            insert.local_address = request.POST.get('first_name')
+            insert.address_same = request.POST.get('address_same')
+            insert.permanent_address = request.POST.get('permanent_address')
+            insert.state = request.POST.get('state')
+            insert.district = request.POST.get('district')
+            insert.taluka = request.POST.get('taluka')
+            insert.village = request.POST.get('village')
+            insert.pincode = request.POST.get('pincode')
+            insert.save()
+            messages.success(
+                request, 'Address Information Successfully Saved!')
+            return render(request, 'students/Applicant_profile.html', {})
+        else:
+            messages.error(request, 'Applicant Is Already Registered!')
+            return render(request, 'students/Applicant_profile.html', {})
+
 
     return render(request, 'students/Applicant_profile.html', {})
 
