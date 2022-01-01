@@ -25,6 +25,7 @@
 
 <!-- Section start-->
 <section class="content">
+  {% if messages %} {% include 'message_alert.html' %} {% endif %}
   <div class="container-fluid">
     <!-- Small boxes (Stat box) -->
     <div class="row">
@@ -101,4 +102,17 @@
   </div>
 </section>
 <!-- /.content -->
+<script>
+  setTimeout(function () {
+    if ($("#msg-success").length > 0) {
+      $("#msg").remove();
+    }
+  }, 1000);
+
+  setTimeout(function () {
+    if ($("#msg-error").length > 0) {
+      $("#msg-error").remove();
+    }
+  }, 1000);
+</script>
 {% endblock admin_body %}

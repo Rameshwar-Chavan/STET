@@ -70,10 +70,18 @@
             <hr />
           </div>
           <br />
-          <form action="{% url 'TET_Officers:officer_home' %}" method="post">
+          <form action="{% url 'TET_Officers:EO_Login' %}" method="post">
             {% csrf_token %}
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="User Id" />
+              <input
+                type="text"
+                name="eo_username"
+                id="eo_username"
+                class="form-control"
+                placeholder="User Name"
+                required="required"
+              />
+
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-envelope"></span>
@@ -83,8 +91,11 @@
             <div class="input-group mb-3">
               <input
                 type="password"
+                name="eo_password"
+                id="eo_password"
                 class="form-control"
                 placeholder="Password"
+                required="required"
               />
               <div class="input-group-append">
                 <div class="input-group-text">
@@ -108,7 +119,7 @@
               <!-- /.col -->
               <div class="col-sm-12">
                 <button type="submit" class="btn btn-primary btn-block">
-                  Sign In
+                  Login
                 </button>
               </div>
               <!-- /.col -->
@@ -119,6 +130,7 @@
               <a href="{% url 'forget' %}" class="text-primary font-weight-bold"
                 >Forget Password
               </a>
+              <i class="fas fa-lock"></i>
             </p>
           </div>
         </div>

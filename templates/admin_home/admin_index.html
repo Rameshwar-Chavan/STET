@@ -50,6 +50,7 @@
         </a>
         <div class="navbar-search-block">
           <form class="form-inline">
+            {% csrf_token %}
             <div class="input-group input-group-sm">
               <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
               <div class="input-group-append">
@@ -71,6 +72,10 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary fixed-sidebar">
     <!-- Brand Logo -->
+    <div class="info">
+          <a href=" {% url 'TET_Officers:admin_logout' %} " class="nav-link mr-5  ml-5" style="font-size:25px;"><i class="fa fa-sign-out-alt" aria-hidden="true" style="font-size:25px;color:#E6E6FF"></i></a>
+          <p href="" class="d-block text text-white" style="font-size:17px">Welcome {{request.user.first_name}} {{request.user.last_name}}</p>
+        </div>
     <a href="#" class="brand-link">
       <img src="{% static 'dist/img/satymev_flag.jpg' %}" class="brand-image bg-dark img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Exam Officer</span>
@@ -196,6 +201,20 @@
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
+<!-- Messages Timeout-->
+<script>
+      setTimeout(function () {
+        if ($("#msg-success").length > 0) {
+          $("#msg").remove();
+        }
+      }, 1000);
+
+      setTimeout(function () {
+        if ($("#msg-error").length > 0) {
+          $("#msg-error").remove();
+        }
+      }, 1000);
+    </script>
 <!-- Bootstrap 4 -->
 <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'dist/js/adminlte.js' %}"></script>
