@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from TET_Officers.views import exam_officer_login
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
@@ -26,4 +27,6 @@ urlpatterns = [
     path('', include('TET_Officers.urls')),
     path('admin/', admin.site.urls),
     path("forget/", views.forget, name="forget"),
+    path("login/", exam_officer_login, name="login"),
+    # path("user_logout/", views.user_logout, name="user_logout"),
 ]
