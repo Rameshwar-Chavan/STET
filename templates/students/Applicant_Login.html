@@ -1,7 +1,7 @@
 {% extends 'base_home.html' %} {% block home_body %}
+
 <div class="col-sm-2"></div>
 <div class="col-sm-3">
-  {% if messages %} {% include 'message_alert.html' %} {% endif %}
   <div class="box rounded mt-2 mb-4">
     <!-- /.login-logo -->
 
@@ -10,8 +10,14 @@
         <strong><h3>Candidate login</h3></strong>
       </div>
       <div class="card-body login-card-body">
+        <!-- Messages Start-->
+        {% if messages %}
+        <!-- Messages included-->
+        {% include 'message_alert.html' %}
+        <!-- Message Include End-->
+        {% endif %}
         <form
-          action="{% url 'candidates:dashboard' %}"
+          action="{% url 'candidates:login' %}"
           method="post"
           novalidate
           class="needs-validation"
@@ -19,15 +25,18 @@
           {% csrf_token %}
           <div class="input-group mb-3">
             <input
-              type="tel"
+              type="text"
+              name="stud_username"
+              id="stud_username"
               class="form-control"
-              placeholder="Mobile No"
-              pattern="^\d{10}$"
+              placeholder="Username"
               title="Must have valid mobile number !"
               required="required"
-              minlength="10"
-              maxlength="10"
             />
+            <!-- pattern="^\d{10}$" 
+                 minlength="10" 
+                 maxlength="10"
+            -->
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -37,12 +46,14 @@
           <div class="input-group mb-3">
             <input
               type="password"
+              name="stud_password"
+              id="stud_password"
               class="form-control"
               placeholder="Password"
-              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="Must contain Alphabate, Numbers and special symbol !"
               required="required"
             />
+            <!--pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"-->
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -66,6 +77,7 @@
                 type="text"
                 class="form-control form-control-sm rounded"
                 id="otp"
+                name="otp"
                 placeholder="OTP"
                 pattern="^\d{6}$"
                 required="required"

@@ -29,7 +29,7 @@
       rel="stylesheet"
       href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}"
     />
-     <!-- select2bs -->
+    <!-- select2bs -->
     <link
       rel="stylesheet"
       href="{% static 'plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}"
@@ -88,6 +88,7 @@
             </a>
             <div class="navbar-search-block">
               <form class="form-inline">
+                {% csrf_token %}
                 <div class="input-group input-group-sm">
                   <input
                     class="form-control form-control-navbar"
@@ -252,6 +253,8 @@
             <h3 class="m-0 ml-0"><b>Profile Status</b></h3>
           </div>
           <br />
+          {% if messages %} {% include 'message_alert.html' %} {% endif %}
+
           <div class="row">
             <div class="col-12">
               <div class="progress-group ml-2 mr-4">
