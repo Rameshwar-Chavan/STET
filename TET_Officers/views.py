@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect, redirect
+from django.http import HttpResponse
+from django.http import JsonResponse
 from django.core import serializers
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, validators
@@ -10,18 +12,39 @@ from TET_Officers.models import Notifications, TimeTable
 # Create your views here.
 
 
+@login_required(login_url='login')
 def officer_home(request):
     return render(request, 'admin_home/index_admin.html', {})
 
 
 def exam_officer_login(request):
-    return render(request, 'admin_home/Exam_Officer_Login.html', {})
+    if request.method == 'POST':
+        username = request.POST.get('eo_username')
+        password = request.POST.get('eo_password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            messages.success(request, 'Login Successfull')
+            return redirect('TET_Officers:officer_home')
+        else:
+            messages.error(request, 'Incorrect User Name or Password')
+            return render(request, 'admin_home/Exam_Officer_Login.html')
+
+    context = {}
+    return render(request, 'admin_home/Exam_Officer_Login.html', context)
+
+
+@login_required(login_url='login')
+def admin_logout(request):
+    logout(request)
+    return redirect('login')
 
 
 def exam_investigator_login(request):
     return render(request, 'admin_home/Exam_Investigator_Login.html', {})
 
 
+@login_required(login_url='login')
 def notification(request):
     all_notifications = Notifications.objects.all()
     if request.method == "POST":
@@ -43,6 +66,7 @@ def notification(request):
     return render(request, 'admin_home/notifications.html', {'all_notifications': all_notifications})
 
 
+@login_required(login_url='login')
 def timetable(request):
 
     timetable_list = TimeTable.objects.all()
@@ -64,9 +88,11 @@ def timetable(request):
     return render(request, 'admin_home/timetable.html', {'timetable_list': timetable_list})
 
 
+@login_required(login_url='login')
 def results(request):
     return render(request, 'admin_home/result.html')
 
 
+@login_required(login_url='login')
 def hallticket(request):
     return render(request, 'admin_home/hallticket.html', {})
