@@ -3,7 +3,8 @@
 {% block home_body %}
               <!-- Main Content Start -->
           <div class="col-sm mt-2">
-          
+                {% if messages %} {% include 'message_alert.html' %} {% endif %}
+
             <div class="card text-center">
               <div class="card-header bg-secondary font-weight-bold font-weight-bolder">
                 महाराष्ट्र शिक्षक पात्रता परीक्षा 2021 बाबतच्या सूचना
