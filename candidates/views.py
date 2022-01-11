@@ -39,43 +39,41 @@ def dashboard(request):
 @login_required(login_url='candidates:login')
 def profile(request):
     if request.method == "POST":
-        if request.POST.get('first_name') and request.POST.get('middle_name') and request.POST.get('last_name') and request.POST.get('email') and request.POST.get('mobile') and request.POST.get('d_o_b') and request.POST.get('gender') and request.POST.get('age') and request.POST.get('marital_status'):
-            insert = personal_information()
-            insert.first_name = request.POST.get('first_name')
-            insert.middle_name = request.POST.get('middle_name')
-            insert.last_name = request.POST.get('last_name')
-            insert.email_id = request.POST.get('email')
-            insert.mobile = request.POST.get('mobile')
-            insert.d_o_b = request.POST.get('d_o_b')
-            insert.gender = request.POST.get('gender')
-            insert.age = request.POST.get('age')
-            insert.marital_status = request.POST.get('marital_status')
-            insert.save()
-            messages.success(
-                request, 'Personal Information Successfully Saved!')
-            return render(request, 'students/Applicant_profile.html', {})
-        else:
-            messages.error(request, 'Applicant Is Already Registered!')
-            return render(request, 'students/Applicant_profile.html', {})
+        if request.POST.get('personal'):
+            if request.POST.get('first_name') and request.POST.get('middle_name') and request.POST.get('last_name') and request.POST.get('email') and request.POST.get('mobile') and request.POST.get('d_o_b') and request.POST.get('gender') and request.POST.get('age') and request.POST.get('marital_status'):
+                insert = personal_information()
+                insert.first_name = request.POST.get('first_name')
+                insert.middle_name = request.POST.get('middle_name')
+                insert.last_name = request.POST.get('last_name')
+                insert.email_id = request.POST.get('email')
+                insert.mobile = request.POST.get('mobile')
+                insert.d_o_b = request.POST.get('d_o_b')
+                insert.gender = request.POST.get('gender')
+                insert.age = request.POST.get('age')
+                insert.marital_status = request.POST.get('marital_status')
+                insert.save()
+                messages.success(
+                    request, 'Personal Information Successfully Saved!')
+                return render(request, 'students/Applicant_profile.html', {})
 
-    if request.method == "POST":
-        if request.POST.get('local_address') and request.POST.get('address_same') and request.POST.get('permanent_address') and request.POST.get('state') and request.POST.get('district') and request.POST.get('taluka') and request.POST.get('village') and request.POST.get('pincode'):
-            insert = address_information()
-            insert.local_address = request.POST.get('first_name')
-            insert.address_same = request.POST.get('address_same')
-            insert.permanent_address = request.POST.get('permanent_address')
-            insert.state = request.POST.get('state')
-            insert.district = request.POST.get('district')
-            insert.taluka = request.POST.get('taluka')
-            insert.village = request.POST.get('village')
-            insert.pincode = request.POST.get('pincode')
-            insert.save()
-            messages.success(
-                request, 'Address Information Successfully Saved!')
-            return render(request, 'students/Applicant_profile.html', {})
-        else:
-            messages.error(request, 'Applicant Is Already Registered!')
-            return render(request, 'students/Applicant_profile.html', {})
+        elif request.POST.get('address'):
+            if request.POST.get('local_address') and request.POST.get('address_same') and request.POST.get('permanent_address') and request.POST.get('state') and request.POST.get('district') and request.POST.get('taluka') and request.POST.get('village') and request.POST.get('pincode'):
+                insert = address_information()
+                insert.local_address = request.POST.get('first_name')
+                insert.address_same = request.POST.get('address_same')
+                insert.permanent_address = request.POST.get('permanent_address')
+                insert.state = request.POST.get('state')
+                insert.district = request.POST.get('district')
+                insert.taluka = request.POST.get('taluka')
+                insert.village = request.POST.get('village')
+                insert.pincode = request.POST.get('pincode')
+                insert.save()
+                messages.success(
+                    request, 'Address Information Successfully Saved!')
+                return render(request, 'students/Applicant_profile.html', {})
+            else:
+                messages.error(request, 'Applicant Is Already Registered!')
+                return render(request, 'students/Applicant_profile.html', {})
 
 
     return render(request, 'students/Applicant_profile.html', {})
