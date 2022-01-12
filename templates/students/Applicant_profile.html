@@ -127,6 +127,7 @@
           >
             <form action="{% url 'candidates:profile' %}" method="POST">
               {% csrf_token %}
+              <input type="hidden" name="personal" id="personal" value="personal">
               <div class="card-header bg-primary text-center">
                 <strong><h3>Personal Information</h3></strong>
               </div>
@@ -350,8 +351,9 @@
             class="content card-body rounded"
             style="background: #e6edf2"
           >
-            <form action="{% url 'candidates:profile' %}" method="POST" name="address">
+            <form action="{% url 'candidates:profile' %}" method="POST">
               {% csrf_token %}
+              <input type="hidden" name="address" id="address" value="address">
               <div class="card-header bg-primary text-center">
                 <strong><h4>Address Details</h4></strong>
               </div>
