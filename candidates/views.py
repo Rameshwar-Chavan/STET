@@ -68,7 +68,7 @@ def profile(request):
             return render(request, 'students/Applicant_profile.html', {})
         elif step2 == True and request.POST.get('local_address') and request.POST.get('address_same') and request.POST.get('permanent_address') and request.POST.get('state') and request.POST.get('district') and request.POST.get('taluka') and request.POST.get('village') and request.POST.get('pincode'):
             insert = address_information()
-            insert.local_address = request.POST.get('first_name')
+            insert.local_address = request.POST.get('local_address')
             insert.address_same = request.POST.get('address_same')
             insert.permanent_address = request.POST.get('permanent_address')
             insert.state = request.POST.get('state')
