@@ -125,7 +125,7 @@
             role="tabpanel"
             aria-labelledby="personal-part-trigger"
           >
-            <form action="{% url 'candidates:profile' %}" method="POST">
+            <form action="{% url 'candidates:profile' %}" method="POST" name="personal">
               {% csrf_token %}
               <input type="hidden" name="personal" id="personal" value="personal">
               <div class="card-header bg-primary text-center">
