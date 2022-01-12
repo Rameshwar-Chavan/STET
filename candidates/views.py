@@ -39,7 +39,6 @@ def dashboard(request):
 @login_required(login_url='candidates:login')
 def profile(request):
     if request.method == "POST":
-        if request.POST.get('personal'):
             if request.POST.get('first_name') and request.POST.get('middle_name') and request.POST.get('last_name') and request.POST.get('email') and request.POST.get('mobile') and request.POST.get('d_o_b') and request.POST.get('gender') and request.POST.get('age') and request.POST.get('marital_status'):
                 insert = personal_information()
                 insert.first_name = request.POST.get('first_name')
