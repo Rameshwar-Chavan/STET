@@ -102,8 +102,8 @@ def profile(request):
         else:
             messages.error(request, 'Applicant Is Already Registered!')
             return render(request, 'students/Applicant_profile.html', {})
-
-    return render(request, 'students/Applicant_profile.html', {})
+    all_notifications = Notifications.objects.all()
+    return render(request, 'students/Applicant_profile.html', {'all_notifications': all_notifications})
 
 
 @login_required(login_url='candidates:login')
@@ -131,8 +131,8 @@ def user_login(request):
         else:
             messages.error(request, 'Incorrect User Name or Password')
             return render(request, 'students/Applicant_Login.html')
-
-    context = {}
+    all_notifications = Notifications.objects.all()
+    context = {'all_notifications': all_notifications}
     return render(request, 'students/Applicant_Login.html', context)
 
 
