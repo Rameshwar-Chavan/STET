@@ -4,26 +4,31 @@
 - Go to [Python](/https://python.org/downloads) and download the python version 3.7
 - Install python 3.7 in your system and set path.
 - Check is python installed successfuly or not using following command 
-```python --version
+```
+python --version
 ``` 
 cammand.
 - Check is pip is latest one ex. pip-20.1 or latest
 - Check it using following command:
-```python pip --version
+```
+python pip --version
 ```
 - Install Django using following command:
-``` pip install django
+``` 
+pip install django
 ```
 
 #### Step 2:
 - Install requirements.txt using following command 
-``` python pip install -m requirements.txt
+``` 
+python pip install -m requirements.txt
 ```
 - If it is not working on your system do manual installation of all the package using following commands:
-``` 1. pip install django
-    2. pip install pillow
-    3. pip install mysqlclient
-    4. pip install djangootp
+``` 
+1. pip install django
+2. pip install pillow
+3. pip install mysqlclient
+4. pip install djangootp
 ```
 #### Step 3:
 - Extract STET.zip folder in your system and open it on your Favourite __IDE__ or __Text Editor__
@@ -36,7 +41,18 @@ cammand.
 ``` 
 python manage.py migrate
 ```
-
+- After succesfull migrations run following command:
+```
+python manage.py runserver
+```
+If you execute above command following link is generated:
+```
+System check identified 2 issues (0 silenced).
+January 20, 2022 - 19:40:26
+Django version 3.0.5, using settings 'STET.settings'
+Starting development server at [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+Quit the server with CTRL-BREAK.
+```
 
 
 
