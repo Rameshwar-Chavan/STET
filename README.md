@@ -55,7 +55,7 @@ Quit the server with CTRL-BREAK.
 ```
 Just copy and pest it into Browser of simpaly click on it redirect you to homepage.
 The homepage looks like
-![alt text](templates/screenshot/homepage.png "Home Page")
+![alt text](https://github.com/Rameshwar-Chavan/STET/blob/main/templates/screenshots/homepage.PNG "Home Page")
 
 
 
