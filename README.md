@@ -3,12 +3,39 @@
 #### Step 1:
 - Go to [Python](/https://python.org/downloads) and download the python version 3.7
 - Install python 3.7 in your system and set path.
-- Check is python installed successfuly or not using following command ```python --version``` cammand.
+- Check is python installed successfuly or not using following command 
+```python --version
+``` 
+cammand.
 - Check is pip is latest one ex. pip-20.1 or latest
 - Check it using following command:
-```python pip --version```
+```python pip --version
+```
 - Install Django using following command:
-``` pip install django```
+``` pip install django
+```
+
+#### Step 2:
+- Install requirements.txt using following command 
+``` python pip install -m requirements.txt
+```
+- If it is not working on your system do manual installation of all the package using following commands:
+``` 1. pip install django
+    2. pip install pillow
+    3. pip install mysqlclient
+    4. pip install djangootp
+```
+#### Step 3:
+- Extract STET.zip folder in your system and open it on your Favourite __IDE__ or __Text Editor__
+* Go to settings.py and change __Allowed Host__ to your HOST Name in my case it is [Localhost]
+
+#### Step 4:
+* Open your database service provider and create Database named "stet_db"
+- Open your file manager and go to STET right click on STET and open it with your command pallet
+- Exicute following commands for Database Table Migrations:
+``` 
+python manage.py migrate
+```
 
 
 
