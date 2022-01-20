@@ -1,3 +1,23 @@
+# Project Installation Steps:
+
+#### Step 1:
+- Go to [Python](/https://python.org/downloads) and download the python version 3.7
+- Install python 3.7 in your system and set path.
+- Check is python installed successfuly or not using following command ```python --version``` cammand.
+- Check is pip is latest one ex. pip-20.1 or latest
+- Check it using following command:
+```python pip --version```
+- Install Django using following command:
+``` pip install django```
+
+
+
+
+
+
+
+
+
 # STET
 
 ## 1. Candidate Requirements:
