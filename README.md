@@ -53,6 +53,9 @@ Django version 3.0.5, using settings 'STET.settings'
 Starting development server at [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 Quit the server with CTRL-BREAK.
 ```
+Just copy and pest it into Browser of simpaly click on it redirect you to homepage.
+The homepage looks like
+![alt text](templates/screenshot/homepage.png "Home Page")
 
 
 
