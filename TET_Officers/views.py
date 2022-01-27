@@ -28,7 +28,7 @@ def exam_officer_login(request):
             return redirect('TET_Officers:officer_home')
         else:
             messages.error(request, 'Incorrect User Name or Password')
-            return render(request, 'admin_home/Exam_Officer_Login.html')
+            return render(request,  'admin_home/Exam_Officer_Login.html')
 
     context = {}
     return render(request, 'admin_home/Exam_Officer_Login.html', context)
