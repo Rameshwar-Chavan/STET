@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from candidates.models import applicant_registration, personal_information, address_information, other_information, Academic_information
+from candidates.models import applicant_registration, personal_information, address_information, other_information, academic_information
 from TET_Officers.models import Notifications
 from django.contrib import messages
 from django.http import HttpResponse
@@ -12,6 +12,8 @@ from STET.decorators import unauthorized_user, allowed_users
 
 
 def registration(request):
+    all_notifications = Notifications.objects.all()
+    context = {'all_notifications': all_notifications}
     if request.method == "POST":
         if request.POST.get('first_name') and request.POST.get('last_name') and request.POST.get('email') and request.POST.get('password') and request.POST.get('mobile'):
             insert = applicant_registration()
@@ -28,7 +30,7 @@ def registration(request):
             messages.error(request, 'Applicant Is Already Registered!')
             return render(request, 'students/Applicant_Registration.html', {})
 
-    return render(request, 'students/Applicant_Registration.html', {})
+    return render(request, 'students/Applicant_Registration.html', context)
 
 
 @login_required(login_url='candidates:login')
