@@ -28,24 +28,24 @@
         <div class="">
           <div class="row">
             <div class="col-sm-2 pt-2 text-center d-inline">
-              <img src="{% static 'dist/img/stet_logo.png' %}" class="brand-image rounded-circle bg-dark" style="opacity: 0.9" height="85px"
-                width="85px" />
+              <img src="{% static 'dist/img/MIT.png' %}" class="brand-image rounded" style="opacity: 0.9" height="90px"
+                width="90px" alt="MIT Logo"/>
             </div>
             <div class="col-sm mr-auto pt-2 pb-2 d-inline">
               <h3 class="text-center text-info">
-                <b> महाराष्ट्र राज्य परीक्षा परिषद, पुणे </b>
+                <strong> महाराष्ट्र इन्स्टिट्यूट ऑफ टेक्नॉलॉजी, औरंगाबाद </strong>
               </h3>
               <h4 class="text-warning text-center">
-                <b>महाराष्ट्र शिक्षक पात्रता परीक्षा - २०२१ <br />
-                  Maharashtra Teacher Eligibility Test - 2021</b>
+                <strong>महाराष्ट्र इन्स्टिट्यूट ऑफ टेक्नॉलॉजी, औरंगाबाद शिक्षक पात्रता परीक्षा - २०२१ <br />
+                  Maharashtra Institute of Technology, Aurangabad Teacher Eligibility Test - 2021</strong>
               </h4>
             </div>
             <div class="col-sm-2 mt-1 pt-2 text-center d-inline">
-              <img src="{% static 'dist/img/satymev_flag.jpg' %}" class="brand-image rounded-circle align-self-center" style="opacity: 0.9" height="85px"
-                width="85px" />
+              <img src="{% static 'dist/img/MIT1.png' %}" class="brand-image rounded" style="opacity: 0.9" height="92px"
+                width="90px" alt="MIT Logo"/>
             </div>
           </div>
-        </div>
+        </div class="mb-2">
         <nav class="navbar navbar-expand-sm navbar-light navbar-rounded sticky-top"style="background:#dfe2e8" >
           <!-- <a class="navbar-brand" href="#">
             <img src="dist/img/stet_logo.pn.gif" width="50" height="50" class="d-inline-block align-top bg-dark rounded-circle" alt="">
@@ -60,16 +60,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item pl-1 pr-1 pt-1 pb-1">
-                <a class="nav-link navbar-brand font-weight-bold" href="{% url 'index' %}"> <i class="fas fa-home"></i> Home</a>
+                <a class="nav-link navbar-brand font-weight-bold" href="{% url 'index' %}"> <em class="fas fa-home"></em> Home</a>
               </li>
               <li class="nav-item pl-1 pr-1 pt-1 pb-1">
-                <a class="nav-link navbar-brand font-weight-bold" href="https://www3.digialm.com/OnlineAssessment/index.html?164@@M642"> <i class="fas fa-user"> </i> Mock Test</a>
+                <a class="nav-link navbar-brand font-weight-bold" href="https://www3.digialm.com/OnlineAssessment/index.html?164@@M642"> <em class="fas fa-user"> </em> Mock Test</a>
               </li>
               <li class="nav-item pl-1 pr-1 pt-1 pb-1">
-                <a class="nav-link navbar-brand font-weight-bold" href="{% url 'contact' %}"><i class="nav-icon fas fa-phone-alt"> </i> Contact Us</a>
+                <a class="nav-link navbar-brand font-weight-bold" href="{% url 'contact' %}"><em class="nav-icon fas fa-phone-alt"> </em> Contact Us</a>
               </li>
               <li class="nav-item pl-1 pr-1 pt-1 pb-1">
-                <a class="nav-link navbar-brand font-weight-bold" href="{% url 'about' %}"><i class="nav-icon fas fa-info-circle">  </i> About Us</a>
+                <a class="nav-link navbar-brand font-weight-bold" href="{% url 'about' %}"><em class="nav-icon fas fa-info-circle">  </em> About Us</a>
               </li>
             </ul>
             
@@ -86,25 +86,25 @@
           
             <div class="card mt-2 rounded">
               <div class="card-header text-center bg-warning text-bold ">
-                <b>Applicants</b>
+                <strong>Applicants</strong>
               </div>
             <div class="list-group" id="list-tab" role="tablist">
               <a class="list-group-item list-group-item-action bg-light" href="{% url 'candidates:login' %}"
-               ><i class="fas fa-sign-in-alt"></i> <span class="text-primary text-bold"> Login</span></a>
+               ><em class="fas fa-sign-in-alt"></em> <span class="text-primary text-bold"> Login</span></a>
               <a class="list-group-item list-group-item-action bg-light" href="{% url 'candidates:registration' %}"
-               ><i class="fas fa-edit"></i><span class="text-primary text-bold font-12"> New Registration</span></a>
+               ><em class="fas fa-edit"></em><span class="text-primary text-bold font-12"> New Registration</span></a>
             </div>  
             </div>
             <!-- Offices Card Start -->
             <div class="card mt-2">
               <div class="card-header bg-warning text-center text-bold">
-               <b>Officers</b>
+               <strong>Officers</strong>
               </div>
               <div class="list-group" id="list-tab" role="tablist">
                 <a class="list-group-item list-group-item-action bg-light" href="{% url 'TET_Officers:EO_Login' %}"
-                  ><i class="fas fa-sign-in-alt"></i> <span class="text-primary text-bold"> EO Login</span></a>
+                  ><em class="fas fa-sign-in-alt"></em> <span class="text-primary text-bold"> EO Login</span></a>
                 <a class="list-group-item list-group-item-action bg-light" href="{% url 'TET_Officers:EIO_Login' %}"
-                  ><i class="fas fa-sign-in-alt"></i> <span class="text-primary text-bold"> EIO Login</span></a>
+                  ><em class="fas fa-sign-in-alt"></em> <span class="text-primary text-bold"> EIO Login</span></a>
                 
               </div>
             </div>
@@ -112,7 +112,7 @@
             <!-- Offices Card Start -->
             <div class="card mt-2">
               <div class="card-header bg-success text-center font-weight-bold">
-                <b>Downloads</b>
+                <strong>Downloads</strong>
               </div>
               <div class="list-group text-center" id="list-tab" role="tablist">
                 <a class="pt-2 pb-1 pl-1 pr-1 list-group-item-action bg-light" id="list-home-list" data-toggle="list" href="#list-home"
@@ -133,7 +133,7 @@
           <div class="col-sm-2 mb-0">
             <div class="card mt-sm-2" >
               <div class="card-header bg-info text-center font-weight-bold text-warning">
-                <b>Notifications</b>
+                <strong>Notifications</strong>
               </div>
               <ul class="list-group list-group-flush text-justify">{% for notification in all_notifications %}
                 <li class="list-group-item"><marquee width="auto" direction="up" height="100%" scrollamount="1" class="text-center">  
