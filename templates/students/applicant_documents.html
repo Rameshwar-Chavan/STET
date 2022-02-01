@@ -1,0 +1,155 @@
+{% extends 'students/Applicant_profile.html' %} {% block profile_body %}
+ <div class="row">
+     <div class="col-sm-1">
+         
+     </div>
+     <div class="col-sm-10">
+         <div class="card">
+          <form action="{% url 'candidates:profile' %}" method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="address" id="address" value="address">
+              <div class="card-header bg-primary text-center">
+              <strong><h4>Upload Documents</h4></strong>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-6 form-group">
+                  <!-- Row-1 Start-->
+                  <div class="form-group">
+                    <label for="ssc_marksheet">S.S.C Marksheet</label>
+                    <div class="custom-file">
+                      <input
+                        type="file"
+                        class="custom-file-input form-control"
+                        id="ssc_file"
+                      />
+                      <label class="custom-file-label" for="customFile"
+                        >Choose file</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                  <div class="form-group">
+                    <label for="hsc_marksheet">H.S.C Marksheet</label>
+                    <div class="custom-file">
+                      <input
+                        type="file"
+                        class="custom-file-input form-control"
+                        id="hsc_file"
+                      />
+                      <label class="custom-file-label" for="customFile"
+                        >Choose file</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Row-2 Start-->
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="caste certificate">Caste Certificate</label>
+                    <div class="custom-file">
+                      <input
+                        type="file"
+                        class="custom-file-input form-control"
+                        id="caste_file"
+                      />
+                      <label class="custom-file-label" for="customFile"
+                        >Choose file</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="">
+                    <div class="form-group">
+                      <label for="Non_creamy_layer">Non-Creamy-Layer</label>
+                      <div class="custom-file">
+                        <input
+                          type="file"
+                          class="custom-file-input form-control"
+                          id="non_creamy_layer_file"
+                        />
+                        <label class="custom-file-label" for="customFile"
+                          >Choose file</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Row-3 Start-->
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="">
+                    <div class="form-group">
+                      <label for="Photo">Passport Size Photo</label>
+                      <div class="custom-file">
+                        <input
+                          type="file"
+                          class="custom-file-input form-control"
+                          id="passport_photo_file"
+                        />
+                        <label class="custom-file-label" for="customFile"
+                          >Choose file</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="">
+                    <div class="form-group">
+                      <label for="Signature">Signature</label>
+                      <div class="custom-file">
+                        <input
+                          type="file"
+                          class="custom-file-input form-control"
+                          id="signature_file"
+                        />
+                        <label class="custom-file-label" for="customFile"
+                          >Choose file</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm text-center">
+                  <button class="btn btn-primary" onclick="stepper.previous()">
+                    Prev
+                  </button>
+                  &nbsp; &nbsp;
+
+                  <button class="btn btn-success" onclick="">Save</button>
+                  &nbsp; &nbsp;
+                </div>
+                <div class="col-sm"></div>
+              </div>
+            </div>
+            </form>
+     
+     </div>   
+    </div>
+     <div class="col-sm-1"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    window.stepper = new Stepper(document.querySelector(".bs-stepper"));
+  });
+  $('input[type=radio][name=address_same]').change(function() {
+        if (this.value == 'yes')
+        {
+            var local = $("#local_address").val();
+            $("#permanent_address").val(local);
+            $("#permanent_address").attr("disabled","disabled");
+        }
+  });
+</script>
+
+{% endblock profile_body %}

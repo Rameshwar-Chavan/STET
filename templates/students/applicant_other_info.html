@@ -1,0 +1,151 @@
+{% extends 'students/Applicant_profile.html' %} {% block profile_body %}
+ <div class="row">
+     <div class="col-sm-1">
+         
+     </div>
+     <div class="col-sm-10">
+         <div class="card">
+          <form action="{% url 'candidates:profile' %}" method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="address" id="address" value="address">
+              <div class="card-header bg-primary text-center">
+              <strong><h4>Other Information</h4></strong>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4 form-group">
+                  <!-- Row-1 Start-->
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="religion">Religion</label>
+                      <div class="form-group">
+                        <select
+                          class="form-control select2bs4"
+                          data-placeholder="Select a Religion"
+                          style="width: 100%"
+                          name="religion"
+                          id="religion"
+                          required
+                        >
+                          <option value="select">Select</option>
+                          <option>Hindu</option>
+                          <option>Buddhist</option>
+                          <option>Christian</option>
+                          <option>Jain</option>
+                          <option>Muslim</option>
+                          <option>Parsi</option>
+                          <option>Sikh</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="Caste">Caste</label>
+                      <div class="form-group">
+                        <select
+                          class="form-control select2bs4"
+                          data-placeholder="Select a Caste"
+                          style="width: 100%"
+                          name="caste"
+                          id="caste"
+                          required
+                        >
+                          <option value="select">Select</option>
+                          <option>General</option>
+                          <option>(OBC) Other Backward Class</option>
+                          <option>(SBC) Special Backward Class</option>
+                          <option>(SC) Scheduled Caste</option>
+                          <option>(ST) Scheduled Tribe</option>
+                          <option>(VJNT) Vimukt Jat Nomadic Tribe</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="pwd">Person With Disablity</label>
+                      <div class="row">
+                        <div class="col-sm mt-2">
+                          <div class="form-check d-inline icheck-success">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="pwd"
+                              id="flexRadio_pwd_yes"
+                              value="yes"
+                            />
+                            <label
+                              class="form-check-label ml-2 d-inline"
+                              for="flexRadio_pwd_yes"
+                            >
+                              <strong>Yes</strong>
+                            </label>
+                          </div>
+                          &nbsp; &nbsp;
+                          <div class="form-check d-inline icheck-success">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="pwd"
+                              id="flexRadio_pwd_no"
+                              value="no"
+                            />
+                            <label
+                              class="form-check-label mt-2 ml-2 d-inline"
+                              for="flexRadio_pwd_no"
+                            >
+                              <strong>No</strong>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Row-2 Start-->
+
+              <!-- Row-3 Start-->
+              <br />
+              <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm text-center">
+                  <button class="btn btn-primary" onclick="stepper.previous()">
+                    Prev
+                  </button>
+                  &nbsp; &nbsp;
+                  <button class="btn btn-success" onclick="">Save</button>
+                  &nbsp; &nbsp;
+                  <button class="btn btn-primary" onclick="stepper.next()">
+                    Next
+                  </button>
+                </div>
+                <div class="col-sm"></div>
+              </div>
+            </div>
+            </form>
+     
+     </div>   
+    </div>
+     <div class="col-sm-1"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    window.stepper = new Stepper(document.querySelector(".bs-stepper"));
+  });
+  $('input[type=radio][name=address_same]').change(function() {
+        if (this.value == 'yes')
+        {
+            var local = $("#local_address").val();
+            $("#permanent_address").val(local);
+            $("#permanent_address").attr("disabled","disabled");
+        }
+  });
+</script>
+
+{% endblock profile_body %}

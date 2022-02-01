@@ -1,0 +1,198 @@
+{% extends 'students/Applicant_profile.html' %} {% block profile_body %}
+ <div class="row">
+     <div class="col-sm-1">
+         
+     </div>
+     <div class="col-sm-10">
+         <div class="card">
+          <form action="{% url 'candidates:profile' %}" method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="address" id="address" value="address">
+              <div class="card-header bg-primary text-center">
+              <strong><h4>Acadmic Information</h4></strong>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4 form-group">
+                  <!-- Row-1 Start-->
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="Qualification_level"
+                        >Qualification Level</label
+                      >
+                      <div class="form-group">
+                        <select
+                          class="form-control select2bs4"
+                          data-placeholder="Select a Qualification"
+                          style="width: 100%"
+                          name="qualification"
+                          id="qualification"
+                          required
+                        >
+                          <option value="select">Select</option>
+                          <option>Certificate Course</option>
+                          <option>Diploma Course</option>
+                          <option>S.S.C (10 std)</option>
+                          <option>H.S.C</option>
+                          <option>Under Graduate Course</option>
+                          <option>Post Graduate Course</option>
+                          <option>Vocational Course</option>
+                          <option>Ph.D</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="Stream">Stream</label>
+                      <div class="form-group">
+                        <select
+                          class="form-control select2bs4"
+                          data-placeholder="Select a stream"
+                          style="width: 100%"
+                          name="stream"
+                          id="stream"
+                          required
+                        >
+                          <option value="select">Select</option>
+                          <option>Agriculture</option>
+                          <option>Arts</option>
+                          <option>Commerce</option>
+                          <option>Education</option>
+                          <option>Engineering</option>
+                          <option>Law</option>
+                          <option>Management</option>
+                          <option>Physical Education</option>
+                          <option>Science</option>
+                          <option>Veterinary</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="Institute Name">Institute Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="institute name"
+                        id="institute name"
+                        placeholder=""
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Row-2 Start-->
+              <div class="row">
+                <div class="col-sm-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="University">University / Board Name</label>
+                      <div class="form-group">
+                        <select
+                          class="form-control select2bs4"
+                          data-placeholder="Select a University"
+                          style="width: 100%"
+                          name="university"
+                          id="university"
+                          required
+                        >
+                          <option value="select">Select</option>
+                          <option>BAMU</option>
+                          <option>BATU</option>
+                          <option>Autonomous</option>
+                          <option>SPPU</option>
+                          <option>Nashik</option>
+                          <option>Jalgaon</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="Passing year">Passing Year</label>
+                      <div class="form-group">
+                        <select
+                          class="form-control select2bs4"
+                          data-placeholder="Select a Passing Year"
+                          style="width: 100%"
+                          name="passing_year"
+                          id="passing_year"
+                          required
+                        >
+                          <option value="select">Select</option>
+                          <option>2021</option>
+                          <option>2020</option>
+                          <option>2019</option>
+                          <option>2018</option>
+                          <option>2017</option>
+                          <option>2016</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label for="Percentage">Percentage</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="Percentage"
+                        id="Percentage"
+                        placeholder=""
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row-3 Start-->
+              <br />
+              <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm text-center">
+                  <button class="btn btn-primary" onclick="stepper.previous()">
+                    Prev
+                  </button>
+                  &nbsp; &nbsp;
+                  <button class="btn btn-success" onclick="">Save</button>
+                  &nbsp; &nbsp;
+                  <button class="btn btn-primary" onclick="stepper.next()">
+                    Next
+                  </button>
+                </div>
+                <div class="col-sm"></div>
+              </div>
+            </div>
+            </form>
+     
+     </div>   
+    </div>
+     <div class="col-sm-1"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    window.stepper = new Stepper(document.querySelector(".bs-stepper"));
+  });
+  $('input[type=radio][name=address_same]').change(function() {
+        if (this.value == 'yes')
+        {
+            var local = $("#local_address").val();
+            $("#permanent_address").val(local);
+            $("#permanent_address").attr("disabled","disabled");
+        }
+  });
+</script>
+
+{% endblock profile_body %}
