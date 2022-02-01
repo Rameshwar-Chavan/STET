@@ -34,6 +34,31 @@ def registration(request):
 
 
 @login_required(login_url='candidates:login')
+def applicant_personal(request):
+    return render(request, 'students/applicant_personal.html', {})
+
+
+@login_required(login_url='candidates:login')
+def applicant_address(request):
+    return render(request, 'students/applicant_address.html', {})
+
+
+@login_required(login_url='candidates:login')
+def applicant_other_info(request):
+    return render(request, 'students/applicant_other_info.html', {})
+
+
+@login_required(login_url='candidates:login')
+def applicant_acadmic_info(request):
+    return render(request, 'students/applicant_acadmic_info.html')
+
+
+@login_required(login_url='candidates:login')
+def applicant_documents(request):
+    return render(request, 'students/applicant_documents.html', {})
+
+
+@login_required(login_url='candidates:login')
 def dashboard(request):
     return render(request, 'students/Applicant_Dashboard.html', {})
 
