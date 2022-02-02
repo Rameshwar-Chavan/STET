@@ -162,13 +162,13 @@
               <div class="row">
                 <div class="col-sm"></div>
                 <div class="col-sm text-center">
-                  <button class="btn btn-primary" onclick="stepper.previous()">
+                  <button class="btn btn-primary" onclick="location.href='{% url 'candidates:other' %}'">
                     Prev
                   </button>
                   &nbsp; &nbsp;
                   <button class="btn btn-success" onclick="">Save</button>
                   &nbsp; &nbsp;
-                  <button class="btn btn-primary" onclick="stepper.next()">
+                  <button class="btn btn-primary" onclick="location.href='{% url 'candidates:documents' %}'">
                     Next
                   </button>
                 </div>
