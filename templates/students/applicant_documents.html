@@ -5,7 +5,7 @@
      </div>
      <div class="col-sm-10">
          <div class="card">
-          <form action="{% url 'candidates:profile' %}" method="POST">
+          <form action="{% url 'candidates:documents' %}" method="POST" enctype="multipart/form-data">
               {% csrf_token %}
               <input type="hidden" name="address" id="address" value="address">
               <div class="card-header bg-primary text-center">
@@ -22,6 +22,7 @@
                         type="file"
                         class="custom-file-input form-control"
                         id="ssc_file"
+                        name="ssc_file"
                       />
                       <label class="custom-file-label" for="customFile"
                         >Choose file</label
@@ -37,6 +38,7 @@
                         type="file"
                         class="custom-file-input form-control"
                         id="hsc_file"
+                        name="hsc_file"
                       />
                       <label class="custom-file-label" for="customFile"
                         >Choose file</label
@@ -55,6 +57,7 @@
                         type="file"
                         class="custom-file-input form-control"
                         id="caste_file"
+                        name="caste_file"
                       />
                       <label class="custom-file-label" for="customFile"
                         >Choose file</label
@@ -71,6 +74,7 @@
                           type="file"
                           class="custom-file-input form-control"
                           id="non_creamy_layer_file"
+                          name="non_creamy_layer_file"
                         />
                         <label class="custom-file-label" for="customFile"
                           >Choose file</label
@@ -91,6 +95,7 @@
                           type="file"
                           class="custom-file-input form-control"
                           id="passport_photo_file"
+                          name="passport_photo_file"
                         />
                         <label class="custom-file-label" for="customFile"
                           >Choose file</label
@@ -108,6 +113,7 @@
                           type="file"
                           class="custom-file-input form-control"
                           id="signature_file"
+                          name="signature_file"
                         />
                         <label class="custom-file-label" for="customFile"
                           >Choose file</label
