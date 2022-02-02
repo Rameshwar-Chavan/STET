@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from candidates.models import applicant_registration, personal_information, address_information, other_information, academic_information
 from TET_Officers.models import Notifications
 from django.contrib import messages
+from django.contrib.auth.models import User, auth
 from django.http import HttpResponse
 
 from django.contrib.auth import authenticate, login, logout, validators
@@ -16,13 +17,15 @@ def registration(request):
     context = {'all_notifications': all_notifications}
     if request.method == "POST":
         if request.POST.get('first_name') and request.POST.get('last_name') and request.POST.get('email') and request.POST.get('password') and request.POST.get('mobile'):
-            insert = applicant_registration()
-            insert.applicant_first_name = request.POST.get('first_name')
-            insert.applicant_last_name = request.POST.get('last_name')
-            insert.email_id = request.POST.get('email')
-            insert.password = request.POST.get('password')
-            insert.mobile = request.POST.get('mobile')
-            insert.save()
+            first_name = request.POST['first_name']
+            last_name = request.POST['last_name']
+            email = request.POST['email']
+            password = request.POST['password']
+            mobile = request.POST['mobile']
+
+            user = User.objects.create_user(username=email, email=email, password=password, first_name=first_name, last_name=last_name)
+            user.save()
+            print("User Created")
             messages.success(
                 request, 'Applicant Registration Successfully Completed !')
             return render(request, 'students/Applicant_Registration.html', {})
