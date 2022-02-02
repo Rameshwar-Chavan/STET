@@ -15,8 +15,8 @@ urlpatterns = [
     path("Applicant_Profile/address/", views.applicant_address, name="address"),
     path("Applicant_Profile/OtherInfo/",
          views.applicant_other_info, name="other"),
-    path("Applicant_Profile/acadmic/",
-         views.applicant_acadmic_info, name="acadmic"),
+    path("Applicant_Profile/academic/",
+         views.applicant_academic_info, name="academic"),
     path("Applicant_Profile/documents/",
          views.applicant_documents, name="documents"),
 
