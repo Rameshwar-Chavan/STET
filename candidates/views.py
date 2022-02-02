@@ -52,8 +52,8 @@ def applicant_other_info(request):
 
 
 @login_required(login_url='candidates:login')
-def applicant_acadmic_info(request):
-    return render(request, 'students/applicant_acadmic_info.html')
+def applicant_academic_info(request):
+    return render(request, 'students/applicant_academic_info.html')
 
 
 @login_required(login_url='candidates:login')
