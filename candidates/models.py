@@ -65,3 +65,15 @@ class academic_information(models.Model):
 
     def __str__(self):
         return self.qualification
+
+class documents(models.Model):
+
+    ssc_file = models.FileField(upload_to='')
+    hsc_file = models.FileField(upload_to='')
+    caste_file = models.FileField(upload_to='')
+    non_creamy_layer_file = models.FileField(upload_to='')
+    passport_photo_file = models.FileField(upload_to='')
+    signature_file = models.FileField(upload_to='')
+
+    def __str__(self):
+        return self.ssc_file

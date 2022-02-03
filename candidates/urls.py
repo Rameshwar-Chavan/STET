@@ -1,5 +1,6 @@
 from django.urls import path
-
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 from django.core import serializers
 
@@ -23,3 +24,6 @@ urlpatterns = [
     path("All_Application/", views.all_application, name="All_Application"),
     path("Post_Apply/", views.post_apply, name="Post_Apply"),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

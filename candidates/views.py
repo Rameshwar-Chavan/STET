@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from candidates.models import applicant_registration, personal_information, address_information, other_information, academic_information
+from candidates.models import applicant_registration, personal_information, address_information, other_information, academic_information, documents
 from TET_Officers.models import Notifications
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
+from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse
 
 from django.contrib.auth import authenticate, login, logout, validators
@@ -38,50 +39,9 @@ def registration(request):
 
 @login_required(login_url='candidates:login')
 def applicant_personal(request):
-    return render(request, 'students/applicant_personal.html', {})
-
-
-@login_required(login_url='candidates:login')
-def applicant_address(request):
-    return render(request, 'students/applicant_address.html', {})
-
-
-@login_required(login_url='candidates:login')
-def applicant_other_info(request):
-    return render(request, 'students/applicant_other_info.html', {})
-
-
-@login_required(login_url='candidates:login')
-def applicant_academic_info(request):
-    return render(request, 'students/applicant_academic_info.html')
-
-
-@login_required(login_url='candidates:login')
-def applicant_documents(request):
-    return render(request, 'students/applicant_documents.html', {})
-
-
-@login_required(login_url='candidates:login')
-def dashboard(request):
-    return render(request, 'students/Applicant_Dashboard.html', {})
-
-
-@login_required(login_url='candidates:login')
-def profile(request):
-    step1 = False
-    step2 = False
+    print("This is a method::",request.method)
     if request.method == "POST":
-        if request.POST.get('personal'):
-            step1 = True
-        elif request.POST.get('address'):
-            step2 = True
-        else:
-            step1 = False
-            step2 = False
-        print("Step1 ", step1)
-        print("Step2 ", step2)
-        print("All Data", request.POST.get('first_name'))
-        if step1 == True and request.POST.get('first_name') and request.POST.get('middle_name') and request.POST.get('last_name') and request.POST.get('email') and request.POST.get('mobile') and request.POST.get('d_o_b') and request.POST.get('gender') and request.POST.get('age') and request.POST.get('marital_status'):
+        if request.POST.get('first_name') and request.POST.get('middle_name') and request.POST.get('last_name') and request.POST.get('email') and request.POST.get('mobile') and request.POST.get('d_o_b') and request.POST.get('gender') and request.POST.get('age') and request.POST.get('marital_status'):
             insert = personal_information()
             insert.first_name = request.POST.get('first_name')
             insert.middle_name = request.POST.get('middle_name')
@@ -93,10 +53,22 @@ def profile(request):
             insert.age = request.POST.get('age')
             insert.marital_status = request.POST.get('marital_status')
             insert.save()
-            messages.success(
-                request, 'Personal Information Successfully Saved!')
-            return render(request, 'students/Applicant_profile.html', {})
-        elif step2 == True and request.POST.get('local_address') and request.POST.get('address_same') and request.POST.get('permanent_address') and request.POST.get('state') and request.POST.get('district') and request.POST.get('taluka') and request.POST.get('village') and request.POST.get('pincode'):
+            messages.success(request, 'Personal Information Successfully Saved!')
+            return render(request, 'students/applicant_personal.html', {})
+        else:
+            messages.error(request, 'Applicant Is Already Registered!')
+            return render(request, 'students/applicant_personal.html', {})
+    else:
+        messages.error(request, 'Method Is GET!')
+        return render(request, 'students/applicant_personal.html', {})
+
+    return render(request, 'students/applicant_personal.html', {})
+
+
+@login_required(login_url='candidates:login')
+def applicant_address(request):
+    if request.method == "POST":
+        if request.POST.get('local_address') and request.POST.get('address_same') and request.POST.get('permanent_address') and request.POST.get('state') and request.POST.get('district') and request.POST.get('taluka') and request.POST.get('village') and request.POST.get('pincode'):
             insert = address_information()
             insert.local_address = request.POST.get('local_address')
             insert.address_same = request.POST.get('address_same')
@@ -107,31 +79,71 @@ def profile(request):
             insert.village = request.POST.get('village')
             insert.pincode = request.POST.get('pincode')
             insert.save()
-            messages.success(
-                request, 'Address Information Successfully Saved!')
-            return render(request, 'students/Applicant_profile.html', {})
-        else:
-            messages.error(request, 'One of the field is Missing!')
-            return render(request, 'students/Applicant_profile.html', {})
+            messages.success(request, 'Address Information Successfully Saved!')
+            return render(request, 'students/applicant_address.html', {})
 
+    return render(request, 'students/applicant_address.html', {})
+
+
+@login_required(login_url='candidates:login')
+def applicant_other_info(request):
     if request.method == "POST":
-        if step2 == True and request.POST.get('local_address') and request.POST.get('address_same') and request.POST.get('permanent_address') and request.POST.get('state') and request.POST.get('district') and request.POST.get('taluka') and request.POST.get('village') and request.POST.get('pincode'):
-            insert = address_information()
-            insert.local_address = request.POST.get('first_name')
-            insert.address_same = request.POST.get('address_same')
-            insert.permanent_address = request.POST.get('permanent_address')
-            insert.state = request.POST.get('state')
-            insert.district = request.POST.get('district')
-            insert.taluka = request.POST.get('taluka')
-            insert.village = request.POST.get('village')
-            insert.pincode = request.POST.get('pincode')
+        if request.POST.get('religion') and request.POST.get('caste') and request.POST.get('pwd'):
+            insert = other_information()
+            insert.religion = request.POST.get('religion')
+            insert.caste = request.POST.get('caste')
+            insert.person_with_disablity = request.POST.get('pwd')
             insert.save()
-            messages.success(
-                request, 'Address Information Successfully Saved!')
-            return render(request, 'students/Applicant_profile.html', {})
-        else:
-            messages.error(request, 'Applicant Is Already Registered!')
-            return render(request, 'students/Applicant_profile.html', {})
+            messages.success(request, 'Other Information Successfully Saved!')
+            return render(request, 'students/applicant_other_info.html', {})
+
+    return render(request, 'students/applicant_other_info.html', {})
+
+
+@login_required(login_url='candidates:login')
+def applicant_academic_info(request):
+    if request.method == "POST":
+        if request.POST.get('qualification') and request.POST.get('stream') and request.POST.get('institute name') and request.POST.get('university') and request.POST.get('passing_year') and request.POST.get('Percentage'):
+            insert = academic_information()
+            insert.qualification = request.POST.get('qualification')
+            insert.stream = request.POST.get('stream')
+            insert.institute_name = request.POST.get('institute name')
+            insert.university_name = request.POST.get('university')
+            insert.passing_year = request.POST.get('passing_year')
+            insert.percentage = request.POST.get('Percentage')
+            insert.save()
+            messages.success(request, 'Academic Information Successfully Saved!')
+            return render(request, 'students/applicant_academic_info.html', {})
+
+    return render(request, 'students/applicant_academic_info.html')
+
+
+@login_required(login_url='candidates:login')
+def applicant_documents(request):
+    if request.method == "POST":
+            ssc_file = request.FILES.getlist('ssc_file')
+            hsc_file = request.FILES.getlist('hsc_file')
+            caste_file = request.FILES.getlist('caste_file')
+            non_creamy_layer_file = request.FILES.getlist('non_creamy_layer_file')
+            passport_photo_file = request.FILES.getlist('passport_photo_file')
+            signature_file = request.FILES.getlist('signature_file')
+            documents(ssc_file=ssc_file, hsc_file=hsc_file, caste_file=caste_file, non_creamy_layer_file= non_creamy_layer_file, passport_photo_file=passport_photo_file, signature_file=signature_file).save()
+            messages.success(request, 'Documents Uploaded Successfully !')
+            return render(request, 'students/applicant_documents.html', {})
+    else:
+         messages.error(request, 'error !')
+         return render(request, 'students/applicant_documents.html', {})
+
+    return render(request, 'students/applicant_documents.html', {})
+
+
+@login_required(login_url='candidates:login')
+def dashboard(request):
+    return render(request, 'students/Applicant_Dashboard.html', {})
+
+
+@login_required(login_url='candidates:login')
+def profile(request):
     all_notifications = Notifications.objects.all()
     return render(request, 'students/Applicant_profile.html', {'all_notifications': all_notifications})
 
