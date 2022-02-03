@@ -121,13 +121,19 @@ def applicant_academic_info(request):
 @login_required(login_url='candidates:login')
 def applicant_documents(request):
     if request.method == "POST":
-            ssc_file = request.FILES.getlist('ssc_file')
-            hsc_file = request.FILES.getlist('hsc_file')
-            caste_file = request.FILES.getlist('caste_file')
-            non_creamy_layer_file = request.FILES.getlist('non_creamy_layer_file')
-            passport_photo_file = request.FILES.getlist('passport_photo_file')
-            signature_file = request.FILES.getlist('signature_file')
-            documents(ssc_file=ssc_file, hsc_file=hsc_file, caste_file=caste_file, non_creamy_layer_file= non_creamy_layer_file, passport_photo_file=passport_photo_file, signature_file=signature_file).save()
+            ssc_file = request.FILES['ssc_file']
+            hsc_file = request.FILES['hsc_file']
+            caste_file = request.FILES['caste_file']
+            non_creamy_layer_file = request.FILES['non_creamy_layer_file']
+            passport_photo_file = request.FILES['passport_photo_file']
+            signature_file = request.FILES['signature_file']
+            fs = FileSystemStorage()
+            fs.save(ssc_file.name, ssc_file)
+            fs.save(hsc_file.name, hsc_file)
+            fs.save(caste_file.name, caste_file)
+            fs.save(non_creamy_layer_file.name, non_creamy_layer_file)
+            fs.save(passport_photo_file.name, passport_photo_file)
+            fs.save(signature_file.name, signature_file)
             messages.success(request, 'Documents Uploaded Successfully !')
             return render(request, 'students/applicant_documents.html', {})
     else:
