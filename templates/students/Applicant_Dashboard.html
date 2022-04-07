@@ -79,40 +79,15 @@
         <ul class="navbar-nav ml-auto">
           <!-- Navbar Search -->
           <li class="nav-item">
-            <a
+            {% comment %} <a
               class="nav-link"
               data-widget="navbar-search"
               href="#"
               role="button"
             >
               <i class="fas fa-search"></i>
-            </a>
-            <div class="navbar-search-block">
-              <form class="form-inline">
-                {% csrf_token %}
-                <div class="input-group input-group-sm">
-                  <input
-                    class="form-control form-control-navbar"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                  />
-                  <div class="input-group-append">
-                    <button class="btn btn-navbar" type="submit">
-                      <i class="fas fa-search"></i>
-                    </button>
-                    <button
-                      class="btn btn-navbar"
-                      type="button"
-                      data-widget="navbar-search"
-                    >
-                      <i class="fas fa-times"></i>
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </li>
+            </a> {% endcomment %}
+            
         </ul>
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
@@ -231,19 +206,19 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{% url 'candidates:login' %}" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="nav-icon fa fa-check"></i>
                   <b> My Applied </b>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{% url 'candidates:login' %}" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="nav-icon fa fa-times"></i>
                   <b> Cancelled Applications </b>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{% url 'candidates:login' %}" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-angle-right"></i>
                   <b> Complaint/Suggestions </b>
                 </a>
@@ -259,7 +234,7 @@
         <div class="row">
           <div class="col-sm-2 pr-2 pt-1 pl-1 pb-2 text-center d-inline">
             <img
-              src="{% static 'dist/img/stet_logo.png' %}"
+              src="{% static 'dist/img/MIT.png' %}"
               class="brand-image img-circle elevation-3 bg-dark"
               style="opacity: 0.8"
               height="85px"
@@ -268,13 +243,11 @@
           </div>
           <div class="col-sm-8 mr-0 d-inline">
             <h3 class="text-center text-info">
-              <b> महाराष्ट्र राज्य परीक्षा परिषद, पुणे </b>
+             <strong> महाराष्ट्र इन्स्टिट्यूट ऑफ टेक्नॉलॉजी, औरंगाबाद </strong>
             </h3>
             <h4 class="text-warning text-center">
-              <b
-                >महाराष्ट्र शिक्षक पात्रता परीक्षा - २०२१ <br />
-                Maharashtra Teacher Eligibility Test - 2021</b
-              >
+              <strong>महाराष्ट्र इन्स्टिट्यूट ऑफ टेक्नॉलॉजी, औरंगाबाद शिक्षक पात्रता परीक्षा - २०२१ <br />
+                  Maharashtra Institute of Technology, Aurangabad Teacher Eligibility Test - 2021</strong>
             </h4>
           </div>
           <div class="col-sm-2"></div>
@@ -297,8 +270,8 @@
             <div class="col-12">
               <div class="progress-group ml-2 mr-4">
                 <strong class="mb-4">Profile Completness</strong>
-                <span class="float-right"><b></b></span>
-                <div class="progress progress-sm mt-1" style="height: auto">
+                <span class="float-right"><strong>Status</strong></span>
+                <div class="progress progress-md mt-1" style="height: 20px">
                   <div
                     class="
                       progress-bar
@@ -309,16 +282,57 @@
                     aria-valuenow="75"
                     aria-valuemin="0"
                     aria-valuemax="100"
-                    style="width: 50%"
+                    style="width: 10%"
                     role="progressbar"
                   >
-                    <b><h6 class="mt-1">50 %</h6></b>
+                    <h6 class="mt-1">10 %</h6>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
+        <div class="row ml-2">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-6 col-sm">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h4>Check Your Eligibility</h4>
+                <p style="background-color: gold;">
+              Birthdate has to be in the <b>short format mm/dd/yy </b>
+                    <p>
+                    <hr>
+                    </p>
+                    
+                    <label for="Birth date: ">Birth date: </label>
+                      <input type="date" name="dob" class="mydob" value="">
+                    <hr />
+                    
+                    <label for="Your age: ">Your age: </label>
+                    <input type="text" disabled class="age" readonly>
+                    
+                    <hr>
+                    
+                    <label for="Percentage "%": ">Percentage "%"</label>   
+                    <input type="text" name="percentage" class="percentage text-center" value=""> <hr /></p>
+                     
+                    <label for="Your Eligibility :">Your Eligibility :</label>  
+                     <input type="text" disabled name="eligibility" class="eligibility text-success" value=""> 
+                   <hr />
+                    <button onclick="myFunction()" class="btn btn-primary center"> Check Eligibility</button>
+                                  </div>
+                                  <div class="icon">
+                                   
+                                    <i class="ion ion-bag"></i>
+                                  </div>
+                                  {% comment %} <a href="#" class="small-box-footer"
+                                    >More info <i class="fas fa-arrow-circle-right"></i
+                                  ></a> {% endcomment %}
+                                </div>
+                              </div>
+                             
+                              
+                          <div>
           {% endblock candidate_body %}
         </section>
         <!-- /.content -->
@@ -348,8 +362,29 @@
       <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
-
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- jQuery -->
+   <script>
+      function getAge(dob) { return ~~((new Date()-new Date(dob))/(31556952000)) }
+    var dob =$("dob").val();
+    var percentage=$("percentage").val()
+      $("dob").val()
+    $("input.mydob").change(function(){
+    $('.age').val(getAge($(this).val()));
+    });
+    $("input.percentage").change(function(){
+    $('.eligibility').val("Eligible");
+    });
+    var age=$('.age').val(getAge($(this).val()));
+    if(age<30 && percentage>50)
+      {
+       
+      }
+    
+
+   </script>
+   
+
     <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="{% static 'plugins/jquery-ui/jquery-ui.min.js' %}"></script>

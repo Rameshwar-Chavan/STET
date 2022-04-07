@@ -63,7 +63,7 @@
                 <a class="nav-link navbar-brand font-weight-bold" href="{% url 'index' %}"> <em class="fas fa-home"></em> Home</a>
               </li>
               <li class="nav-item pl-1 pr-1 pt-1 pb-1">
-                <a class="nav-link navbar-brand font-weight-bold" href="https://www3.digialm.com/OnlineAssessment/index.html?164@@M642"> <em class="fas fa-user"> </em> Mock Test</a>
+                <a class="nav-link navbar-brand font-weight-bold" target="_blanck" href="https://www3.digialm.com/OnlineAssessment/index.html?164@@M642"> <em class="fas fa-user"> </em> Mock Test</a>
               </li>
               <li class="nav-item pl-1 pr-1 pt-1 pb-1">
                 <a class="nav-link navbar-brand font-weight-bold" href="{% url 'contact' %}"><em class="nav-icon fas fa-phone-alt"> </em> Contact Us</a>
@@ -75,7 +75,8 @@
             
             
           </div>
-          <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          {% if user.active %}
+                      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
       <!-- Navbar Right Menu -->
@@ -109,6 +110,9 @@
                 <!--</div>-->
               </li>
             </ul>
+          </div>
+          
+          {% endif %}
           </li>
         </ul>
       </div>

@@ -25,5 +25,5 @@ urlpatterns = [
     path("Post_Apply/", views.post_apply, name="Post_Apply"),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
