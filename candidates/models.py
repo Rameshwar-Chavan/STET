@@ -68,12 +68,12 @@ class academic_information(models.Model):
 
 class documents(models.Model):
 
-    ssc_file = models.FileField(upload_to='')
-    hsc_file = models.FileField(upload_to='')
-    caste_file = models.FileField(upload_to='')
-    non_creamy_layer_file = models.FileField(upload_to='')
-    passport_photo_file = models.FileField(upload_to='')
-    signature_file = models.FileField(upload_to='')
+    ssc_file = models.FileField()
+    hsc_file = models.FileField()
+    caste_file = models.FileField()
+    non_creamy_layer_file = models.FileField()
+    passport_photo_file = models.FileField()
+    signature_file = models.FileField()
 
-    def __str__(self):
-        return self.ssc_file
+    def __int__(self):
+        return self.id
